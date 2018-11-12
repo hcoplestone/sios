@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/prettytable/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prettytable/_compact.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prettytable/cli.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prettytable/factory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prettytable/prettytable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assertions.py" beforeDir="false" afterPath="$PROJECT_DIR$/assertions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sios.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_assertions.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_assertions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,8 +22,10 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/sios$Nosetests_for_tests_test_assertions_TestAssertions.coverage" NAME="Nosetests for tests.test_assertions.TestAssertions Coverage Results" MODIFIED="1542025130478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sios$Nosetests_for_test_assertions_TestAssertions_test_assert_string.coverage" NAME="Nosetests for test_assertions.TestAssertions.test_assert_string Coverage Results" MODIFIED="1542026571913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
-    <SUITE FILE_PATH="coverage/sios$Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings.coverage" NAME="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings Coverage Results" MODIFIED="1542026832338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sios$Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings.coverage" NAME="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings Coverage Results" MODIFIED="1542030341400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sios$Nosetests_for_tests_test_assertions_TestAssertions_test_assert_string.coverage" NAME="Nosetests for tests.test_assertions.TestAssertions.test_assert_string Coverage Results" MODIFIED="1542025076988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/sios$Nosetests_for_test_assertions_TestAssertions.coverage" NAME="Nosetests for test_assertions.TestAssertions Coverage Results" MODIFIED="1542030733138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sios$Nosetests_for_test_assertions_TestAssertions_test_assert_dimensions_match.coverage" NAME="Nosetests for test_assertions.TestAssertions.test_assert_dimensions_match Coverage Results" MODIFIED="1542030348132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1992092386">
@@ -26,27 +37,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="COPYING" value="1" />
           <entry key="ipynb" value="1" />
-          <entry key="md" value="1" />
-          <entry key="py" value="8" />
+          <entry key="md" value="3" />
+          <entry key="py" value="10" />
+          <entry key="rst" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IPNB" value="1" />
-          <entry key="Markdown" value="1" />
-          <entry key="Python" value="8" />
+          <entry key="Markdown" value="3" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="10" />
+          <entry key="ReST" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="165" />
-          <entry key="py" value="5025" />
+          <entry key="md" value="3" />
+          <entry key="py" value="8897" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5190" />
+          <entry key="Markdown" value="3" />
+          <entry key="Python" value="9062" />
         </counts>
       </usages-collector>
     </session>
@@ -57,10 +74,30 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sios.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1542030100612" expanded="true" signature="94:96" ph="..." />
+                <marker date="1542030100612" expanded="true" signature="113:119" ph="..." />
+                <marker date="1542030100612" expanded="true" signature="113:2443" ph="..." />
+                <marker date="1542030100612" expanded="true" signature="1796:1832" ph="..." />
+                <marker date="1542030100612" expanded="true" signature="1967:2031" ph="..." />
+                <marker date="1542030100612" expanded="true" signature="2483:2484" ph="..." />
+                <marker date="1542030100612" expanded="true" signature="2483:2489" ph="..." />
+                <marker date="1542030100612" expanded="true" signature="2898:2902" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assertions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+            <state relative-caret-position="395">
+              <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -68,30 +105,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_assertions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="34" column="62" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
+            <state relative-caret-position="440">
+              <caret line="56" column="77" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-                <marker date="1542026831235" expanded="true" signature="161:509" ph="..." />
-                <marker date="1542026831235" expanded="true" signature="547:556" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sios.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <marker date="1542026877169" expanded="true" signature="58:60" ph="..." />
-                <marker date="1542026877169" expanded="true" signature="77:83" ph="..." />
-                <marker date="1542026877169" expanded="true" signature="77:878" ph="..." />
-                <marker date="1542026877169" expanded="true" signature="917:918" ph="..." />
-                <marker date="1542026877169" expanded="true" signature="917:923" ph="..." />
-                <marker date="1542026877169" expanded="true" signature="1261:1265" ph="..." />
+                <marker date="1542030696807" expanded="true" signature="1377:1386" ph="..." />
               </folding>
             </state>
           </provider>
@@ -115,9 +133,11 @@
         <option value="$PROJECT_DIR$/Intro.ipynb" />
         <option value="$PROJECT_DIR$/tests/AssertionsTest.py" />
         <option value="$PROJECT_DIR$/tests/test_assertions.py" />
-        <option value="$PROJECT_DIR$/assertions.py" />
-        <option value="$PROJECT_DIR$/test_assertions.py" />
+        <option value="$PROJECT_DIR$/prettytable.py" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/sios.py" />
+        <option value="$PROJECT_DIR$/test_assertions.py" />
+        <option value="$PROJECT_DIR$/assertions.py" />
       </list>
     </option>
   </component>
@@ -174,7 +194,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/experiments" />
     </key>
   </component>
@@ -190,7 +214,39 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings">
+  <component name="RunManager" selected="Python tests.Nosetests for test_assertions.TestAssertions">
+    <configuration name="Nosetests for test_assertions.TestAssertions" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <module name="sios" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_assertions.TestAssertions&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_dimensions_match" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <module name="sios" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_assertions.TestAssertions.test_assert_dimensions_match&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
       <module name="sios" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -226,9 +282,13 @@
     <list>
       <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_string" />
       <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" />
+      <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_dimensions_match" />
+      <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions" />
+        <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_dimensions_match" />
         <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" />
         <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_string" />
       </list>
@@ -248,35 +308,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 43m 40s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_dimensions_match - 2018.11.12 at 13h 45m 48s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_dimensions_match" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 43m 45s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 45m 55s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 43m 49s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 46m 23s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 44m 24s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 47m 07s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 44m 45s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 47m 24s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 45m 31s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 48m 12s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 45m 45s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 49m 15s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 46m 23s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 49m 44s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 46m 30s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 50m 17s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 47m 12s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 51m 13s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -293,7 +353,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" sideWeight="0.5007299" side_tool="true" weight="0.24555735" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49927008" weight="0.24555735" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.24555735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -324,16 +384,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Intro.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -368,38 +418,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assertions.py">
+    <entry file="file://$PROJECT_DIR$/prettytable.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+        <state relative-caret-position="158">
+          <caret line="1089" column="20" selection-start-line="1089" selection-start-column="20" selection-end-line="1089" selection-end-column="20" />
+          <folding>
+            <element signature="e#1615#1625#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_assertions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="34" column="62" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <marker date="1542026831235" expanded="true" signature="161:509" ph="..." />
-            <marker date="1542026831235" expanded="true" signature="547:556" ph="..." />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/PTable-0.9.2/COPYING">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PTable-0.9.2/README.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="16" selection-start-column="16" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sios.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        <state relative-caret-position="384">
+          <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542026877169" expanded="true" signature="58:60" ph="..." />
-            <marker date="1542026877169" expanded="true" signature="77:83" ph="..." />
-            <marker date="1542026877169" expanded="true" signature="77:878" ph="..." />
-            <marker date="1542026877169" expanded="true" signature="917:918" ph="..." />
-            <marker date="1542026877169" expanded="true" signature="917:923" ph="..." />
-            <marker date="1542026877169" expanded="true" signature="1261:1265" ph="..." />
+            <marker date="1542030100612" expanded="true" signature="94:96" ph="..." />
+            <marker date="1542030100612" expanded="true" signature="113:119" ph="..." />
+            <marker date="1542030100612" expanded="true" signature="113:2443" ph="..." />
+            <marker date="1542030100612" expanded="true" signature="1796:1832" ph="..." />
+            <marker date="1542030100612" expanded="true" signature="1967:2031" ph="..." />
+            <marker date="1542030100612" expanded="true" signature="2483:2484" ph="..." />
+            <marker date="1542030100612" expanded="true" signature="2483:2489" ph="..." />
+            <marker date="1542030100612" expanded="true" signature="2898:2902" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_assertions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="56" column="77" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1542030696807" expanded="true" signature="1377:1386" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assertions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
         </state>
       </provider>
     </entry>

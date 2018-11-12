@@ -21,7 +21,7 @@ class TestAssertions(TestCase):
 
         # Array including integers should fail
         with self.assertRaises(AssertionError):
-           Assertions.assert_list_of_strings(['a', 1], 'list including integer')
+            Assertions.assert_list_of_strings(['a', 1], 'list including integer')
 
         # Array including lists should fail
         with self.assertRaises(AssertionError):
@@ -33,3 +33,25 @@ class TestAssertions(TestCase):
 
         with self.assertRaises(AssertionError):
             Assertions.assert_list_of_strings('yess', 'a string')
+
+    def test_assert_dimensions_match(self):
+        # List with matching dimensions should pass
+        Assertions.assert_dimensions_match(['a', 'n'], 'list 1', ['c', 'd'], 'list 2')
+
+        # Arrays with different dimensions should fail
+        with self.assertRaises(AssertionError):
+          Assertions.assert_dimensions_match(['a'], 'list 1', ['b', 'c'], 'list 2')
+
+        # Passing in objects that aren't arrays should throw errors
+        with self.assertRaises(AssertionError):
+            Assertions.assert_dimensions_match('yeet', 'not an array', ['b', 'c'], 'list 2')
+
+        with self.assertRaises(AssertionError):
+            Assertions.assert_dimensions_match(['a', 'b'], 'list 1', 'yeet', 'not an array')
+
+        # Passing in non string descriptions should also throw an error
+        with self.assertRaises(AssertionError):
+            Assertions.assert_dimensions_match([1], None, [2], 'Description 2')
+
+        with self.assertRaises(AssertionError):
+            Assertions.assert_dimensions_match([1], 'Description 1', [2], None)
