@@ -2,7 +2,17 @@ from typing import List
 from assertions import Assertions
 
 
-class Integrator:
+class IntegratTesting started at 12:41 ...
+/usr/local/bin/python3.6 /Applications/PyCharm.app/Contents/helpers/pycharm/_jb_nosetest_runner.py --target sios/test_assertions.py::TestAssertions.test_assert_string
+Launching Nosetest with arguments /Applications/PyCharm.app/Contents/helpers/pycharm/_jb_nosetest_runner.py sios/test_assertions.py:TestAssertions.test_assert_string in /Users/harveycoplestone/Documents/FYP
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+OK
+
+Process finished with exit code 0
+or:
 
     def __init__(self, t: str, q_list: List[str], v_list: List[str]) -> None:
         """

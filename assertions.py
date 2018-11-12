@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Assertions:
 
     @staticmethod
@@ -11,7 +12,7 @@ class Assertions:
         :param description: A human readable description of the object we are validating.
         :return:
         """
-        assert type(param) is str, f'{description} must be a string.'
+        assert type(param) is str, f'"{description}" must be a string.'
 
     @staticmethod
     def assert_list_of_strings(param: List, description: str) -> None:
@@ -22,7 +23,7 @@ class Assertions:
         :param description: A human readable description of the object we are validating.
         """
 
-        assert type(param) is list, f'{description} must be a list.'
+        assert type(param) is list, f'"{description}" must be a list.'
 
         for i in param:
-            assert type(i) is str, f'List {description} must contain only strings.'
+            assert type(i) is str, f'List "{description}" must contain only strings.'
