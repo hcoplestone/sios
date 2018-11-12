@@ -1,13 +1,12 @@
 from integrators import GalerkinGaussLobattoIntegrator
 
-def main():
-    """
-    Run the integrator :)
-    :return:
-    """
-    ggl = GalerkinGaussLobattoIntegrator('x', ['q1', 'q2'], ['v1', 'v2'], True)
-    ggl.integrate('x^2')
+
+class Sios:
+    def doit(self):
+        ggl = GalerkinGaussLobattoIntegrator('x', ['q1', 'q2'], ['v1', 'v2'], True)
+        ggl.discretise('x^2', 4, -1.0, 1.0)
 
 
 if __name__ == "__main__":
-    main()
+   sios = Sios()
+   sios.doit()

@@ -21,7 +21,6 @@ class Integrator:
         self.t = t
         self.q_list = q_list
         self.v_list = v_list
-        self.verbose = verbose
         self.integrator_type = integrator_type
 
         self.symbols = {}
@@ -32,7 +31,7 @@ class Integrator:
         self.setup_integrator()
 
         # Print debug information is requested
-        if self.verbose:
+        if verbose:
             self.debug()
 
     def validate_integrator(self) -> None:

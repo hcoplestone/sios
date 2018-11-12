@@ -27,6 +27,22 @@ class TestAssertions(TestCase):
         with self.assertRaises(AssertionError):
             Assertions.assert_integer([], 'a list')
 
+    def test_assert_float(self):
+        # Floats should pass
+        Assertions.assert_float(1.5, 'an integer')
+
+        # Integers should not pass
+        with self.assertRaises(AssertionError):
+            Assertions.assert_float(1, 'an integer')
+
+        # Strings should not pass
+        with self.assertRaises(AssertionError):
+            Assertions.assert_float('yeet', 'a string')
+
+        # Lists should not pass
+        with self.assertRaises(AssertionError):
+            Assertions.assert_float([], 'a list')
+
     def test_assert_list_of_strings(self):
         # Array of strings should pass
         Assertions.assert_list_of_strings(['a', 'b', 'c,'], 'list of strings')

@@ -25,6 +25,18 @@ class Assertions:
         """
         assert type(param) is int, f'"{description}" must be an integer.'
 
+
+    @staticmethod
+    def assert_float(param: float, description: str) -> None:
+        """
+        Assert the provided object is a float.
+
+        :param param: The object we want to assert is a float.
+        :param description: A human readable description of the object we are validating.
+        :return:
+        """
+        assert type(param) is float, f'"{description}" must be a float.'
+
     @staticmethod
     def assert_list_of_strings(param: List, description: str) -> None:
         """
