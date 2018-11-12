@@ -4,14 +4,18 @@ from typing import List
 class Assertions:
 
     @staticmethod
-    def assert_list_contains_strings(list: List, description: str) -> None:
+    def assert_list_of_strings(lst: List, description: str) -> None:
         """
+        Assert the provided object is (a) a list and (b) only contains strings.
 
-        :param list: The list that we want to assert only contains strings.
+        :param lst: The list that we want to assert only contains strings.
         :param description: A human readable description of the list we are validating.
         """
-        for i in list:
-            assert type(i) is str, f'List {description} must contain only strings'
+
+        assert type(lst) is list, f'{description} must be a list.'
+
+        for i in lst:
+            assert type(i) is str, f'List {description} must contain only strings.'
 
 
 class Integrator:
@@ -35,8 +39,7 @@ class Integrator:
         Check that all the integrators parameters are as expected.
         """
         assert type(self.t) is str, "Symbol for time variable must be a string."
-        assert type(self.q_list) is list, "Generalised coordinated must be a list."
-        Assertions.assert_list_contains_strings(self.q_list, 'Generalised coordinates.')
+        Assertions.assert_list_of_strings(self.q_list, 'Generalised coordinates')
 
 
 class GalerkinGaussLobatto(Integrator):
