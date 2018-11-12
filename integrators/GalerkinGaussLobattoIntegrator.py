@@ -1,5 +1,7 @@
 from typing import List
 from .Integrator import Integrator
+from quadpy.line_segment import GaussLobatto
+from assertions import Assertions
 
 
 class GalerkinGaussLobattoIntegrator(Integrator):
@@ -12,5 +14,11 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         Integrator.__init__(self, t, q_list, v_list, verbose, 'Galerkin Gauss Lobatto')
 
-    def integrate(self, expression: str):
-        print(expression)
+    def discretise(self, n: int, t_lim_lower: float, t_lim_upper: float) -> None:
+        """
+        Discretise our continuous function
+        """
+
+
+
+    def integrate(self):

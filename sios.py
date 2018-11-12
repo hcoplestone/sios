@@ -1,6 +1,5 @@
 from integrators import GalerkinGaussLobattoIntegrator
 
-
 def main():
     """
     Run the integrator :)

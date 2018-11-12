@@ -15,6 +15,18 @@ class TestAssertions(TestCase):
         with self.assertRaises(AssertionError):
             Assertions.assert_string([], 'a list')
 
+    def test_assert_integer(self):
+        # Integers should pass
+        Assertions.assert_integer(1, 'an integer')
+
+        # Strings should not pass
+        with self.assertRaises(AssertionError):
+            Assertions.assert_integer('yeet', 'a string')
+
+        # Lists should not pass
+        with self.assertRaises(AssertionError):
+            Assertions.assert_integer([], 'a list')
+
     def test_assert_list_of_strings(self):
         # Array of strings should pass
         Assertions.assert_list_of_strings(['a', 'b', 'c,'], 'list of strings')

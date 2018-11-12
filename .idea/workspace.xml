@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integrators/Integrator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integrators/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/harveycoplestone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/harveycoplestone.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assertions.py" beforeDir="false" afterPath="$PROJECT_DIR$/assertions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sios.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_assertions.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_assertions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/sios$Nosetests_for_test_assertions_TestAssertions_test_assert_integer.coverage" NAME="Nosetests for test_assertions.TestAssertions.test_assert_integer Coverage Results" MODIFIED="1542034333507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sios$Nosetests_for_tests_test_assertions_TestAssertions.coverage" NAME="Nosetests for tests.test_assertions.TestAssertions Coverage Results" MODIFIED="1542025130478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sios$Nosetests_for_test_assertions_TestAssertions_test_assert_string.coverage" NAME="Nosetests for test_assertions.TestAssertions.test_assert_string Coverage Results" MODIFIED="1542026571913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/sios$Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings.coverage" NAME="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings Coverage Results" MODIFIED="1542030341400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -37,7 +36,7 @@
           <entry key="COPYING" value="1" />
           <entry key="ipynb" value="1" />
           <entry key="md" value="3" />
-          <entry key="py" value="19" />
+          <entry key="py" value="21" />
           <entry key="rst" value="1" />
         </counts>
       </usages-collector>
@@ -46,7 +45,7 @@
           <entry key="IPNB" value="1" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="19" />
+          <entry key="Python" value="21" />
           <entry key="ReST" value="1" />
         </counts>
       </usages-collector>
@@ -54,13 +53,13 @@
         <counts>
           <entry key="Python Console" value="165" />
           <entry key="md" value="3" />
-          <entry key="py" value="10261" />
+          <entry key="py" value="10788" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="3" />
-          <entry key="Python" value="10426" />
+          <entry key="Python" value="10953" />
         </counts>
       </usages-collector>
     </session>
@@ -73,10 +72,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sios.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
-                <marker date="1542033581755" expanded="true" signature="124:128" ph="..." />
+                <marker date="1542033893431" expanded="true" signature="123:127" ph="..." />
               </folding>
             </state>
           </provider>
@@ -91,13 +90,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="45">
+              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1542034218232" expanded="true" signature="685:688" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assertions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_assertions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+                <marker date="1542034332137" expanded="true" signature="1769:1778" ph="..." />
               </folding>
             </state>
           </provider>
@@ -128,14 +149,14 @@
         <option value="$PROJECT_DIR$/tests/test_assertions.py" />
         <option value="$PROJECT_DIR$/prettytable.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/test_assertions.py" />
-        <option value="$PROJECT_DIR$/assertions.py" />
         <option value="$PROJECT_DIR$/integrators/GaussLobattoIntegrator.py" />
         <option value="$PROJECT_DIR$/integrators/Integrator.py" />
-        <option value="$PROJECT_DIR$/sios.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/integrators/__init__.py" />
+        <option value="$PROJECT_DIR$/sios.py" />
         <option value="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" />
+        <option value="$PROJECT_DIR$/assertions.py" />
+        <option value="$PROJECT_DIR$/test_assertions.py" />
       </list>
     </option>
   </component>
@@ -181,11 +202,6 @@
               <item name="sios" type="b2602c69:ProjectViewProjectNode" />
               <item name="sios" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sios" type="462c0819:PsiDirectoryNode" />
-              <item name="integrators" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -217,7 +233,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Nosetests for test_assertions.TestAssertions">
+  <component name="RunManager" selected="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_integer">
     <configuration name="Nosetests for test_assertions.TestAssertions" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
       <module name="sios" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -247,6 +263,22 @@
       <option name="_new_regexPattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_assertions.TestAssertions.test_assert_dimensions_match&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_integer" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <module name="sios" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_assertions.TestAssertions.test_assert_integer&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -287,9 +319,11 @@
       <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" />
       <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_dimensions_match" />
       <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions" />
+      <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_integer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_integer" />
         <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions" />
         <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_dimensions_match" />
         <item itemvalue="Python tests.Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" />
@@ -311,15 +345,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 46m 23s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 47m 07s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 47m 24s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 48m 12s.xml">
       <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
@@ -341,6 +366,15 @@
     <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 14h 07m 40s.xml">
       <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_integer - 2018.11.12 at 14h 51m 40s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_integer" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_integer - 2018.11.12 at 14h 51m 48s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_integer" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_integer - 2018.11.12 at 14h 52m 13s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_integer" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -356,7 +390,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" sideWeight="0.5007299" side_tool="true" weight="0.24555735" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.24555735" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.24555735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -366,7 +400,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24525547" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24525547" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -447,17 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_assertions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="56" column="77" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <marker date="1542030696807" expanded="true" signature="1377:1386" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/sympy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -481,12 +504,19 @@
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/integrators/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sios.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
-            <marker date="1542033581755" expanded="true" signature="124:128" ph="..." />
+            <marker date="1542033893431" expanded="true" signature="123:127" ph="..." />
           </folding>
         </state>
       </provider>
@@ -498,27 +528,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/__init__.py">
+    <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding>
+            <marker date="1542034218232" expanded="true" signature="685:688" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_assertions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1542034332137" expanded="true" signature="1769:1778" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assertions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
         </state>
       </provider>
     </entry>

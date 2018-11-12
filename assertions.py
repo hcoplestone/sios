@@ -15,6 +15,17 @@ class Assertions:
         assert type(param) is str, f'"{description}" must be a string.'
 
     @staticmethod
+    def assert_integer(param: int, description: str) -> None:
+        """
+        Assert the provided object is an integer.
+
+        :param param: The object we want to assert is an integer.
+        :param description: A human readable description of the object we are validating.
+        :return:
+        """
+        assert type(param) is int, f'"{description}" must be an integer.'
+
+    @staticmethod
     def assert_list_of_strings(param: List, description: str) -> None:
         """
         Assert the provided object is (a) a list and (b) only contains strings.
