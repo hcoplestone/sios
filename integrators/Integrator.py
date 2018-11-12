@@ -86,7 +86,7 @@ class Integrator:
         """
 
         st = PrettyTable()
-        st.title = 'Phase space coordinates'
+        st.title = 'Phase Space Coordinates'
 
         st.field_names = ["Generalised coordinate symbol", "Corresponding velocity symbol$"]
         for i in range(0, len(self.q_list)):

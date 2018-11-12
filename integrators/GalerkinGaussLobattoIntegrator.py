@@ -74,6 +74,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
     def discretise(self, expression: str, n: int, t_lim_lower: float, t_lim_upper: float) -> None:
         """
+        Discretise the function that we provide on an interval [t_lim_lower, t_lim_upper].
 
         :param expression: String expression for the function we want to discretise.
         :param n: The number of quadrature points to use.
