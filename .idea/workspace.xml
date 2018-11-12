@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_assertions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assertions.py" beforeDir="false" afterPath="$PROJECT_DIR$/assertions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sios.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AssertionsTest.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_assertions.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="419">
@@ -83,19 +79,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sios.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="60">
+              <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1542026545933" expanded="true" signature="58:60" ph="..." />
-                <marker date="1542026545933" expanded="true" signature="613:619" ph="..." />
-                <marker date="1542026545933" expanded="true" signature="613:1414" ph="..." />
-                <marker date="1542026545933" expanded="true" signature="1453:1454" ph="..." />
-                <marker date="1542026545933" expanded="true" signature="1453:1459" ph="..." />
-                <marker date="1542026545933" expanded="true" signature="1797:1801" ph="..." />
+                <marker date="1542026877169" expanded="true" signature="58:60" ph="..." />
+                <marker date="1542026877169" expanded="true" signature="77:83" ph="..." />
+                <marker date="1542026877169" expanded="true" signature="77:878" ph="..." />
+                <marker date="1542026877169" expanded="true" signature="917:918" ph="..." />
+                <marker date="1542026877169" expanded="true" signature="917:923" ph="..." />
+                <marker date="1542026877169" expanded="true" signature="1261:1265" ph="..." />
               </folding>
             </state>
           </provider>
@@ -119,9 +115,9 @@
         <option value="$PROJECT_DIR$/Intro.ipynb" />
         <option value="$PROJECT_DIR$/tests/AssertionsTest.py" />
         <option value="$PROJECT_DIR$/tests/test_assertions.py" />
-        <option value="$PROJECT_DIR$/sios.py" />
         <option value="$PROJECT_DIR$/assertions.py" />
         <option value="$PROJECT_DIR$/test_assertions.py" />
+        <option value="$PROJECT_DIR$/sios.py" />
       </list>
     </option>
   </component>
@@ -252,9 +248,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 43m 23s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 43m 40s.xml">
       <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
     </history-entry>
@@ -280,6 +273,9 @@
       <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
     </history-entry>
     <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 46m 30s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_list_of_strings - 2018.11.12 at 12h 47m 12s.xml">
       <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_list_of_strings" configurationId="tests" />
     </history-entry>
   </component>
@@ -372,22 +368,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sios.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542026545933" expanded="true" signature="58:60" ph="..." />
-            <marker date="1542026545933" expanded="true" signature="613:619" ph="..." />
-            <marker date="1542026545933" expanded="true" signature="613:1414" ph="..." />
-            <marker date="1542026545933" expanded="true" signature="1453:1454" ph="..." />
-            <marker date="1542026545933" expanded="true" signature="1453:1459" ph="..." />
-            <marker date="1542026545933" expanded="true" signature="1797:1801" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assertions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
@@ -403,6 +383,22 @@
             <element signature="e#0#29#0" expanded="true" />
             <marker date="1542026831235" expanded="true" signature="161:509" ph="..." />
             <marker date="1542026831235" expanded="true" signature="547:556" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sios.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1542026877169" expanded="true" signature="58:60" ph="..." />
+            <marker date="1542026877169" expanded="true" signature="77:83" ph="..." />
+            <marker date="1542026877169" expanded="true" signature="77:878" ph="..." />
+            <marker date="1542026877169" expanded="true" signature="917:918" ph="..." />
+            <marker date="1542026877169" expanded="true" signature="917:923" ph="..." />
+            <marker date="1542026877169" expanded="true" signature="1261:1265" ph="..." />
           </folding>
         </state>
       </provider>
