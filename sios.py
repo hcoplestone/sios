@@ -4,17 +4,28 @@ from typing import List
 class Assertions:
 
     @staticmethod
-    def assert_list_of_strings(lst: List, description: str) -> None:
+    def assert_string(param: str, description: str) -> None:
+        """
+        Assert the provided object is a string.
+
+        :param param: The object we want to assert is a string.
+        :param description: A human readable description of the object we are validating.
+        :return:
+        """
+        assert type(param) is str, f'{description} must be a string.'
+
+    @staticmethod
+    def assert_list_of_strings(param: List, description: str) -> None:
         """
         Assert the provided object is (a) a list and (b) only contains strings.
 
-        :param lst: The list that we want to assert only contains strings.
-        :param description: A human readable description of the list we are validating.
+        :param param: The object that we want to assert is a list of strings.
+        :param description: A human readable description of the object we are validating.
         """
 
-        assert type(lst) is list, f'{description} must be a list.'
+        assert type(param) is list, f'{description} must be a list.'
 
-        for i in lst:
+        for i in param:
             assert type(i) is str, f'List {description} must contain only strings.'
 
 
@@ -38,7 +49,7 @@ class Integrator:
         """
         Check that all the integrators parameters are as expected.
         """
-        assert type(self.t) is str, "Symbol for time variable must be a string."
+        Assertions.assert_string(self.t, 'Symbol for time variable')
         Assertions.assert_list_of_strings(self.q_list, 'Generalised coordinates')
 
 
