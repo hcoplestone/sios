@@ -32,8 +32,8 @@ class GaussLobattoScaled(GaussLobatto):
         """
         Map weights and points on the interval [-1, 1] to the interval [t_lim_lower, t_lim_upper].
         """
-        self.scaled_points = (self.points + 1)*0.5*(self.t_lim_upper-self.t_lim_lower) + self.t_lim_lower
-        self.scaled_weights = self.weights*0.5*(self.t_lim_upper-self.t_lim_lower)
+        self.scaled_points = (self.points + 1) * 0.5 * (self.t_lim_upper - self.t_lim_lower) + self.t_lim_lower
+        self.scaled_weights = self.weights * 0.5 * (self.t_lim_upper - self.t_lim_lower)
 
     def debug(self) -> None:
         """
@@ -72,22 +72,23 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         Integrator.__init__(self, t, q_list, v_list, verbose, 'Galerkin Gauss Lobatto')
 
-    def discretise(self, expression: str, n: int, t_lim_lower: float, t_lim_upper: float) -> None:
+    def discretise(self, expression, n: int, t_lim_lower: float, t_lim_upper: float) -> None:
         """
         Discretise the function that we provide on an interval [t_lim_lower, t_lim_upper].
 
-        :param expression: String expression for the function we want to discretise.
+        :param expression: Sympy expression for the function we want to discretise.
         :param n: The number of quadrature points to use.
         :param t_lim_lower: Lower time limit to sample our continuous function over.
         :param t_lim_upper: Upper time limit to sample our continuous function over.
         """
 
-        Assertions.assert_string(expression, 'function to discretise')
         Assertions.assert_integer(n, 'number of quadrature points')
         Assertions.assert_float(t_lim_lower, 't variable lower limit')
         Assertions.assert_float(t_lim_upper, 't variable upper limit')
 
-        gl = GaussLobattoScaled(n, t_lim_lower, t_lim_upper, True)
+        self.set_expression(expression)
+
+        gl = GaussLobattoScaled(n, t_lim_lower, t_lim_upper, self.verbose)
 
     def integrate(self):
         print('Integrating...')

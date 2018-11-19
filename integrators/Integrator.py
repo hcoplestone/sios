@@ -22,6 +22,7 @@ class Integrator:
         self.q_list = q_list
         self.v_list = v_list
         self.integrator_type = integrator_type
+        self.verbose = verbose
 
         self.symbols = {}
         # END instance variable declarations
@@ -58,6 +59,16 @@ class Integrator:
         self.symbols['t'] = Symbol(self.t, real=True)
         self.symbols['q'] = [Symbol(q, real=True) for q in self.q_list]
         self.symbols['v'] = [Symbol(v, real=True) for v in self.v_list]
+
+    def set_expression(self, expression) -> None:
+        """
+        Set the expression that we are going to be integrating.
+        :param expression: The expression that we are going to be integrating.
+        """
+        self.expression = expression
+        if self.verbose:
+            print("The expression we are integrating is:")
+            print(f"L = {self.expression}\n")
 
     def debug(self) -> None:
         """
