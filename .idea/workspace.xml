@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integrators/Integrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/Integrator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sios.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slimplectic.py" beforeDir="false" afterPath="$PROJECT_DIR$/slimplectic.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,18 +51,18 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="COPYING" value="1" />
-          <entry key="ipynb" value="1" />
+          <entry key="ipynb" value="2" />
           <entry key="md" value="3" />
-          <entry key="py" value="41" />
+          <entry key="py" value="52" />
           <entry key="rst" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="IPNB" value="1" />
+          <entry key="IPNB" value="2" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="41" />
+          <entry key="Python" value="52" />
           <entry key="ReST" value="1" />
         </counts>
       </usages-collector>
@@ -70,7 +71,7 @@
           <entry key="Python Console" value="298" />
           <entry key="dummy" value="3" />
           <entry key="md" value="3" />
-          <entry key="py" value="16786" />
+          <entry key="py" value="19166" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -78,7 +79,7 @@
         <counts>
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="17084" />
+          <entry key="Python" value="19464" />
         </counts>
       </usages-collector>
     </session>
@@ -88,28 +89,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sios.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+            <state relative-caret-position="581">
+              <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
-                <marker date="1542636025084" expanded="true" signature="155:758" ph="..." />
-                <marker date="1542636025084" expanded="true" signature="222:227" ph="..." />
+                <marker date="1542648067332" expanded="true" signature="284:497" ph="..." />
+                <marker date="1542648067332" expanded="true" signature="601:604" ph="..." />
+                <marker date="1542648067332" expanded="true" signature="615:1395" ph="..." />
+                <marker date="1542648067332" expanded="true" signature="682:687" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="64" column="62" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="62" />
+            <state relative-caret-position="423">
+              <caret line="75" column="73" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1542634189706" expanded="true" signature="2511:2647" ph="..." />
+                <marker date="1542648208406" expanded="true" signature="2682:3050" ph="..." />
+                <marker date="1542648208406" expanded="true" signature="3128:3551" ph="..." />
               </folding>
             </state>
           </provider>
@@ -118,23 +122,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-772">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="386">
+              <caret line="81" column="83" selection-start-line="81" selection-start-column="83" selection-end-line="81" selection-end-column="83" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1542634942774" expanded="true" signature="229:2174" ph="..." />
-                <marker date="1542634942774" expanded="true" signature="2171:2172" ph="..." />
-                <marker date="1542634942774" expanded="true" signature="2172:2174" ph="..." />
-                <marker date="1542634942774" expanded="true" signature="3421:3425" ph="..." />
+                <marker date="1542644529870" expanded="true" signature="229:2174" ph="..." />
+                <marker date="1542644529870" expanded="true" signature="2171:2172" ph="..." />
+                <marker date="1542644529870" expanded="true" signature="2172:2174" ph="..." />
+                <marker date="1542644529870" expanded="true" signature="3339:3343" ph="..." />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/slimplectic.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-54" />
           </provider>
         </entry>
       </file>
@@ -170,9 +167,11 @@
         <option value="$PROJECT_DIR$/test_assertions.py" />
         <option value="$PROJECT_DIR$/assertions.py" />
         <option value="$PROJECT_DIR$/slimpletic_ggl.py" />
-        <option value="$PROJECT_DIR$/integrators/Integrator.py" />
+        <option value="$PROJECT_DIR$/slimplectic.py" />
+        <option value="$PROJECT_DIR$/stupid.py" />
         <option value="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" />
         <option value="$PROJECT_DIR$/sios.py" />
+        <option value="$PROJECT_DIR$/integrators/Integrator.py" />
       </list>
     </option>
   </component>
@@ -216,6 +215,17 @@
             <path>
               <item name="sios" type="b2602c69:ProjectViewProjectNode" />
               <item name="sios" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sios" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sios" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="autodiff" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sios" type="b2602c69:ProjectViewProjectNode" />
@@ -387,9 +397,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 50m 17s.xml">
-      <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nosetests_for_test_assertions_TestAssertions - 2018.11.12 at 13h 51m 13s.xml">
       <configuration name="Nosetests for test_assertions.TestAssertions" configurationId="tests" />
     </history-entry>
@@ -415,6 +422,9 @@
       <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_float" configurationId="tests" />
     </history-entry>
     <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_float - 2018.11.19 at 12h 51m 15s.xml">
+      <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_float" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_test_assertions_TestAssertions_test_assert_float - 2018.11.19 at 14h 00m 40s.xml">
       <configuration name="Nosetests for test_assertions.TestAssertions.test_assert_float" configurationId="tests" />
     </history-entry>
   </component>
@@ -549,54 +559,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/stupid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slimplectic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-186" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/slimplectic_ggl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1800">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state relative-caret-position="284">
+          <caret line="651" column="4" selection-start-line="651" selection-start-column="4" selection-end-line="651" selection-end-column="4" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slimplectic.py">
+    <entry file="file://$PROJECT_DIR$/experiments/autodiff/Autograd.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/numpy/numpy_boxes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54" />
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-772">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="386">
+          <caret line="81" column="83" selection-start-line="81" selection-start-column="83" selection-end-line="81" selection-end-column="83" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542634942774" expanded="true" signature="229:2174" ph="..." />
-            <marker date="1542634942774" expanded="true" signature="2171:2172" ph="..." />
-            <marker date="1542634942774" expanded="true" signature="2172:2174" ph="..." />
-            <marker date="1542634942774" expanded="true" signature="3421:3425" ph="..." />
+            <marker date="1542644529870" expanded="true" signature="229:2174" ph="..." />
+            <marker date="1542644529870" expanded="true" signature="2171:2172" ph="..." />
+            <marker date="1542644529870" expanded="true" signature="2172:2174" ph="..." />
+            <marker date="1542644529870" expanded="true" signature="3339:3343" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/numpy/fft.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/numpy/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/numpy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sios.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1542648067332" expanded="true" signature="284:497" ph="..." />
+            <marker date="1542648067332" expanded="true" signature="601:604" ph="..." />
+            <marker date="1542648067332" expanded="true" signature="615:1395" ph="..." />
+            <marker date="1542648067332" expanded="true" signature="682:687" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="64" column="62" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="62" />
+        <state relative-caret-position="423">
+          <caret line="75" column="73" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542634189706" expanded="true" signature="2511:2647" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sios.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-            <marker date="1542636025084" expanded="true" signature="155:758" ph="..." />
-            <marker date="1542636025084" expanded="true" signature="222:227" ph="..." />
+            <marker date="1542648208406" expanded="true" signature="2682:3050" ph="..." />
+            <marker date="1542648208406" expanded="true" signature="3128:3551" ph="..." />
           </folding>
         </state>
       </provider>

@@ -70,6 +70,26 @@ class Integrator:
             print("The expression we are integrating is:")
             print(f"L = {self.expression}\n")
 
+    def get_expression_evaluator(self):
+        """
+        Return the pythonic function equivalent of the sympy expression we are integrating.
+        Function returned accepts arguments (t, q, q1, q2..., v, v1, v2...)
+        :return: function(t, q variables..., v variables...)
+        """
+        return lambdify(tuple([self.symbols['t']] + self.symbols['q'] + self.symbols['v']), self.expression)
+
+    def set_time_boundaries(self, t_lim_lower: float, t_lim_upper: float) -> None:
+        """
+        Set the boundaries in time for the integration.
+        :param t_lim_lower: Lower time integration limit.
+        :param t_lim_upper: Upper time integration limit.
+        """
+        Assertions.assert_float(t_lim_lower, 't variable lower limit')
+        Assertions.assert_float(t_lim_upper, 't variable upper limit')
+        self.t_lim_lower = t_lim_lower
+        self.t_lim_upper = t_lim_upper
+
+
     def debug(self) -> None:
         """
         Print all necessary data for debugging.

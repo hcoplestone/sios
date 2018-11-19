@@ -1,8 +1,27 @@
 from integrators import GalerkinGaussLobattoIntegrator
 from sympy import lambdify
 import autograd.numpy as np
+from autograd import elementwise_grad as egrad
+from autograd import grad
+import math
 
 import matplotlib.pyplot as plt
+
+
+class Taylor:
+    @staticmethod
+    def exp(x, n=200):
+        """
+        The exponential function as a Taylor series about x = 0.
+        :param x: Variable to expand in.
+        :param n: Number of terms in taylor series.
+        :return: f(x)
+        """
+        r = 0
+        for i in range(1, n):
+            r += np.power(x, i) / math.factorial(i)
+        return r
+
 
 class Sios:
     def doit(self):
@@ -13,16 +32,24 @@ class Sios:
         m = 1.0
 
         # Lagrangian L = T - V; V = 0 in free space
-        L = 0.5 * m * np.dot(ggl.symbols['v'], ggl.symbols['v'])
+        v = ggl.symbols['v'][0]
+        # L = 0.5 * m * np.dot(np.dot(v, v), v)
+        # L = 0.5 * m * v * v
+        L = Taylor.exp(v)
 
-        ggl.discretise(L, 4, 1.0, 2.0)
+        ggl.discretise(L, 4, 0.0, 10.0)
 
-        f = lambdify(tuple([ggl.symbols['t']] + ggl.symbols['q'] + ggl.symbols['v']), ggl.expression)
+        # Plot the Lagrangian as a function of v
+        f = ggl.get_expression_evaluator()
+        F = lambda v: f(1, 1, v)
+        g = egrad(F)
 
-        x = np.linspace(1, 100, 100)
-
-        for i in x:
-            print(f"{float(i)}  -  {f(i,i,i)}")
+        x = np.linspace(ggl.t_lim_lower, ggl.t_lim_upper)
+        y = F(x)
+        yprime = g(x)
+        plt.plot(x, y)
+        plt.plot(x, yprime)
+        plt.show()
 
 
 if __name__ == "__main__":

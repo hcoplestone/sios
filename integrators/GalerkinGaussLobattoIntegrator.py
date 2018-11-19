@@ -83,9 +83,9 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         """
 
         Assertions.assert_integer(n, 'number of quadrature points')
-        Assertions.assert_float(t_lim_lower, 't variable lower limit')
-        Assertions.assert_float(t_lim_upper, 't variable upper limit')
 
+
+        self.set_time_boundaries(t_lim_lower, t_lim_upper)
         self.set_expression(expression)
 
         gl = GaussLobattoScaled(n, t_lim_lower, t_lim_upper, self.verbose)
