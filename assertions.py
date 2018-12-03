@@ -52,6 +52,20 @@ class Assertions:
             assert type(i) is str, f'List "{description}" must contain only strings.'
 
     @staticmethod
+    def assert_list_of_floats(param: List, description: str) -> None:
+        """
+        Assert the provided object is (a) a list and (b) only contains floats.
+
+        :param param: The object that we want to assert is a list of floats.
+        :param description: A human readable description of the object we are validating.
+        """
+
+        assert type(param) is list, f'"{description}" must be a list.'
+
+        for i in param:
+            assert type(i) is float, f'List "{description}" must contain only floats.'
+
+    @staticmethod
     def assert_dimensions_match(list_i: List, description_i: str, list_j: List, description_j: str):
         """
         Assert the dimensions of two lists are equal.

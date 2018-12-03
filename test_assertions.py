@@ -62,6 +62,25 @@ class TestAssertions(TestCase):
         with self.assertRaises(AssertionError):
             Assertions.assert_list_of_strings('yess', 'a string')
 
+    def test_assert_list_of_floats(self):
+        # Array of strings should pass
+        Assertions.assert_list_of_floats([1.0, 2.0, 3.0], 'list of floats')
+
+        # Array including integers should fail
+        with self.assertRaises(AssertionError):
+            Assertions.assert_list_of_floats(['a', 1], 'list including integer')
+
+        # Array including lists should fail
+        with self.assertRaises(AssertionError):
+            Assertions.assert_list_of_floats([1.0, [2.0]], 'list with nested list')
+
+        # Passing any type other than a list to the assertion should throw an error
+        with self.assertRaises(AssertionError):
+            Assertions.assert_list_of_floats('yeet', 'a string')
+
+        with self.assertRaises(AssertionError):
+            Assertions.assert_list_of_floats(1, 2)
+
     def test_assert_dimensions_match(self):
         # List with matching dimensions should pass
         Assertions.assert_dimensions_match(['a', 'n'], 'list 1', ['c', 'd'], 'list 2')

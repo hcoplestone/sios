@@ -89,7 +89,6 @@ class Integrator:
         self.t_lim_lower = t_lim_lower
         self.t_lim_upper = t_lim_upper
 
-
     def debug(self) -> None:
         """
         Print all necessary data for debugging.

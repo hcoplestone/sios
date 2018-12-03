@@ -84,11 +84,23 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         Assertions.assert_integer(n, 'number of quadrature points')
 
-
         self.set_time_boundaries(t_lim_lower, t_lim_upper)
         self.set_expression(expression)
 
         gl = GaussLobattoScaled(n, t_lim_lower, t_lim_upper, self.verbose)
 
+    def set_initial_conditions(self, q_initial_value_list: List[float], v_initial_value_list: List[float]):
+        """
+        Set the initial conditions for the integrator.
+        :param q_initial_value_list:  List of initial q values.
+        :param v_initial_value_list: List of initial v = $\dot{q}$ values.
+        """
+
+        Assertions.assert_list_of_floats(q_initial_value_list, 'Initial q values')
+        Assertions.assert_dimensions_match(self.q_list, 'q variables', q_initial_value_list, 'Initial q values')
+
+        Assertions.assert_list_of_floats(v_initial_value_list, 'Initial v values')
+        Assertions.assert_dimensions_match(self.v_list, 'v variables', v_initial_value_list, 'Initial v values')
+
     def integrate(self):
-        print('Integrating...')
+        pass
