@@ -7,33 +7,38 @@ from prettytable import PrettyTable
 
 class GaussLobattoScaled(GaussLobatto):
 
-    def __init__(self, n: int, t_lim_lower: float, t_lim_upper: float, verbose: bool = False):
+    def __init__(self, n: int, verbose: bool = False):
         """
         Calculate gauss lobatto weight and points on the interval [-1, 1].
         Then scale the distribution of points to our new interval [t_lim_lower, t_lim_upper].
 
         :param n:  Number of quadrature points
+        :param verbose: Flag to determine if we should dump points and weights to stdio
+        """
+        GaussLobatto.__init__(self, n)
+
+        self.verbose = verbose
+
+        self.t_lim_lower = None
+        self.t_lim_upper = None
+        self.scaled_points = None
+        self.scaled_weights = None
+
+    def scale_to_interval(self, t_lim_lower: float, t_lim_upper: float) -> None:
+        """
+        Map weights and points on the interval [-1, 1] to the interval [t_lim_lower, t_lim_upper].
+
         :param t_lim_lower: Lower limit for t variable
         :param t_lim_upper: Upper limit for t variable
-        :param verbose: Flag to determine if we should dump points and weights to stdio
         """
         self.t_lim_upper = t_lim_upper
         self.t_lim_lower = t_lim_lower
-        GaussLobatto.__init__(self, n)
 
-        self.scaled_points = None
-        self.scaled_weights = None
-        self.scale_to_interval()
-
-        if verbose:
-            self.debug()
-
-    def scale_to_interval(self) -> None:
-        """
-        Map weights and points on the interval [-1, 1] to the interval [t_lim_lower, t_lim_upper].
-        """
         self.scaled_points = (self.points + 1) * 0.5 * (self.t_lim_upper - self.t_lim_lower) + self.t_lim_lower
         self.scaled_weights = self.weights * 0.5 * (self.t_lim_upper - self.t_lim_lower)
+
+        if self.verbose:
+            self.debug()
 
     def debug(self) -> None:
         """
@@ -87,7 +92,8 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         self.set_time_boundaries(t_lim_lower, t_lim_upper)
         self.set_expression(expression)
 
-        gl = GaussLobattoScaled(n, t_lim_lower, t_lim_upper, self.verbose)
+        gl = GaussLobattoScaled(n, self.verbose)
+        gl.scale_to_interval(t_lim_lower, t_lim_upper)
 
     def set_initial_conditions(self, q_initial_value_list: List[float], v_initial_value_list: List[float]):
         """
