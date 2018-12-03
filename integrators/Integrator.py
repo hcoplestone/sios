@@ -19,12 +19,25 @@ class Integrator:
 
         # Instance variable declarations
         self.t = t
+
+        # q variables - symbols and initial values
         self.q_list = q_list
+        self.q_initial_value_list = None
+
+        # v = $\dot{q}$ variables - symbols and initial values
         self.v_list = v_list
+        self.v_initial_value_list = None
+
+        self.t_list = None
+        self.q_solutions = []
+        self.v_solutions = []
+
         self.integrator_type = integrator_type
         self.verbose = verbose
 
         self.symbols = {}
+
+        self.n = None
         # END instance variable declarations
 
         # Validate the integrator and run all pre-integration prep
@@ -89,6 +102,14 @@ class Integrator:
         self.t_lim_lower = t_lim_lower
         self.t_lim_upper = t_lim_upper
 
+    # def determine_time_step(self, n: int):
+    #     """
+    #     :param n: Number of discretisation points to use.
+    #     """
+    #     Assertions.assert_integer(n, 'Number of discretisation points')
+    #     self.n = n
+    #     self.dt = (self.t_lim_upper - self.t_lim_lower)/self.n
+
     def debug(self) -> None:
         """
         Print all necessary data for debugging.
@@ -121,5 +142,23 @@ class Integrator:
         st.field_names = ["Generalised coordinate symbol", "Corresponding velocity symbol$"]
         for i in range(0, len(self.q_list)):
             st.add_row([self.q_list[i], self.v_list[i]])
+
+        print(st)
+
+    def display_solutions(self) -> None:
+        """
+        Display a table of all the position and momenta solutions
+        """
+
+        st = PrettyTable()
+        st.title = 'Solutions'
+
+        st.field_names = ["t", "q solution list", "v solution list"]
+        for i in range(0, len(self.t_list)):
+            st.add_row([
+                round(self.t_list[i], 2),
+                str(self.q_solutions[i]),
+                str(self.v_solutions[i])
+            ])
 
         print(st)

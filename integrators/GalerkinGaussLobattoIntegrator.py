@@ -3,6 +3,7 @@ from .Integrator import Integrator
 from quadpy.line_segment.gauss_lobatto import GaussLobatto
 from assertions import Assertions
 from prettytable import PrettyTable
+import autograd.numpy as np
 
 
 class GaussLobattoScaled(GaussLobatto):
@@ -90,6 +91,9 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         Assertions.assert_integer(n, 'number of quadrature points')
 
         self.set_time_boundaries(t_lim_lower, t_lim_upper)
+        self.n = n
+
+        self.t_list = np.linspace(t_lim_lower, t_lim_upper, n)
         self.set_expression(expression)
 
         gl = GaussLobattoScaled(n, self.verbose)
@@ -108,5 +112,25 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         Assertions.assert_list_of_floats(v_initial_value_list, 'Initial v values')
         Assertions.assert_dimensions_match(self.v_list, 'v variables', v_initial_value_list, 'Initial v values')
 
+        self.q_initial_value_list = q_initial_value_list
+        self.v_initial_value_list = v_initial_value_list
+
     def integrate(self):
-        pass
+        """
+        Numerically integrate the system.
+        """
+
+        # Setup solutions
+        self.q_solutions = [np.zeros(len(self.q_list)) for i in range(self.n)]
+        self.v_solutions = [np.zeros(len(self.v_list)) for i in range(self.n)]
+
+        # Add the initial conditions to the solution
+        self.q_solutions[0] = np.array(self.q_initial_value_list)
+        self.v_solutions[0] = np.array(self.v_initial_value_list)
+
+        # Iterate
+        for i in range(self.n):
+            pass
+
+        # Display the solutions
+        self.display_solutions()
