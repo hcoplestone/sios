@@ -2,6 +2,7 @@ from typing import List
 from assertions import Assertions
 from prettytable import PrettyTable
 from sympy import *
+import autograd.numpy as np
 
 
 class Integrator:
@@ -89,7 +90,7 @@ class Integrator:
         Function returned accepts arguments (t, q, q1, q2..., v, v1, v2...)
         :return: function(t, q variables..., v variables...)
         """
-        return lambdify(tuple([self.symbols['t']] + self.symbols['q'] + self.symbols['v']), self.expression)
+        return lambdify(tuple([self.symbols['t']] + self.symbols['q'] + self.symbols['v']), self.expression, modules=np)
 
     def set_time_boundaries(self, t_lim_lower: float, t_lim_upper: float) -> None:
         """

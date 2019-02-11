@@ -4,6 +4,7 @@ from quadpy.line_segment.gauss_lobatto import GaussLobatto
 from assertions import Assertions
 from prettytable import PrettyTable
 import autograd.numpy as np
+from scipy import optimize
 
 
 class GaussLobattoScaled(GaussLobatto):
@@ -38,8 +39,8 @@ class GaussLobattoScaled(GaussLobatto):
         self.scaled_points = (self.points + 1) * 0.5 * (self.t_lim_upper - self.t_lim_lower) + self.t_lim_lower
         self.scaled_weights = self.weights * 0.5 * (self.t_lim_upper - self.t_lim_lower)
 
-        if self.verbose:
-            self.debug()
+        # if self.verbose:
+        # self.debug()
 
     def debug(self) -> None:
         """
@@ -129,8 +130,23 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         self.v_solutions[0] = np.array(self.v_initial_value_list)
 
         # Iterate
-        for i in range(self.n):
-            pass
+        if self.verbose:
+            print("\nIterating...")
+
+        for i in range(self.n - 1):
+            print(f"\nSolving for n={i+2}")
+
+            def first_equation_to_solve(trial_solutions):
+                return 0.5 * (self.q_solutions[i] + trial_solutions)
+
+            q_nplus1_guess = np.random.rand(len(self.q_list))
+            print(f"Guessing q_n_plus_1 = {q_nplus1_guess}")
+
+            q_nplus1_solution = optimize.root(first_equation_to_solve, q_nplus1_guess, method='hybr')
+            self.q_solutions[i+1] = q_nplus1_solution.x
+            print(f"Solved to be q_n_plus_1 = {q_nplus1_solution.x}")
+
 
         # Display the solutions
+        print()
         self.display_solutions()
