@@ -6,6 +6,8 @@ from prettytable import PrettyTable
 import autograd.numpy as np
 from scipy import optimize
 
+from .quadrature import FirstOrderQuadrature
+
 
 class GaussLobattoScaled(GaussLobatto):
 
@@ -97,9 +99,6 @@ class FirstOrderIntegrator(Integrator):
         self.t_list = np.linspace(t_lim_lower, t_lim_upper, n)
         self.set_expression(expression)
 
-        # gl = GaussLobattoScaled(n, self.verbose)
-        # gl.scale_to_interval(t_lim_lower, t_lim_upper)
-
     def set_initial_conditions(self, q_initial_value_list: List[float], v_initial_value_list: List[float]):
         """
         Set the initial conditions for the integrator.
@@ -115,9 +114,6 @@ class FirstOrderIntegrator(Integrator):
 
         self.q_initial_value_list = q_initial_value_list
         self.v_initial_value_list = v_initial_value_list
-
-    def trapezium_rule_nd(self, q_n_array, q_n_plus_1_array, time_step):
-        return 0.5 * time_step * (q_n_array + q_n_plus_1_array)
 
     def integrate(self):
         """
@@ -141,7 +137,7 @@ class FirstOrderIntegrator(Integrator):
 
             def new_positions_from_nth_solution_equation(q_n_plus_1_trial_solutions):
                 time_step = self.t_list[i + 1] - self.t_list[i]
-                return self.trapezium_rule_nd(self.q_solutions[i], q_n_plus_1_trial_solutions, time_step)
+                return FirstOrderQuadrature.trapezium_rule_nd(self.q_solutions[i], q_n_plus_1_trial_solutions, time_step)
 
             q_nplus1_guess = np.random.rand(len(self.q_list))
             print(f"Guessing q_n_plus_1 = {q_nplus1_guess}")
