@@ -69,7 +69,7 @@ class GaussLobattoScaled(GaussLobatto):
         print(table)
 
 
-class GalerkinGaussLobattoIntegrator(Integrator):
+class FirstOrderIntegrator(Integrator):
 
     def __init__(self, t: str, q_list: List[str], v_list: List[str], verbose: bool = False) -> None:
         """
@@ -77,7 +77,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         This way we can abstract away common functionality between integrators.
         """
 
-        Integrator.__init__(self, t, q_list, v_list, verbose, 'Galerkin Gauss Lobatto')
+        Integrator.__init__(self, t, q_list, v_list, verbose, 'First Order Integrator')
 
     def discretise(self, expression, n: int, t_lim_lower: float, t_lim_upper: float) -> None:
         """
@@ -117,8 +117,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         self.v_initial_value_list = v_initial_value_list
 
     def trapezium_rule_nd(self, q_n_array, q_n_plus_1_array, time_step):
-       return 0.5 * time_step * (q_n_array + q_n_plus_1_array)
-
+        return 0.5 * time_step * (q_n_array + q_n_plus_1_array)
 
     def integrate(self):
         """
@@ -141,16 +140,15 @@ class GalerkinGaussLobattoIntegrator(Integrator):
             print(f"\nSolving for n={i+2}")
 
             def new_positions_from_nth_solution_equation(q_n_plus_1_trial_solutions):
-                time_step = self.t_list[i+1] - self.t_list[i]
+                time_step = self.t_list[i + 1] - self.t_list[i]
                 return self.trapezium_rule_nd(self.q_solutions[i], q_n_plus_1_trial_solutions, time_step)
 
             q_nplus1_guess = np.random.rand(len(self.q_list))
             print(f"Guessing q_n_plus_1 = {q_nplus1_guess}")
 
             q_nplus1_solution = optimize.root(new_positions_from_nth_solution_equation, q_nplus1_guess, method='hybr')
-            self.q_solutions[i+1] = q_nplus1_solution.x
+            self.q_solutions[i + 1] = q_nplus1_solution.x
             print(f"Solved to be q_n_plus_1 = {q_nplus1_solution.x}")
-
 
         # Display the solutions
         print()

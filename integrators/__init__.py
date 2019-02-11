@@ -1,5 +1,5 @@
-from .GalerkinGaussLobattoIntegrator import GalerkinGaussLobattoIntegrator
+from .FirstOrderIntegrator import FirstOrderIntegrator
 
 __all__ = [
-    "GalerkinGaussLobattoIntegrator"
+    "FirstOrderIntegrator"
 ]
