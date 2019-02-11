@@ -99,21 +99,21 @@ class FirstOrderIntegrator(Integrator):
         self.t_list = np.linspace(t_lim_lower, t_lim_upper, n)
         self.set_expression(expression)
 
-    def set_initial_conditions(self, q_initial_value_list: List[float], v_initial_value_list: List[float]):
+    def set_initial_conditions(self, q_initial_value_list: List[float], p_initial_value_list: List[float]):
         """
         Set the initial conditions for the integrator.
         :param q_initial_value_list:  List of initial q values.
-        :param v_initial_value_list: List of initial v = $\dot{q}$ values.
+        :param p_initial_value_list: List of initial v = $\dot{q}$ values.
         """
 
         Assertions.assert_list_of_floats(q_initial_value_list, 'Initial q values')
         Assertions.assert_dimensions_match(self.q_list, 'q variables', q_initial_value_list, 'Initial q values')
 
-        Assertions.assert_list_of_floats(v_initial_value_list, 'Initial v values')
-        Assertions.assert_dimensions_match(self.v_list, 'v variables', v_initial_value_list, 'Initial v values')
+        Assertions.assert_list_of_floats(p_initial_value_list, 'Initial p values')
+        Assertions.assert_dimensions_match(self.q_list, 'q variables', p_initial_value_list, 'Initial p values')
 
         self.q_initial_value_list = q_initial_value_list
-        self.v_initial_value_list = v_initial_value_list
+        self.p_initial_value_list = p_initial_value_list
 
     def integrate(self):
         """
@@ -122,11 +122,11 @@ class FirstOrderIntegrator(Integrator):
 
         # Setup solutions
         self.q_solutions = [np.zeros(len(self.q_list)) for i in range(self.n)]
-        self.v_solutions = [np.zeros(len(self.v_list)) for i in range(self.n)]
+        self.p_solutions = [np.zeros(len(self.q_list)) for i in range(self.n)]
 
         # Add the initial conditions to the solution
         self.q_solutions[0] = np.array(self.q_initial_value_list)
-        self.v_solutions[0] = np.array(self.v_initial_value_list)
+        self.p_solutions[0] = np.array(self.p_initial_value_list)
 
         # Iterate
         if self.verbose:
@@ -137,7 +137,8 @@ class FirstOrderIntegrator(Integrator):
 
             def new_positions_from_nth_solution_equation(q_n_plus_1_trial_solutions):
                 time_step = self.t_list[i + 1] - self.t_list[i]
-                return FirstOrderQuadrature.trapezium_rule_nd(self.q_solutions[i], q_n_plus_1_trial_solutions, time_step)
+                return FirstOrderQuadrature.trapezium_rule_nd(self.q_solutions[i], q_n_plus_1_trial_solutions,
+                                                              time_step)
 
             q_nplus1_guess = np.random.rand(len(self.q_list))
             print(f"Guessing q_n_plus_1 = {q_nplus1_guess}")

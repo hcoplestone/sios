@@ -25,13 +25,18 @@ class Integrator:
         self.q_list = q_list
         self.q_initial_value_list = None
 
-        # v = $\dot{q}$ variables - symbols and initial values
+        # v = $\dot{q}$ variables - symbols
         self.v_list = v_list
-        self.v_initial_value_list = None
+
+        # Momenta
+        self.p_initial_value_list = None
+
+        # The expression we are integrating
+        self.expression = None
 
         self.t_list = None
         self.q_solutions = []
-        self.v_solutions = []
+        self.p_solutions = []
 
         self.integrator_type = integrator_type
         self.verbose = verbose
@@ -154,12 +159,12 @@ class Integrator:
         st = PrettyTable()
         st.title = 'Solutions'
 
-        st.field_names = ["t", "q solution list", "v solution list"]
+        st.field_names = ["t", "q solution list", "p solution list"]
         for i in range(0, len(self.t_list)):
             st.add_row([
                 round(self.t_list[i], 2),
                 str(self.q_solutions[i]),
-                str(self.v_solutions[i])
+                str(self.p_solutions[i])
             ])
 
         print(st)
