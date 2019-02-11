@@ -5,6 +5,7 @@ from assertions import Assertions
 from prettytable import PrettyTable
 import autograd.numpy as np
 from scipy import optimize
+from autograd import elementwise_grad as egrad
 
 from .quadrature import FirstOrderQuadrature
 
@@ -115,6 +116,18 @@ class FirstOrderIntegrator(Integrator):
         self.q_initial_value_list = q_initial_value_list
         self.p_initial_value_list = p_initial_value_list
 
+    def action(self, q_n, q_n_plus_1, t, time_step):
+        # Function returned accepts arguments (t, q, q1, q2..., v, v1, v2...)
+        lagrangian_evaluator = self.get_expression_evaluator()
+
+        v_n = (q_n_plus_1 - q_n) / time_step
+        lagrangian_evaled_at_n = lagrangian_evaluator(t, *q_n, *v_n)
+
+        v_n_plus_1 = (q_n_plus_1 - q_n) / time_step
+        lagrangian_evaled_at_n_plus_1 = lagrangian_evaluator(t, *q_n_plus_1, *v_n_plus_1)
+
+        return FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_n, lagrangian_evaled_at_n_plus_1, time_step)
+
     def integrate(self):
         """
         Numerically integrate the system.
@@ -132,20 +145,32 @@ class FirstOrderIntegrator(Integrator):
         if self.verbose:
             print("\nIterating...")
 
-        for i in range(self.n - 1):
-            print(f"\nSolving for n={i+2}")
 
-            def new_positions_from_nth_solution_equation(q_n_plus_1_trial_solutions):
-                time_step = self.t_list[i + 1] - self.t_list[i]
-                return FirstOrderQuadrature.trapezium_rule_nd(self.q_solutions[i], q_n_plus_1_trial_solutions,
-                                                              time_step)
+        for i in range(self.n - 1):
+            time_step = self.t_list[i + 1] - self.t_list[i]
+            t = self.t_list[i+1]
+            print(f"\nSolving for n={i+2}")
+            print(f"t={t}\n")
+
+            def new_position_from_nth_solution_equation(q_n_plus_1_trial_solutions):
+                S = lambda q_n: self.action(q_n, q_n_plus_1_trial_solutions, t, time_step)
+                partial_differential_of_action_wrt_q_n = egrad(S)
+                return self.p_solutions[i] + partial_differential_of_action_wrt_q_n(self.p_solutions[i])
+
+            def determine_new_momentum_from_q_n_plus_1th_solution():
+                S = lambda q_n_plus_1: self.action(self.q_solutions[i], self.q_solutions[i+1], t, time_step)
+                partial_differential_of_action_wrt_q_n_plus_1 = egrad(S)
+                return partial_differential_of_action_wrt_q_n_plus_1(self.q_solutions[i+1])
 
             q_nplus1_guess = np.random.rand(len(self.q_list))
             print(f"Guessing q_n_plus_1 = {q_nplus1_guess}")
 
-            q_nplus1_solution = optimize.root(new_positions_from_nth_solution_equation, q_nplus1_guess, method='hybr')
+            q_nplus1_solution = optimize.root(new_position_from_nth_solution_equation, q_nplus1_guess, method='hybr')
             self.q_solutions[i + 1] = q_nplus1_solution.x
             print(f"Solved to be q_n_plus_1 = {q_nplus1_solution.x}")
+
+            self.p_solutions[i+1] = determine_new_momentum_from_q_n_plus_1th_solution()
+            print(f"p_n_plus_1 = {self.p_solutions[i+1]}")
 
         # Display the solutions
         print()
