@@ -50,10 +50,10 @@ class Sios:
         L = 0.5 * m * (vx * vx + vy * vy) - 2 * (x * x + y * y)
 
         # Define discretization parameters
-        foi.discretise(L, 200, 0.0, 10.0)
+        foi.discretise(L, 400, 0.0, 10.0)
 
         # Set the initial conditions for integration
-        foi.set_initial_conditions([1.0, 1.0], [0.0, 0.0])
+        foi.set_initial_conditions([1.0, 1.0], [2.0, 1.0])
 
         # Integrate the system
 
@@ -67,7 +67,8 @@ class Sios:
 
         # Display the solutions and plot the results
         # foi.display_solutions()
-        foi.plot_results()
+        # foi.plot_results()
+        # foi.animate_trajectory()
 
 
 if __name__ == "__main__":

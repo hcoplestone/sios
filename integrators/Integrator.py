@@ -4,6 +4,7 @@ from prettytable import PrettyTable
 from sympy import *
 import autograd.numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import animation
 
 
 class Integrator:
@@ -188,6 +189,36 @@ class Integrator:
 
         print(st)
 
+    def animate_trajectory(self) -> None:
+        x_data = [result.item(0) for result in self.q_solutions]
+        y_data = [result.item(1) for result in self.q_solutions]
+
+        fig = plt.figure()
+        ax = plt.axes(xlim=(min(x_data),max(x_data)), ylim=(min(y_data), max(y_data)))
+
+        ax.set_xlabel(self.q_list[0])
+        ax.set_ylabel(self.q_list[1])
+        line, = ax.plot([], [], lw=2)
+        # line, = ax.plot([], [], 'o', markersize=1)
+
+        title = ax.text(0.5, 0.85, "".format(self.t_list[0]), bbox={'facecolor': 'w', 'alpha': 0.5, 'pad': 5},
+                        transform=ax.transAxes, ha="center")
+        def init():
+            line.set_data([], [])
+            return line,
+
+        def animate(i):
+            line.set_data(x_data[0:i], y_data[0:i])
+            title.set_text("t={0:.2f}".format(self.t_list[i]))
+            return title,line,
+
+        # call the animator.  blit=True means only re-draw the parts that have changed.
+        anim = animation.FuncAnimation(fig, animate, init_func=init,
+                                       frames=len(self.q_solutions), interval=1, blit=True)
+
+        # anim.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+        plt.show()
+
     def plot_results(self, cols=1) -> None:
         """
         Plot results
@@ -226,7 +257,8 @@ class Integrator:
 
         if len(self.q_list) == 2:
             plt.figure(2)
-            plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions], 'o', markersize=1)
+            plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions],
+                     'o', markersize=1)
             plt.title('Trajectory')
             plt.xlabel(self.q_list[0])
             plt.ylabel(self.q_list[1])
