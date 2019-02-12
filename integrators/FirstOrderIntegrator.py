@@ -136,7 +136,8 @@ class FirstOrderIntegrator(Integrator):
         for i in range(self.n - 1):
             time_step = self.t_list[i + 1] - self.t_list[i]
             t = self.t_list[i + 1]
-            print('.', end='', flush=True)
+            if self.verbose:
+              print('.', end='', flush=True)
             # print(f"\nSolving for n={i+2}")
             # print(f"t={t}\n")
 
