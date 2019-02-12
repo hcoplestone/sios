@@ -176,20 +176,20 @@ class Integrator:
         """
         plt.figure(1)
 
-        plt.subplot(211)
+        # plt.subplot(211)
         plt.title('Evolution of generalised coordinates as a function of time')
         plt.plot(self.t_list, list(map(lambda result: result.item(0), self.q_solutions)))
         plt.ylabel(self.q_list[0])
-
-        plt.subplot(212)
-        plt.plot(self.t_list, list(map(lambda result: result.item(1), self.q_solutions)))
-        plt.xlabel(self.t)
-        plt.ylabel(self.q_list[1])
-
-        plt.figure(2)
-        plt.plot(list(map(lambda result: result.item(0), self.q_solutions))), list(map(lambda result: result.item(1), self.q_solutions))
-        plt.title('Trajectory')
-        plt.xlabel(self.q_list[0])
-        plt.ylabel(self.q_list[1])
+        #
+        # plt.subplot(212)
+        # plt.plot(self.t_list, list(map(lambda result: result.item(1), self.q_solutions)))
+        # plt.xlabel(self.t)
+        # plt.ylabel(self.q_list[1])
+        #
+        # plt.figure(2)
+        # plt.plot(list(map(lambda result: result.item(0), self.q_solutions))), list(map(lambda result: result.item(1), self.q_solutions))
+        # plt.title('Trajectory')
+        # plt.xlabel(self.q_list[0])
+        # plt.ylabel(self.q_list[1])
 
         plt.show()
