@@ -21,14 +21,14 @@ class Sios:
         v2 = foi.symbols['v'][1]
         L = 0.5 * m * (v1 * v1 + v2 * v2)
         # L = 0.0
-        # L = 0.5 * m * sp_exp.exp(v) + 100*v
+        # L = 0.5 * m * sp_exp.exp(v1) + 100*v1
 
         # Define discretization parameters
-        foi.discretise(L, 5, 0.0, 10.0)
+        foi.discretise(L, 100, 0.0, 500.0)
 
         # Set the initial conditions for integration
         # ggl.set_initial_conditions([1.0], [1.0])
-        foi.set_initial_conditions([0.0, 0.0], [1.0, 1.0])
+        foi.set_initial_conditions([0.0, 0.0], [50.0, 50.0])
 
         # Integrate the system
         foi.integrate()

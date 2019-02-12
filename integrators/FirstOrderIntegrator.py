@@ -122,11 +122,15 @@ class FirstOrderIntegrator(Integrator):
 
         v_n = (q_n_plus_1 - q_n) / time_step
         lagrangian_evaled_at_n = lagrangian_evaluator(t, *q_n, *v_n)
+        # print('Lagrangian evaled at n:')
+        # print(lagrangian_evaled_at_n)
 
         v_n_plus_1 = (q_n_plus_1 - q_n) / time_step
-        lagrangian_evaled_at_n_plus_1 = lagrangian_evaluator(t, *q_n_plus_1, *v_n_plus_1)
+        t_n_plus_1 = t+time_step
+        lagrangian_evaled_at_n_plus_1 = lagrangian_evaluator(t_n_plus_1, *q_n_plus_1, *v_n_plus_1)
 
-        return FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_n, lagrangian_evaled_at_n_plus_1, time_step)
+        action = FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_n, lagrangian_evaled_at_n_plus_1, time_step)
+        return action
 
     def integrate(self):
         """
@@ -155,10 +159,11 @@ class FirstOrderIntegrator(Integrator):
             def new_position_from_nth_solution_equation(q_n_plus_1_trial_solutions):
                 S = lambda q_n: self.action(q_n, q_n_plus_1_trial_solutions, t, time_step)
                 partial_differential_of_action_wrt_q_n = egrad(S)
-                return self.p_solutions[i] + partial_differential_of_action_wrt_q_n(self.p_solutions[i])
+                equation = self.p_solutions[i] + partial_differential_of_action_wrt_q_n(self.p_solutions[i])
+                return equation
 
             def determine_new_momentum_from_q_n_plus_1th_solution():
-                S = lambda q_n_plus_1: self.action(self.q_solutions[i], self.q_solutions[i+1], t, time_step)
+                S = lambda q_n_plus_1: self.action(self.q_solutions[i], q_n_plus_1, t, time_step)
                 partial_differential_of_action_wrt_q_n_plus_1 = egrad(S)
                 return partial_differential_of_action_wrt_q_n_plus_1(self.q_solutions[i+1])
 
