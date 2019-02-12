@@ -38,6 +38,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         self.t_list = np.linspace(t_lim_lower, t_lim_upper, n)
         self.set_expression(expression)
 
+
     def action(self, q_n, q_n_plus_1, t, time_step):
         # Function returned accepts arguments (t, q, q1, q2..., v, v1, v2...)
         lagrangian_evaluator = self.get_expression_evaluator()

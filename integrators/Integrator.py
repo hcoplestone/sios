@@ -186,28 +186,45 @@ class Integrator:
 
         print(st)
 
-    def plot_results(self) -> None:
+    def plot_results(self, cols=1) -> None:
         """
         Plot results
         """
-        plt.figure(1)
+        fig = plt.figure(1)
 
-        plt.subplot(211)
-        plt.title('Evolution of generalised coordinates as a function of time')
-        # plt.plot(self.t_list, list(map(lambda result: result.item(0), self.q_solutions)))
-        plt.plot(self.t_list, [result.item(0) for result in self.q_solutions])
-        plt.ylabel(self.q_list[0])
+        number_of_subplots = len(self.q_list)
 
-        plt.subplot(212)
-        # plt.plot(self.t_list, list(map(lambda result: result.item(1), self.q_solutions)))
-        plt.plot(self.t_list, [result.item(1) for result in self.q_solutions])
-        plt.xlabel(self.t)
-        plt.ylabel(self.q_list[1])
+        # Compute number of rows required
+        number_of_rows = number_of_subplots // cols
+        number_of_rows += number_of_subplots % cols
 
-        plt.figure(2)
-        plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions])
-        plt.title('Trajectory')
-        plt.xlabel(self.q_list[0])
-        plt.ylabel(self.q_list[1])
+        # Position index
+        position = range(1, number_of_subplots + 1)
+
+        for k in range(number_of_subplots):
+            ax = fig.add_subplot(number_of_rows, cols, position[k])
+            ax.plot(self.t_list, [result.item(k) for result in self.q_solutions])
+            ax.set_ylabel(self.q_list[k])
+            if (k == 0):
+                ax.set_title('Evolution of generalised coordinates as a function of t')
+
+        # plt.subplot(211)
+        # plt.title('Evolution of generalised coordinates as a function of time')
+        # # plt.plot(self.t_list, list(map(lambda result: result.item(0), self.q_solutions)))
+        # plt.plot(self.t_list, [result.item(0) for result in self.q_solutions])
+        # plt.ylabel(self.q_list[0])
+
+        # plt.subplot(212)
+        # # plt.plot(self.t_list, list(map(lambda result: result.item(1), self.q_solutions)))
+        # plt.plot(self.t_list, [result.item(1) for result in self.q_solutions])
+        # plt.xlabel(self.t)
+        # plt.ylabel(self.q_list[1])
+
+        if len(self.q_list) == 2:
+            plt.figure(2)
+            plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions])
+            plt.title('Trajectory')
+            plt.xlabel(self.q_list[0])
+            plt.ylabel(self.q_list[1])
 
         plt.show()

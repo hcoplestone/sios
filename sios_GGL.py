@@ -1,10 +1,4 @@
 from integrators import GalerkinGaussLobattoIntegrator
-import autograd.numpy as np
-import sympy.functions.elementary.exponential as sp_exp
-from autograd import elementwise_grad as egrad
-import sympy.functions.elementary.complexes as sp_cpx
-
-import matplotlib.pyplot as plt
 
 
 class SiosGGL:
