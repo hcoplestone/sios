@@ -204,7 +204,7 @@ class Integrator:
 
         for k in range(number_of_subplots):
             ax = fig.add_subplot(number_of_rows, cols, position[k])
-            ax.plot(self.t_list, [result.item(k) for result in self.q_solutions], '.')
+            ax.plot(self.t_list, [result.item(k) for result in self.q_solutions], 'o', markersize=1)
             ax.set_ylabel(self.q_list[k])
             if k == 0:
                 ax.set_title('Evolution of generalised coordinates as a function of ' + self.t)
@@ -225,7 +225,7 @@ class Integrator:
 
         if len(self.q_list) == 2:
             plt.figure(2)
-            plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions], '.')
+            plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions], 'o', markersize=1)
             plt.title('Trajectory')
             plt.xlabel(self.q_list[0])
             plt.ylabel(self.q_list[1])
