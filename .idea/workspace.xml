@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integrators/FirstOrderIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/FirstOrderIntegrator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integrators/Integrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/Integrator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sios.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,7 +73,7 @@
           <entry key="Python Console" value="298" />
           <entry key="dummy" value="30" />
           <entry key="md" value="3" />
-          <entry key="py" value="33050" />
+          <entry key="py" value="33262" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -78,7 +81,7 @@
         <counts>
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="31" />
-          <entry key="Python" value="33348" />
+          <entry key="Python" value="33560" />
         </counts>
       </usages-collector>
     </session>
@@ -91,13 +94,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sios.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+            <state relative-caret-position="179">
+              <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
-                <marker date="1549995871743" expanded="true" signature="118:121" ph="..." />
-                <marker date="1549995871743" expanded="true" signature="132:1969" ph="..." />
-                <marker date="1549995871743" expanded="true" signature="208:209" ph="..." />
+                <marker date="1549996514550" expanded="true" signature="118:121" ph="..." />
+                <marker date="1549996514550" expanded="true" signature="132:2042" ph="..." />
+                <marker date="1549996514550" expanded="true" signature="208:209" ph="..." />
               </folding>
             </state>
           </provider>
@@ -106,15 +109,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integrators/FirstOrderIntegrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2355">
-              <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+            <state relative-caret-position="347">
+              <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1549995301239" expanded="true" signature="377:2392" ph="..." />
-                <marker date="1549995301239" expanded="true" signature="2389:2390" ph="..." />
-                <marker date="1549995301239" expanded="true" signature="2390:2392" ph="..." />
-                <marker date="1549995301239" expanded="true" signature="5109:5121" ph="..." />
-                <marker date="1549995301239" expanded="true" signature="5476:5489" ph="..." />
+                <marker date="1549996483361" expanded="true" signature="377:2392" ph="..." />
+                <marker date="1549996483361" expanded="true" signature="2389:2390" ph="..." />
+                <marker date="1549996483361" expanded="true" signature="2390:2392" ph="..." />
+                <marker date="1549996483361" expanded="true" signature="5156:5168" ph="..." />
+                <marker date="1549996483361" expanded="true" signature="5523:5536" ph="..." />
               </folding>
             </state>
           </provider>
@@ -132,11 +135,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2857">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="440">
+              <caret line="185" column="13" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
               <folding>
-                <marker date="1549994912387" expanded="true" signature="3128:4344" ph="..." />
-                <marker date="1549994912387" expanded="true" signature="4422:5138" ph="..." />
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1549996415344" expanded="true" signature="3128:4344" ph="..." />
+                <marker date="1549996415344" expanded="true" signature="4422:5138" ph="..." />
               </folding>
             </state>
           </provider>
@@ -162,7 +166,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dot</find>
       <find>dot(</find>
       <find>pyt</find>
       <find>GGL_q</find>
@@ -192,6 +195,7 @@
       <find>qdot</find>
       <find>set_initial</find>
       <find>set_initi</find>
+      <find>integ</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -531,7 +535,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/integrators/FirstOrderIntegrator.py</url>
-          <line>143</line>
+          <line>144</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -715,13 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/quadrature/GaussLobattoQuadrature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -732,14 +729,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
+    <entry file="file://$PROJECT_DIR$/integrators/quadrature/GaussLobattoQuadrature.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2857">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <marker date="1549994912387" expanded="true" signature="3128:4344" ph="..." />
-            <marker date="1549994912387" expanded="true" signature="4422:5138" ph="..." />
-          </folding>
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -750,30 +743,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/FirstOrderIntegrator.py">
+    <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2355">
-          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+        <state relative-caret-position="440">
+          <caret line="185" column="13" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1549995301239" expanded="true" signature="377:2392" ph="..." />
-            <marker date="1549995301239" expanded="true" signature="2389:2390" ph="..." />
-            <marker date="1549995301239" expanded="true" signature="2390:2392" ph="..." />
-            <marker date="1549995301239" expanded="true" signature="5109:5121" ph="..." />
-            <marker date="1549995301239" expanded="true" signature="5476:5489" ph="..." />
+            <marker date="1549996415344" expanded="true" signature="3128:4344" ph="..." />
+            <marker date="1549996415344" expanded="true" signature="4422:5138" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrators/FirstOrderIntegrator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1549996483361" expanded="true" signature="377:2392" ph="..." />
+            <marker date="1549996483361" expanded="true" signature="2389:2390" ph="..." />
+            <marker date="1549996483361" expanded="true" signature="2390:2392" ph="..." />
+            <marker date="1549996483361" expanded="true" signature="5156:5168" ph="..." />
+            <marker date="1549996483361" expanded="true" signature="5523:5536" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sios.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+        <state relative-caret-position="179">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
-            <marker date="1549995871743" expanded="true" signature="118:121" ph="..." />
-            <marker date="1549995871743" expanded="true" signature="132:1969" ph="..." />
-            <marker date="1549995871743" expanded="true" signature="208:209" ph="..." />
+            <marker date="1549996514550" expanded="true" signature="118:121" ph="..." />
+            <marker date="1549996514550" expanded="true" signature="132:2042" ph="..." />
+            <marker date="1549996514550" expanded="true" signature="208:209" ph="..." />
           </folding>
         </state>
       </provider>

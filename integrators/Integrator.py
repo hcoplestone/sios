@@ -173,6 +173,7 @@ class Integrator:
         Display a table of all the position and momenta solutions
         """
 
+        print()
         st = PrettyTable()
         st.title = 'Solutions'
 

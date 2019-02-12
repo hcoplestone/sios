@@ -136,8 +136,9 @@ class FirstOrderIntegrator(Integrator):
         for i in range(self.n - 1):
             time_step = self.t_list[i + 1] - self.t_list[i]
             t = self.t_list[i + 1]
-            print(f"\nSolving for n={i+2}")
-            print(f"t={t}\n")
+            print('.', end='', flush=True)
+            # print(f"\nSolving for n={i+2}")
+            # print(f"t={t}\n")
 
             def new_position_from_nth_solution_equation(q_n_plus_1_trial_solutions):
                 S = lambda q_n: self.action(q_n, q_n_plus_1_trial_solutions, t, time_step)
@@ -154,15 +155,14 @@ class FirstOrderIntegrator(Integrator):
                 q_nplus1_guess = self.q_solutions[i] + (self.q_solutions[i] - self.q_solutions[i - 1])
             else:
                 q_nplus1_guess = self.q_solutions[i]
-            print(f"Guessing q_n_plus_1 = {q_nplus1_guess}")
+            # print(f"Guessing q_n_plus_1 = {q_nplus1_guess}")
 
             q_nplus1_solution = optimize.root(new_position_from_nth_solution_equation, q_nplus1_guess, method='hybr')
             self.q_solutions[i + 1] = q_nplus1_solution.x
-            print(f"Solved to be q_n_plus_1 = {q_nplus1_solution.x}")
+            # print(f"Solved to be q_n_plus_1 = {q_nplus1_solution.x}")
 
             self.p_solutions[i + 1] = determine_new_momentum_from_q_n_plus_1th_solution()
-            print(f"p_n_plus_1 = {self.p_solutions[i+1]}")
+            # print(f"p_n_plus_1 = {self.p_solutions[i+1]}")
 
-        # Display the solutions
-        print()
-        self.display_solutions()
+        if self.verbose:
+            print("\nIntegration complete!")

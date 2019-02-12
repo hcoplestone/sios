@@ -38,7 +38,7 @@ class Sios:
 
     def doit(self):
         # Create an instance of our integrator
-        foi = FirstOrderIntegrator('t', ['x', 'y'], ['vx', 'vy'], verbose=True)
+        foi = FirstOrderIntegrator('t', ['x', 'y'], ['vx', 'vy'], verbose=False)
 
         # Define our properties and the Lagrangian for a spring
         m = 1.0
@@ -60,12 +60,13 @@ class Sios:
         foi.integrate()
         end_time = timer()
 
-        # Plot the results
-        foi.plot_results()
+        # Display the solutions and plot the results
+        # foi.display_solutions()
+        # foi.plot_results()
 
         # Display elapsed time while integrating
         elapsed_time = end_time - start_time
-        print('Elapsed time is {0:.2f}'.format(elapsed_time))
+        print('\nElapsed time is {0:.2f} seconds'.format(elapsed_time))
         return elapsed_time
 
 
