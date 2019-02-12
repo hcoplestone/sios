@@ -98,6 +98,22 @@ class Integrator:
         """
         return lambdify(tuple([self.symbols['t']] + self.symbols['q'] + self.symbols['v']), self.expression, modules=np)
 
+    def set_initial_conditions(self, q_initial_value_list: List[float], p_initial_value_list: List[float]):
+        """
+        Set the initial conditions for the integrator.
+        :param q_initial_value_list:  List of initial q values.
+        :param p_initial_value_list: List of initial v = $\dot{q}$ values.
+        """
+
+        Assertions.assert_list_of_floats(q_initial_value_list, 'Initial q values')
+        Assertions.assert_dimensions_match(self.q_list, 'q variables', q_initial_value_list, 'Initial q values')
+
+        Assertions.assert_list_of_floats(p_initial_value_list, 'Initial p values')
+        Assertions.assert_dimensions_match(self.q_list, 'q variables', p_initial_value_list, 'Initial p values')
+
+        self.q_initial_value_list = q_initial_value_list
+        self.p_initial_value_list = p_initial_value_list
+
     def set_time_boundaries(self, t_lim_lower: float, t_lim_upper: float) -> None:
         """
         Set the boundaries in time for the integration.
@@ -176,20 +192,22 @@ class Integrator:
         """
         plt.figure(1)
 
-        # plt.subplot(211)
+        plt.subplot(211)
         plt.title('Evolution of generalised coordinates as a function of time')
-        plt.plot(self.t_list, list(map(lambda result: result.item(0), self.q_solutions)))
+        # plt.plot(self.t_list, list(map(lambda result: result.item(0), self.q_solutions)))
+        plt.plot(self.t_list, [result.item(0) for result in self.q_solutions])
         plt.ylabel(self.q_list[0])
-        #
-        # plt.subplot(212)
+
+        plt.subplot(212)
         # plt.plot(self.t_list, list(map(lambda result: result.item(1), self.q_solutions)))
-        # plt.xlabel(self.t)
-        # plt.ylabel(self.q_list[1])
-        #
-        # plt.figure(2)
-        # plt.plot(list(map(lambda result: result.item(0), self.q_solutions))), list(map(lambda result: result.item(1), self.q_solutions))
-        # plt.title('Trajectory')
-        # plt.xlabel(self.q_list[0])
-        # plt.ylabel(self.q_list[1])
+        plt.plot(self.t_list, [result.item(1) for result in self.q_solutions])
+        plt.xlabel(self.t)
+        plt.ylabel(self.q_list[1])
+
+        plt.figure(2)
+        plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions])
+        plt.title('Trajectory')
+        plt.xlabel(self.q_list[0])
+        plt.ylabel(self.q_list[1])
 
         plt.show()
