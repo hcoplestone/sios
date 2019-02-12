@@ -61,14 +61,13 @@ class Sios:
         foi.integrate()
         end_time = timer()
 
-        # Display the solutions and plot the results
-        foi.display_solutions()
-        # foi.plot_results()
-
         # Display elapsed time while integrating
         elapsed_time = end_time - start_time
         print('\nElapsed time is {0:.2f} seconds'.format(elapsed_time))
-        return elapsed_time
+
+        # Display the solutions and plot the results
+        # foi.display_solutions()
+        foi.plot_results()
 
 
 if __name__ == "__main__":

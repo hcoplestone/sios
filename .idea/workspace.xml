@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/integrators/Integrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/Integrator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sios.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,7 +70,7 @@
           <entry key="Python Console" value="298" />
           <entry key="dummy" value="30" />
           <entry key="md" value="3" />
-          <entry key="py" value="33711" />
+          <entry key="py" value="33717" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -79,7 +78,7 @@
         <counts>
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="31" />
-          <entry key="Python" value="34009" />
+          <entry key="Python" value="34015" />
         </counts>
       </usages-collector>
     </session>
@@ -89,16 +88,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sios.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+            <state relative-caret-position="517">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
-                <marker date="1549998285052" expanded="true" signature="118:121" ph="..." />
-                <marker date="1549998285052" expanded="true" signature="132:2062" ph="..." />
-                <marker date="1549998285052" expanded="true" signature="208:209" ph="..." />
+                <marker date="1549998597235" expanded="true" signature="118:121" ph="..." />
+                <marker date="1549998597235" expanded="true" signature="132:2034" ph="..." />
+                <marker date="1549998597235" expanded="true" signature="208:209" ph="..." />
               </folding>
             </state>
           </provider>
@@ -130,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="180" column="77" selection-start-line="180" selection-start-column="77" selection-end-line="180" selection-end-column="77" />
+            <state relative-caret-position="89">
+              <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <marker date="1549998538700" expanded="true" signature="3128:4344" ph="..." />
@@ -226,8 +225,8 @@
         <option value="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" />
         <option value="$PROJECT_DIR$/integrators/quadrature/GaussLobattoQuadrature.py" />
         <option value="$PROJECT_DIR$/integrators/FirstOrderIntegrator.py" />
-        <option value="$PROJECT_DIR$/sios.py" />
         <option value="$PROJECT_DIR$/integrators/Integrator.py" />
+        <option value="$PROJECT_DIR$/sios.py" />
       </list>
     </option>
   </component>
@@ -756,27 +755,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sios.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <marker date="1549998285052" expanded="true" signature="118:121" ph="..." />
-            <marker date="1549998285052" expanded="true" signature="132:2062" ph="..." />
-            <marker date="1549998285052" expanded="true" signature="208:209" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="180" column="77" selection-start-line="180" selection-start-column="77" selection-end-line="180" selection-end-column="77" />
+        <state relative-caret-position="89">
+          <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <marker date="1549998538700" expanded="true" signature="3128:4344" ph="..." />
             <marker date="1549998538700" expanded="true" signature="4422:5138" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sios.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+            <marker date="1549998597235" expanded="true" signature="118:121" ph="..." />
+            <marker date="1549998597235" expanded="true" signature="132:2034" ph="..." />
+            <marker date="1549998597235" expanded="true" signature="208:209" ph="..." />
           </folding>
         </state>
       </provider>
