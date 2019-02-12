@@ -143,7 +143,7 @@ class FirstOrderIntegrator(Integrator):
             def new_position_from_nth_solution_equation(q_n_plus_1_trial_solutions):
                 S = lambda q_n: self.action(q_n, q_n_plus_1_trial_solutions, t, time_step)
                 partial_differential_of_action_wrt_q_n = egrad(S)
-                equation = self.p_solutions[i] + partial_differential_of_action_wrt_q_n(self.q_solutions[i])
+                equation = np.add(self.p_solutions[i],  partial_differential_of_action_wrt_q_n(self.q_solutions[i]))
                 return equation
 
             def determine_new_momentum_from_q_n_plus_1th_solution():

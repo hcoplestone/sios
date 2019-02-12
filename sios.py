@@ -50,7 +50,7 @@ class Sios:
         L = 0.5 * m * (vx * vx + vy * vy) - 2 * (x * x + y * y)
 
         # Define discretization parameters
-        foi.discretise(L, 600, 0.0, 10.0)
+        foi.discretise(L, 200, 0.0, 10.0)
 
         # Set the initial conditions for integration
         foi.set_initial_conditions([1.0, 1.0], [0.0, 0.0])
