@@ -150,7 +150,7 @@ class FirstOrderIntegrator(Integrator):
                 partial_differential_of_action_wrt_q_n_plus_1 = egrad(S)
                 return partial_differential_of_action_wrt_q_n_plus_1(self.q_solutions[i + 1])
 
-            q_nplus1_guess = np.random.rand(len(self.q_list))
+            q_nplus1_guess = self.q_solutions[i]
             print(f"Guessing q_n_plus_1 = {q_nplus1_guess}")
 
             q_nplus1_solution = optimize.root(new_position_from_nth_solution_equation, q_nplus1_guess, method='hybr')

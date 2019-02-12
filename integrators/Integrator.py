@@ -205,8 +205,10 @@ class Integrator:
             ax = fig.add_subplot(number_of_rows, cols, position[k])
             ax.plot(self.t_list, [result.item(k) for result in self.q_solutions])
             ax.set_ylabel(self.q_list[k])
-            if (k == 0):
-                ax.set_title('Evolution of generalised coordinates as a function of t')
+            if k == 0:
+                ax.set_title('Evolution of generalised coordinates as a function of ' + self.t)
+            if k == number_of_subplots - 1:
+                ax.set_xlabel(self.t)
 
         # plt.subplot(211)
         # plt.title('Evolution of generalised coordinates as a function of time')

@@ -1,8 +1,9 @@
 from integrators import FirstOrderIntegrator
+from timeit import default_timer as timer
 
 
 class Sios:
-    def doit(self):
+    def timeit(self):
         # Create an instance of our integrator
         foi = FirstOrderIntegrator('t', ['x', 'y'], ['vx', 'vy'], verbose=True)
 
@@ -21,12 +22,23 @@ class Sios:
         foi.set_initial_conditions([1.0, 1.0], [0.0, 0.0])
 
         # Integrate the system
+
+        start_time = timer()
         foi.integrate()
+        end_time = timer()
 
         # Plot the results
-        foi.plot_results()
+        # foi.plot_results()
+
+        # Display elapsed time while integrating
+        elapsed_time = end_time - start_time
+        print('Elapsed time is {0:.2f}'.format(elapsed_time))
+        return elapsed_time
 
 
 if __name__ == "__main__":
     sios = Sios()
-    sios.doit()
+    times = []
+    for i in range(5):
+        times.append(sios.timeit())
+    print(times)
