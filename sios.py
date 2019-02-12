@@ -62,7 +62,7 @@ class Sios:
         end_time = timer()
 
         # Display the solutions and plot the results
-        # foi.display_solutions()
+        foi.display_solutions()
         # foi.plot_results()
 
         # Display elapsed time while integrating

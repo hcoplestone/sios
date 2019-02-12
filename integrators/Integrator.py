@@ -177,7 +177,8 @@ class Integrator:
         st = PrettyTable()
         st.title = 'Solutions'
 
-        st.field_names = ["t", "q solution list", "p solution list"]
+        # st.field_names = ["t", "q solution list", "p solution list"]
+        st.field_names = ["t", "[" + " ".join(self.q_list) + "]", "Momenta of [" + " ".join(self.q_list) + "]"]
         for i in range(0, len(self.t_list)):
             st.add_row([
                 round(self.t_list[i], 2),
