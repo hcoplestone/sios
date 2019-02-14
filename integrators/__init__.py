@@ -1,7 +1,7 @@
 from .FirstOrderIntegrator import FirstOrderIntegrator
-from .GalerkinGaussLobattoIntegrator import GalerkinGaussLobattoIntegrator
+from .PolynomialIntegrator import PolynomialIntegrator
 
 __all__ = [
     "FirstOrderIntegrator",
-    "GalerkinGaussLobattoIntegrator"
+    "PolynomialIntegrator"
 ]

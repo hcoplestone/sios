@@ -1,32 +1,34 @@
-from integrators import GalerkinGaussLobattoIntegrator
+from integrators import PolynomialIntegrator
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 class SiosGGL:
     def doit(self):
         # Create an instance of our integrator
-        ggl = GalerkinGaussLobattoIntegrator('t', ['x', 'y'], ['vx', 'vy'], 2, verbose=False)
+        integrator = PolynomialIntegrator('t', ['x', 'y'], ['vx', 'vy'], 1, verbose=False)
 
         # Define our properties and the Lagrangian for a spring
         m = 1.0
 
         # Get symbols for use in Lagrangian
-        vx, vy = ggl.symbols['v']
-        x, y = ggl.symbols['q']
+        vx, vy = integrator.symbols['v']
+        x, y = integrator.symbols['q']
 
         # Define the Lagrangian for the system
         L = 0.5 * m * (vx * vx + vy * vy) - 2 * (x * x + y * y)
 
         # Define discretization parameters
-        ggl.discretise(L, 100, 0.0, 10.0)
+        integrator.discretise(L, 100, 0.0, 10.0)
 
         # Set the initial conditions for integration
-        ggl.set_initial_conditions([1.0, 1.0], [0.0, 0.0])
+        integrator.set_initial_conditions([1.0, 1.0], [0.0, 0.0])
 
         # Integrate the system
-        ggl.integrate()
+        integrator.integrate()
 
         # Plot the results
-        ggl.plot_results()
+        integrator.plot_results()
 
 
 if __name__ == "__main__":
