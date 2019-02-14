@@ -189,13 +189,17 @@ class Integrator:
 
     def setup_solutions(self) -> None:
         """
-        Initialise the solution arrays with zeros.
+        Initialise the solution arrays with zeros. Set the first solutions to the initial conditions.
         :return:
         """
 
         # TODO: assert q_list and p_list not empty
         self.q_solutions = [np.zeros(len(self.q_list)) for i in range(self.n)]
         self.p_solutions = [np.zeros(len(self.q_list)) for i in range(self.n)]
+
+        # Add the initial conditions to the solution
+        self.q_solutions[0] = np.array(self.q_initial_value_list)
+        self.p_solutions[0] = np.array(self.p_initial_value_list)
 
     def display_solutions(self) -> None:
         """

@@ -39,7 +39,7 @@ class Sios:
 
     def doit(self):
         # Create an instance of our integrator
-        foi = FirstOrderIntegrator('t', ['x', 'y'], ['vx', 'vy'], verbose=False)
+        foi = FirstOrderIntegrator('t', ['x', 'y'], ['vx', 'vy'], verbose=True)
 
         # Define our properties and the Lagrangian for a spring
         m = 1.0

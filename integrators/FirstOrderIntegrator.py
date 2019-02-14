@@ -38,12 +38,8 @@ class FirstOrderIntegrator(Integrator):
         Numerically integrate the system.
         """
 
-        # Setup solutions
+        # Setup solutions with initial values
         self.setup_solutions()
-
-        # Add the initial conditions to the solution
-        self.q_solutions[0] = np.array(self.q_initial_value_list)
-        self.p_solutions[0] = np.array(self.p_initial_value_list)
 
         # Iterate
         if self.verbose:
