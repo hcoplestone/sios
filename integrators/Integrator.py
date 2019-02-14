@@ -115,6 +115,24 @@ class Integrator:
         self.q_initial_value_list = q_initial_value_list
         self.p_initial_value_list = p_initial_value_list
 
+    def discretise(self, expression, n: int, t_lim_lower: float, t_lim_upper: float) -> None:
+        """
+        Discretise the function that we provide on an interval [t_lim_lower, t_lim_upper].
+
+        :param expression: Sympy expression for the function we want to discretise.
+        :param n: The number of quadrature points to use.
+        :param t_lim_lower: Lower time limit to sample our continuous function over.
+        :param t_lim_upper: Upper time limit to sample our continuous function over.
+        """
+
+        Assertions.assert_integer(n, 'number of quadrature points')
+
+        self.set_time_boundaries(t_lim_lower, t_lim_upper)
+        self.n = n
+
+        self.t_list = np.linspace(t_lim_lower, t_lim_upper, n)
+        self.set_expression(expression)
+
     def set_time_boundaries(self, t_lim_lower: float, t_lim_upper: float) -> None:
         """
         Set the boundaries in time for the integration.
@@ -169,6 +187,16 @@ class Integrator:
 
         print(st)
 
+    def setup_solutions(self) -> None:
+        """
+        Initialise the solution arrays with zeros.
+        :return:
+        """
+
+        # TODO: assert q_list and p_list not empty
+        self.q_solutions = [np.zeros(len(self.q_list)) for i in range(self.n)]
+        self.p_solutions = [np.zeros(len(self.q_list)) for i in range(self.n)]
+
     def display_solutions(self) -> None:
         """
         Display a table of all the position and momenta solutions
@@ -199,6 +227,7 @@ class Integrator:
         ax.set_xlabel(self.q_list[0])
         ax.set_ylabel(self.q_list[1])
         line, = ax.plot([], [], lw=2)
+        # line, = ax.plot([], [], 'o')
         # line, = ax.plot([], [], 'o', markersize=1)
 
         title = ax.text(0.5, 0.85, "".format(self.t_list[0]), bbox={'facecolor': 'w', 'alpha': 0.5, 'pad': 5},
@@ -209,6 +238,7 @@ class Integrator:
 
         def animate(i):
             line.set_data(x_data[0:i], y_data[0:i])
+            # line.set_data([x_data[i]], [y_data[i]])
             title.set_text("t={0:.2f}".format(self.t_list[i]))
             return title,line,
 
