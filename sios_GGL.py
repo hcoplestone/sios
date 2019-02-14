@@ -4,7 +4,7 @@ from integrators import GalerkinGaussLobattoIntegrator
 class SiosGGL:
     def doit(self):
         # Create an instance of our integrator
-        ggl = GalerkinGaussLobattoIntegrator('t', ['x', 'y'], ['vx', 'vy'], 2, verbose=True)
+        ggl = GalerkinGaussLobattoIntegrator('t', ['x', 'y'], ['vx', 'vy'], 2, verbose=False)
 
         # Define our properties and the Lagrangian for a spring
         m = 1.0
@@ -17,7 +17,7 @@ class SiosGGL:
         L = 0.5 * m * (vx * vx + vy * vy) - 2 * (x * x + y * y)
 
         # Define discretization parameters
-        ggl.discretise(L, 3, 0.0, 10.0)
+        ggl.discretise(L, 100, 0.0, 10.0)
 
         # Set the initial conditions for integration
         ggl.set_initial_conditions([1.0, 1.0], [0.0, 0.0])
@@ -26,7 +26,7 @@ class SiosGGL:
         ggl.integrate()
 
         # Plot the results
-        # ggl.plot_results()
+        ggl.plot_results()
 
 
 if __name__ == "__main__":
