@@ -3,19 +3,24 @@ from .Integrator import Integrator
 import autograd.numpy as np
 from scipy import optimize
 from autograd import elementwise_grad as egrad
+from assertions import Assertions
 
-from .quadrature import FirstOrderQuadrature
+from .quadrature import GaussLobattoQuadrature
 
 
 class GalerkinGaussLobattoIntegrator(Integrator):
 
-    def __init__(self, t: str, q_list: List[str], v_list: List[str], verbose: bool = False) -> None:
+    def __init__(self, t: str, q_list: List[str], v_list: List[str], order_of_integrator: int, verbose: bool = False) -> None:
         """
         We subclass from a base integrator class.
         This way we can abstract away common functionality between integrators.
         """
 
         Integrator.__init__(self, t, q_list, v_list, verbose, 'Galerkin Gauss Lobatto Integrator')
+
+        Assertions.assert_integer(order_of_integrator, 'Integrator order')
+        self.order_of_integrator = order_of_integrator
+        self.gauss_lobatto = GaussLobattoQuadrature(self.order_of_integrator+1, verbose=True)
 
     def action(self, q_n, q_n_plus_1, t, time_step):
         # Function returned accepts arguments (t, q, q1, q2..., v, v1, v2...)
@@ -28,7 +33,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         t_n_plus_1 = t + time_step
         lagrangian_evaled_at_n_plus_1 = lagrangian_evaluator(t_n_plus_1, *q_n_plus_1, *v_n_plus_1)
 
-        action = FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_n, lagrangian_evaled_at_n_plus_1, time_step)
+        action = GaussLobattoQuadrature.approximate_integral(lagrangian_evaled_at_n, lagrangian_evaled_at_n_plus_1, time_step)
         return action
 
     def integrate(self):
@@ -48,6 +53,9 @@ class GalerkinGaussLobattoIntegrator(Integrator):
             t = self.t_list[i + 1]
             if self.verbose:
                 print('.', end='', flush=True)
+
+            self.gauss_lobatto.scale_to_interval(self.t_list[i], self.t_list[i+1])
+
 
             def new_position_from_nth_solution_equation(q_n_plus_1_trial_solutions):
                 S = lambda q_n: self.action(q_n, q_n_plus_1_trial_solutions, t, time_step)

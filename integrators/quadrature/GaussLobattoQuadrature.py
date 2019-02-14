@@ -1,7 +1,9 @@
 import numpy as np
 from quadpy.line_segment.gauss_lobatto import GaussLobatto
+from prettytable import PrettyTable
 
-class GaussLobattoScaled(GaussLobatto):
+
+class GaussLobattoQuadrature(GaussLobatto):
 
     def __init__(self, n: int, verbose: bool = False):
         """
@@ -62,9 +64,6 @@ class GaussLobattoScaled(GaussLobatto):
 
         print(table)
 
-
-class GaussLobattoQuadrature:
-
     @staticmethod
-    def trapezium_rule(y0, y1, time_step):
+    def approximate_integral(y0, y1, time_step):
         return 0.5 * time_step * np.add(y0, y1)
