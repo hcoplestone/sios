@@ -71,7 +71,7 @@ class PolynomialIntegrator(Integrator):
 
     def evaluate_path_derivative(self, q_n, q_n_plus_1, t_lower, t_upper, t):
         """
-        Evaluate path above using autodiff. Could be made more efficient as evaluating path twice - but just a proof of
+        Could be made more efficient as evaluating path twice - but just a proof of
         concept for now.
         """
         # number_of_generalised_coordinates = len(self.q_list)

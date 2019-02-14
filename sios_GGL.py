@@ -1,6 +1,5 @@
 from integrators import PolynomialIntegrator
-import matplotlib.pyplot as plt
-import numpy as np
+from timeit import default_timer as timer
 
 
 class SiosGGL:
@@ -25,7 +24,13 @@ class SiosGGL:
         integrator.set_initial_conditions([1.0, 1.0], [0.0, 0.0])
 
         # Integrate the system
+        start_time = timer()
         integrator.integrate()
+        end_time = timer()
+
+        # Display elapsed time
+        elapsed_time = end_time - start_time
+        print('Elapsed time is {0:.2f}'.format(elapsed_time))
 
         # Plot the results
         integrator.plot_results()
