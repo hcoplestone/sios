@@ -48,14 +48,42 @@ class PolynomialIntegrator(Integrator):
         # print("\nq_n_i: {0}\nq_n_plus_1_i: {1}\nt_lower: {2}\nt_upper: {3}".format(type(q_n_i), type(q_n_plus_1_i), type(t_lower), type(t_upper)))
 
         coefficients = np.flip(np.polyfit([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], self.order_of_integrator))
-        # return self.evaluate_polynomial(coefficients, t-t_lower, q_n_i)
+        # return self.evaluate_polynomial(coefficients, t, q_n_i)
 
         ts = np.linspace(t_lower, t_upper, 200)
         plt.plot([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], 'o')
         plt.plot(ts, [self.evaluate_polynomial(coefficients, tt) for tt in ts])
 
-        path = q_n_i + (q_n_plus_1_i - q_n_i) * (t - t_lower) / (t_upper - t_lower)
-        return path
+        return self.evaluate_polynomial(coefficients, t)
+        # path = q_n_i + (q_n_plus_1_i - q_n_i) * (t - t_lower) / (t_upper - t_lower)
+        # return path
+
+    def time_derivative_of_interpolatated_path(self, q_n_i, q_n_plus_1_i, t_lower, t_upper, t):
+        """
+        Interpolate the path of a single q degree of freedom.
+        This function should be evaluated for each DOF in the solution separately.
+        """
+
+        if hasattr(q_n_i, '_value'):
+            q_n_i_unpacked = q_n_i._value
+        else:
+            q_n_i_unpacked = q_n_i
+
+        if hasattr(q_n_plus_1_i, '_value'):
+            q_n_plus_1_i_unpacked = q_n_plus_1_i._value
+        else:
+            q_n_plus_1_i_unpacked = q_n_plus_1_i
+
+        coefficients = np.flip(np.polyfit([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], self.order_of_integrator))
+        coefficients_of_differentiated_path = [0 for i in coefficients]
+        for index, c in enumerate(coefficients):
+            if index < len(coefficients)-1:
+                coefficients_of_differentiated_path[index] = coefficients[index+1] * (index+1)
+            else:
+               coefficients_of_differentiated_path[index] = 0
+
+        return self.evaluate_polynomial(coefficients_of_differentiated_path, t)
+
 
     def action(self, q_n, q_n_plus_1, t, time_step):
         t_lower = t
@@ -75,10 +103,8 @@ class PolynomialIntegrator(Integrator):
         def time_derivative_of_path(time):
             components = []
             for i in range(len(self.q_list)):
-                component = (q_n_plus_1[i] - q_n[i]) / time_step
+                component = self.time_derivative_of_interpolatated_path(q_n[i], q_n_plus_1[i], t_lower, t_upper, time)
                 components.append(component)
-                # path_i = lambda time: self.interpolate_path(q_n[i], q_n_plus_1[i], t_lower, t_upper, time)
-                # components.append(egrad(path_i)(time))
             return components
 
         # print(path(t))
