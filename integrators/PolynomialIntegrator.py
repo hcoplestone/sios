@@ -26,6 +26,7 @@ class PolynomialIntegrator(Integrator):
 
     def action(self, q_n, q_n_plus_1, t, time_step):
         t_lower = t
+        t_mid = t + time_step/2
         t_upper = t + time_step
 
         # Function returned accepts arguments (t, q, q1, q2..., v, v1, v2...)
@@ -40,12 +41,14 @@ class PolynomialIntegrator(Integrator):
                 components.append(egrad(path_i)(time))
             return components
 
-        lagrangian_evaled_at_n = lagrangian_evaluator(t, *path(t_lower), *time_derivative_of_path(t_lower))
+        lagrangian_evaled_at_t_n = lagrangian_evaluator(t, *path(t_lower), *time_derivative_of_path(t_lower))
+        lagrangian_evaled_at_t_mid = lagrangian_evaluator(t, *path(t_mid), *time_derivative_of_path(t_mid))
+        lagrangian_evaled_at_t_n_plus_1 = lagrangian_evaluator(t_upper, *path(t_upper), *time_derivative_of_path(t_upper))
 
-        lagrangian_evaled_at_n_plus_1 = lagrangian_evaluator(t_upper, *path(t_upper), *time_derivative_of_path(t_upper))
+        action_lower = FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_t_n, lagrangian_evaled_at_t_mid, time_step/2)
+        action_upper = FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_t_mid, lagrangian_evaled_at_t_n_plus_1, time_step/2)
 
-        action = FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_n, lagrangian_evaled_at_n_plus_1, time_step)
-        return action
+        return action_lower + action_upper
 
     def integrate(self):
         """
