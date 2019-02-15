@@ -5,6 +5,7 @@ from scipy import optimize
 from autograd import elementwise_grad as egrad
 from assertions import Assertions
 import matplotlib.pyplot as plt
+import copy
 
 from .quadrature import FirstOrderQuadrature
 
@@ -38,11 +39,14 @@ class PolynomialIntegrator(Integrator):
 
         if hasattr(q_n_i, '_value'):
             q_n_i_unpacked = q_n_i._value
+            # q_n_i_unpacked = copy.copy(q_n_i._value)
         else:
             q_n_i_unpacked = q_n_i
+            # q_n_i_unpacked = copy.copy(q_n_i)
 
         if hasattr(q_n_plus_1_i, '_value'):
             q_n_plus_1_i_unpacked = q_n_plus_1_i._value
+            # q_n_plus_1_i_unpacked = copy.copy(q_n_plus_1_i._value)
         else:
             q_n_plus_1_i_unpacked = q_n_plus_1_i
 
@@ -50,15 +54,35 @@ class PolynomialIntegrator(Integrator):
 
         coefficients = np.flip(
             np.polyfit([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], self.order_of_integrator))
-        # return self.evaluate_polynomial(coefficients, t, q_n_i)
+        # return self.evaluate_polynomial(coefficients, t)
 
+
+        # def sum_of_residuals_squared(coefficients_guess):
+        #     ans = 0
+        #     x = [t_lower, t_upper]
+        #     y = [q_n_i_unpacked, q_n_plus_1_i_unpacked]
+        #     for index, point in enumerate(x):
+        #         print(coefficients_guess)
+        #         residual = y[index] - self.evaluate_polynomial(coefficients_guess, point)
+        #         residual_squared = np.power(residual, 2)
+        #         ans = ans + residual_squared
+        #     return ans
+        #
+        # def func_to_minimise(coefficients_guess):
+        #     derivative_of_sum_of_residuals_squared = egrad(sum_of_residuals_squared)
+        #     return derivative_of_sum_of_residuals_squared(coefficients_guess)
+
+        # coefficients_guess = [1.0,1.0]
+        # coefficients = optimize.root(func_to_minimise, coefficients_guess, method='hybr').x
+
+        #
         ts = np.linspace(t_lower, t_upper, 200)
         plt.plot([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], 'o')
         plt.plot(ts, [self.evaluate_polynomial(coefficients, tt) for tt in ts])
 
-        return self.evaluate_polynomial(coefficients, t)
-        # path = q_n_i + (q_n_plus_1_i - q_n_i) * (t - t_lower) / (t_upper - t_lower)
-        # return path
+        # return self.evaluate_polynomial(coefficients, t)
+        path = q_n_i + (q_n_plus_1_i - q_n_i) * (t - t_lower) / (t_upper - t_lower)
+        return path
 
     def time_derivative_of_interpolatated_path(self, q_n_i, q_n_plus_1_i, t_lower, t_upper, t):
         """
@@ -66,8 +90,8 @@ class PolynomialIntegrator(Integrator):
         This function should be evaluated for each DOF in the solution separately.
         """
 
-        # path = q_n_i + (q_n_plus_1_i - q_n_i) * 1.0 / (t_upper - t_lower)
-        # return path
+        path = q_n_i + (q_n_plus_1_i - q_n_i) * 1.0 / (t_upper - t_lower)
+        return path
 
         if hasattr(q_n_i, '_value'):
             q_n_i_unpacked = q_n_i._value
@@ -111,7 +135,7 @@ class PolynomialIntegrator(Integrator):
                 components.append(component)
             return components
 
-        N = 3
+        N = 5
         h = float(t_upper - t_lower) / N
         t_sample = t_lower
         s = 0.0
