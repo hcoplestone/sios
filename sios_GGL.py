@@ -5,7 +5,7 @@ from timeit import default_timer as timer
 class SiosGGL:
     def doit(self):
         # Create an instance of our integrator
-        integrator = PolynomialIntegrator('t', ['x', 'y'], ['vx', 'vy'], 5, verbose=False)
+        integrator = PolynomialIntegrator('t', ['x', 'y'], ['vx', 'vy'], 5, verbose=True)
 
         # Define our properties and the Lagrangian for a spring
         m = 1.0
@@ -18,10 +18,10 @@ class SiosGGL:
         L = 0.5 * m * (vx * vx + vy * vy) - 2 * (x * x + y * y)
 
         # Define discretization parameters
-        integrator.discretise(L, 3, 0.0, 10.0)
+        integrator.discretise(L, 5, 0.0, 1.0)
 
         # Set the initial conditions for integration
-        integrator.set_initial_conditions([1.0, 1.0], [0.0, 0.0])
+        integrator.set_initial_conditions([1.0, 1.0], [1.0, 0.0])
 
         # Integrate the system
         start_time = timer()

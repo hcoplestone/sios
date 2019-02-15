@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 
 from .quadrature import FirstOrderQuadrature
 
+
 # np.numpy_boxes.ArrayBox.__repr__ = lambda self: str(self._value)
 
 class PolynomialIntegrator(Integrator):
@@ -47,7 +48,8 @@ class PolynomialIntegrator(Integrator):
 
         # print("\nq_n_i: {0}\nq_n_plus_1_i: {1}\nt_lower: {2}\nt_upper: {3}".format(type(q_n_i), type(q_n_plus_1_i), type(t_lower), type(t_upper)))
 
-        coefficients = np.flip(np.polyfit([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], self.order_of_integrator))
+        coefficients = np.flip(
+            np.polyfit([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], self.order_of_integrator))
         # return self.evaluate_polynomial(coefficients, t, q_n_i)
 
         ts = np.linspace(t_lower, t_upper, 200)
@@ -64,6 +66,9 @@ class PolynomialIntegrator(Integrator):
         This function should be evaluated for each DOF in the solution separately.
         """
 
+        # path = q_n_i + (q_n_plus_1_i - q_n_i) * 1.0 / (t_upper - t_lower)
+        # return path
+
         if hasattr(q_n_i, '_value'):
             q_n_i_unpacked = q_n_i._value
         else:
@@ -74,20 +79,19 @@ class PolynomialIntegrator(Integrator):
         else:
             q_n_plus_1_i_unpacked = q_n_plus_1_i
 
-        coefficients = np.flip(np.polyfit([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], self.order_of_integrator))
+        coefficients = np.flip(
+            np.polyfit([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], self.order_of_integrator))
         coefficients_of_differentiated_path = [0 for i in coefficients]
         for index, c in enumerate(coefficients):
-            if index < len(coefficients)-1:
-                coefficients_of_differentiated_path[index] = coefficients[index+1] * (index+1)
+            if index < len(coefficients) - 1:
+                coefficients_of_differentiated_path[index] = coefficients[index + 1] * (index + 1)
             else:
-               coefficients_of_differentiated_path[index] = 0
+                coefficients_of_differentiated_path[index] = 0
 
         return self.evaluate_polynomial(coefficients_of_differentiated_path, t)
 
-
     def action(self, q_n, q_n_plus_1, t, time_step):
         t_lower = t
-        t_mid = t + time_step / 2
         t_upper = t + time_step
 
         # Function returned accepts arguments (t, q, q1, q2..., v, v1, v2...)
@@ -107,19 +111,18 @@ class PolynomialIntegrator(Integrator):
                 components.append(component)
             return components
 
-        # print(path(t))
+        N = 3
+        h = float(t_upper - t_lower) / N
+        t_sample = t_lower
+        s = 0.0
+        s = s + (lagrangian_evaluator(t_sample, *path(t_sample), *time_derivative_of_path(t_sample)) / 2.0)
+        for i in range(1, N):
+            t_sample = t_sample + h
+            s = s + lagrangian_evaluator(t_sample, *path(t_sample), *time_derivative_of_path(t_sample))
+        t_sample = t_sample + h
+        s = s + (lagrangian_evaluator(t_sample, *path(t_sample), *time_derivative_of_path(t_sample)) / 2.0)
 
-        lagrangian_evaled_at_t_n = lagrangian_evaluator(t, *path(t_lower), *time_derivative_of_path(t_lower))
-        lagrangian_evaled_at_t_mid = lagrangian_evaluator(t, *path(t_mid), *time_derivative_of_path(t_mid))
-        lagrangian_evaled_at_t_n_plus_1 = lagrangian_evaluator(t_upper, *path(t_upper),
-                                                               *time_derivative_of_path(t_upper))
-
-        action_lower = FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_t_n, lagrangian_evaled_at_t_mid,
-                                                           time_step / 2)
-        action_upper = FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_t_mid, lagrangian_evaled_at_t_n_plus_1,
-                                                           time_step / 2)
-
-        return action_lower + action_upper
+        return s * h
 
     def integrate(self):
         """
