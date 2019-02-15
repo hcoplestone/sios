@@ -18,7 +18,7 @@ class SiosGGL:
         L = 0.5 * m * (vx * vx + vy * vy) - 2 * (x * x + y * y)
 
         # Define discretization parameters
-        integrator.discretise(L, 100, 0.0, 10.0)
+        integrator.discretise(L, 200, 0.0, 10.0)
 
         # Set the initial conditions for integration
         integrator.set_initial_conditions([1.0, 1.0], [0.0, 0.0])

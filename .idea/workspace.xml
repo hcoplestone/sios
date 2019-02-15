@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integrators/PolynomialIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/PolynomialIntegrator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sios_GGL.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios_GGL.py" afterDir="false" />
     </list>
@@ -55,7 +56,7 @@
           <entry key="COPYING" value="1" />
           <entry key="ipynb" value="2" />
           <entry key="md" value="3" />
-          <entry key="py" value="101" />
+          <entry key="py" value="106" />
           <entry key="rst" value="1" />
         </counts>
       </usages-collector>
@@ -64,7 +65,7 @@
           <entry key="IPNB" value="2" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="101" />
+          <entry key="Python" value="106" />
           <entry key="ReST" value="1" />
         </counts>
       </usages-collector>
@@ -73,7 +74,7 @@
           <entry key="Python Console" value="298" />
           <entry key="dummy" value="74" />
           <entry key="md" value="3" />
-          <entry key="py" value="45153" />
+          <entry key="py" value="49168" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -81,7 +82,7 @@
         <counts>
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="75" />
-          <entry key="Python" value="45451" />
+          <entry key="Python" value="49466" />
         </counts>
       </usages-collector>
     </session>
@@ -94,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sios_GGL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+            <state relative-caret-position="105">
+              <caret line="7" column="73" lean-forward="true" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -106,28 +107,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/integrators/PolynomialIntegrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+            <state relative-caret-position="182">
+              <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1550185954308" expanded="true" signature="1279:1285" ph="..." />
-                <marker date="1550185954308" expanded="true" signature="1336:1884" ph="..." />
-                <marker date="1550185954308" expanded="true" signature="2094:2106" ph="..." />
+                <marker date="1550193419491" expanded="true" signature="877:961" ph="..." />
+                <marker date="1550193419491" expanded="true" signature="1339:1376" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integrators/FirstOrderIntegrator.py">
+        <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/numpy/numpy_boxes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <marker date="1550155025567" expanded="true" signature="1777:1789" ph="..." />
-                <marker date="1550155025567" expanded="true" signature="2151:2164" ph="..." />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/tracer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -181,9 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>n_plus_1</find>
-      <find>pi</find>
-      <find>pi_ic_from_qdot</find>
       <find>v_initial</find>
       <find>st_ini</find>
       <find>velocity</find>
@@ -202,15 +203,18 @@
       <find>setup</find>
       <find>numpy.poly</find>
       <find>polyder</find>
-      <find>numpy</find>
       <find>all</find>
       <find>+=</find>
       <find>[</find>
       <find>np.</find>
       <find>print</find>
-      <find>fit_po</find>
       <find>Gauss</find>
       <find>scale</find>
+      <find>fit_po</find>
+      <find>fit_p</find>
+      <find>autograd</find>
+      <find>fit_poly</find>
+      <find>numpy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -620,9 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/numpy/numpy_boxes.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/numpy/fft.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -755,18 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/FirstOrderIntegrator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1550155025567" expanded="true" signature="1777:1789" ph="..." />
-            <marker date="1550155025567" expanded="true" signature="2151:2164" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -789,16 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sios_GGL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sios.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -812,15 +791,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/PolynomialIntegrator.py">
+    <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/numpy/numpy_boxes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+        <state relative-caret-position="60">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/misc/optimizers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/misc/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrators/FirstOrderIntegrator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1550185954308" expanded="true" signature="1279:1285" ph="..." />
-            <marker date="1550185954308" expanded="true" signature="1336:1884" ph="..." />
-            <marker date="1550185954308" expanded="true" signature="2094:2106" ph="..." />
+            <marker date="1550155025567" expanded="true" signature="1777:1789" ph="..." />
+            <marker date="1550155025567" expanded="true" signature="2151:2164" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/tracer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sios_GGL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="73" lean-forward="true" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrators/PolynomialIntegrator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1550193419491" expanded="true" signature="877:961" ph="..." />
+            <marker date="1550193419491" expanded="true" signature="1339:1376" ph="..." />
           </folding>
         </state>
       </provider>
