@@ -42,9 +42,7 @@ class PolynomialIntegrator(Integrator):
 
         lagrangian_evaled_at_n = lagrangian_evaluator(t, *path(t_lower), *time_derivative_of_path(t_lower))
 
-        v_n_plus_1 = (q_n_plus_1 - q_n) / time_step
-        t_n_plus_1 = t + time_step
-        lagrangian_evaled_at_n_plus_1 = lagrangian_evaluator(t_n_plus_1, *path(t_upper), *time_derivative_of_path(t_upper))
+        lagrangian_evaled_at_n_plus_1 = lagrangian_evaluator(t_upper, *path(t_upper), *time_derivative_of_path(t_upper))
 
         action = FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_n, lagrangian_evaled_at_n_plus_1, time_step)
         return action
