@@ -23,7 +23,7 @@ cycles = 2
 
 theta_start = 0
 theta_end = 2*np.pi*cycles
-intervals = 100*cycles
+intervals = 200*cycles
 
 def dXdtheta(X, theta):
     # X - vector: [u, xi]
