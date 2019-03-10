@@ -19,7 +19,7 @@ u0 = 1/r0
 xi0 = 0
 
 # Integration Parameters
-cycles = 5
+cycles = 2
 
 theta_start = 0
 theta_end = 2*np.pi*cycles
