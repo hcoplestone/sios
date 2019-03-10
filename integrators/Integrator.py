@@ -288,13 +288,13 @@ class Integrator:
         # plt.plot(self.t_list, [result.item(1) for result in self.q_solutions])
         # plt.xlabel(self.t)
         # plt.ylabel(self.q_list[1])
-
-        if len(self.q_list) == 2:
-            plt.figure(2)
-            plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions],
-                     'o', markersize=1)
-            plt.title('Trajectory')
-            plt.xlabel(self.q_list[0])
-            plt.ylabel(self.q_list[1])
+        #
+        # if len(self.q_list) == 2:
+        #     plt.figure(2)
+        #     plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions],
+        #              'o', markersize=1)
+        #     plt.title('Trajectory')
+        #     plt.xlabel(self.q_list[0])
+        #     plt.ylabel(self.q_list[1])
 
         plt.show()

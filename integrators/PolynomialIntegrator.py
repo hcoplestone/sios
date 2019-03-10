@@ -52,35 +52,35 @@ class PolynomialIntegrator(Integrator):
 
         # print("\nq_n_i: {0}\nq_n_plus_1_i: {1}\nt_lower: {2}\nt_upper: {3}".format(type(q_n_i), type(q_n_plus_1_i), type(t_lower), type(t_upper)))
 
-        coefficients = np.flip(
-            np.polyfit([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], self.order_of_integrator))
+        # coefficients = np.flip(
+        #     np.polyfit([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], self.order_of_integrator))
         # return self.evaluate_polynomial(coefficients, t)
 
 
-        # def sum_of_residuals_squared(coefficients_guess):
-        #     ans = 0
-        #     x = [t_lower, t_upper]
-        #     y = [q_n_i_unpacked, q_n_plus_1_i_unpacked]
-        #     for index, point in enumerate(x):
-        #         print(coefficients_guess)
-        #         residual = y[index] - self.evaluate_polynomial(coefficients_guess, point)
-        #         residual_squared = np.power(residual, 2)
-        #         ans = ans + residual_squared
-        #     return ans
-        #
-        # def func_to_minimise(coefficients_guess):
-        #     derivative_of_sum_of_residuals_squared = egrad(sum_of_residuals_squared)
-        #     return derivative_of_sum_of_residuals_squared(coefficients_guess)
+        def sum_of_residuals_squared(coefficients_guess):
+            ans = 0
+            x = [t_lower, t_upper]
+            y = [q_n_i_unpacked, q_n_plus_1_i_unpacked]
+            for index, point in enumerate(x):
+                print(coefficients_guess)
+                residual = y[index] - self.evaluate_polynomial(coefficients_guess, point)
+                residual_squared = np.power(residual, 2)
+                ans = ans + residual_squared
+            return ans
 
-        # coefficients_guess = [1.0,1.0]
-        # coefficients = optimize.root(func_to_minimise, coefficients_guess, method='hybr').x
+        def func_to_minimise(coefficients_guess):
+            derivative_of_sum_of_residuals_squared = egrad(sum_of_residuals_squared)
+            return derivative_of_sum_of_residuals_squared(coefficients_guess)
+
+        coefficients_guess = [1.0,1.0]
+        coefficients = optimize.root(func_to_minimise, coefficients_guess).x
 
         #
         ts = np.linspace(t_lower, t_upper, 200)
         plt.plot([t_lower, t_upper], [q_n_i_unpacked, q_n_plus_1_i_unpacked], 'o')
         plt.plot(ts, [self.evaluate_polynomial(coefficients, tt) for tt in ts])
 
-        # return self.evaluate_polynomial(coefficients, t)
+        return self.evaluate_polynomial(coefficients, t)
         path = q_n_i + (q_n_plus_1_i - q_n_i) * (t - t_lower) / (t_upper - t_lower)
         return path
 
@@ -90,8 +90,8 @@ class PolynomialIntegrator(Integrator):
         This function should be evaluated for each DOF in the solution separately.
         """
 
-        path = q_n_i + (q_n_plus_1_i - q_n_i) * 1.0 / (t_upper - t_lower)
-        return path
+        # path = q_n_i + (q_n_plus_1_i - q_n_i) * 1.0 / (t_upper - t_lower)
+        # return path
 
         if hasattr(q_n_i, '_value'):
             q_n_i_unpacked = q_n_i._value
