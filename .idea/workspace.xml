@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comparisons/orbit.py" beforeDir="false" afterPath="$PROJECT_DIR$/comparisons/orbit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integrators/Integrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/Integrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integrators/PolynomialIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/PolynomialIntegrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integrators/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sios_GGL.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios_GGL.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,14 +43,14 @@
     <session id="-1992092386">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="6" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -59,7 +58,7 @@
           <entry key="COPYING" value="1" />
           <entry key="ipynb" value="2" />
           <entry key="md" value="3" />
-          <entry key="py" value="116" />
+          <entry key="py" value="129" />
           <entry key="rst" value="1" />
         </counts>
       </usages-collector>
@@ -68,7 +67,7 @@
           <entry key="IPNB" value="2" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="116" />
+          <entry key="Python" value="129" />
           <entry key="ReST" value="1" />
         </counts>
       </usages-collector>
@@ -77,7 +76,7 @@
           <entry key="Python Console" value="298" />
           <entry key="dummy" value="74" />
           <entry key="md" value="3" />
-          <entry key="py" value="57117" />
+          <entry key="py" value="63465" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -85,7 +84,7 @@
         <counts>
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="75" />
-          <entry key="Python" value="57415" />
+          <entry key="Python" value="63763" />
         </counts>
       </usages-collector>
     </session>
@@ -98,22 +97,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sios_GGL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="75">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,7 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integrators/FirstOrderIntegrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
+            <state relative-caret-position="-217">
               <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -133,27 +120,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integrators/quadrature/GaussLobattoQuadrature.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+            <state relative-caret-position="1652">
+              <caret line="149" column="97" selection-start-line="149" selection-start-column="97" selection-end-line="149" selection-end-column="97" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1554763099869" expanded="true" signature="1000:1935" ph="..." />
+                <marker date="1554763099869" expanded="true" signature="1985:1990" ph="..." />
+                <marker date="1554763099869" expanded="true" signature="3439:3444" ph="..." />
+                <marker date="1554763099869" expanded="true" signature="4270:4287" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
+        <entry file="file://$PROJECT_DIR$/integrators/quadrature/GaussLobattoQuadrature.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="196" column="77" selection-start-line="196" selection-start-column="77" selection-end-line="196" selection-end-column="77" />
+            <state relative-caret-position="375">
+              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <marker date="1550582585034" expanded="true" signature="3161:5152" ph="..." />
-                <marker date="1550582585034" expanded="true" signature="5230:5946" ph="..." />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,20 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>integ</find>
-      <find>print &quot;.</find>
-      <find>display restul</find>
-      <find>ax =</find>
-      <find>setup_so</find>
-      <find>quad</find>
-      <find>collocation</find>
-      <find>solve</find>
-      <find>jacobian</find>
-      <find>setup</find>
-      <find>numpy.poly</find>
-      <find>polyder</find>
-      <find>all</find>
-      <find>+=</find>
       <find>[</find>
       <find>np.</find>
       <find>Gauss</find>
@@ -200,6 +175,20 @@
       <find>q_interior_point_trial_solutions</find>
       <find>q_interi</find>
       <find>action</find>
+      <find>quadrature</find>
+      <find>self.action</find>
+      <find>deriv</find>
+      <find>time_step</find>
+      <find>t_list</find>
+      <find>polynomial</find>
+      <find>velociti</find>
+      <find>self.n</find>
+      <find>self.D</find>
+      <find>optimize</find>
+      <find>points_in_</find>
+      <find>new_posi</find>
+      <find>q_list</find>
+      <find>root</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -233,8 +222,8 @@
         <option value="$PROJECT_DIR$/integrators/PolynomialIntegrator.py" />
         <option value="$PROJECT_DIR$/integrators/__init__.py" />
         <option value="$PROJECT_DIR$/integrators/Integrator.py" />
-        <option value="$PROJECT_DIR$/sios_GGL.py" />
         <option value="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" />
+        <option value="$PROJECT_DIR$/sios_GGL.py" />
       </list>
     </option>
   </component>
@@ -270,31 +259,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sios" type="462c0819:PsiDirectoryNode" />
-              <item name="integrators" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sios" type="462c0819:PsiDirectoryNode" />
-              <item name="integrators" type="462c0819:PsiDirectoryNode" />
-              <item name="quadrature" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -693,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slimplectic_GGL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
-          <caret line="940" column="65" selection-start-line="940" selection-start-column="65" selection-end-line="940" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/numpy/numpy_wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -727,13 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-369">
           <caret line="687" column="4" selection-start-line="687" selection-start-column="4" selection-end-line="687" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sios.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -794,10 +745,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sios.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/sympy/functions/special/polynomials.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-219">
+          <caret line="730" column="6" selection-start-line="730" selection-start-column="6" selection-end-line="730" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="124" column="71" selection-start-line="124" selection-start-column="71" selection-end-line="124" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1554746926462" expanded="true" signature="3161:5152" ph="..." />
+            <marker date="1554746926462" expanded="true" signature="5230:5946" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/integrators/quadrature/GaussLobattoQuadrature.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        <state relative-caret-position="375">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -806,7 +783,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/integrators/FirstOrderIntegrator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
+        <state relative-caret-position="-217">
           <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -816,22 +793,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
+    <entry file="file://$PROJECT_DIR$/slimplectic_GGL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="196" column="77" selection-start-line="196" selection-start-column="77" selection-end-line="196" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1550582585034" expanded="true" signature="3161:5152" ph="..." />
-            <marker date="1550582585034" expanded="true" signature="5230:5946" ph="..." />
-          </folding>
+        <state relative-caret-position="437">
+          <caret line="712" lean-forward="true" selection-start-line="712" selection-end-line="712" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sios_GGL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        <state relative-caret-position="75">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
@@ -840,10 +812,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="1652">
+          <caret line="149" column="97" selection-start-line="149" selection-start-column="97" selection-end-line="149" selection-end-column="97" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+            <marker date="1554763099869" expanded="true" signature="1000:1935" ph="..." />
+            <marker date="1554763099869" expanded="true" signature="1985:1990" ph="..." />
+            <marker date="1554763099869" expanded="true" signature="3439:3444" ph="..." />
+            <marker date="1554763099869" expanded="true" signature="4270:4287" ph="..." />
           </folding>
         </state>
       </provider>

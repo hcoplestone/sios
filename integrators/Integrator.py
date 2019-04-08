@@ -277,24 +277,12 @@ class Integrator:
             if k == number_of_subplots - 1:
                 ax.set_xlabel(self.t)
 
-        # plt.subplot(211)
-        # plt.title('Evolution of generalised coordinates as a function of time')
-        # # plt.plot(self.t_list, list(map(lambda result: result.item(0), self.q_solutions)))
-        # plt.plot(self.t_list, [result.item(0) for result in self.q_solutions])
-        # plt.ylabel(self.q_list[0])
-
-        # plt.subplot(212)
-        # # plt.plot(self.t_list, list(map(lambda result: result.item(1), self.q_solutions)))
-        # plt.plot(self.t_list, [result.item(1) for result in self.q_solutions])
-        # plt.xlabel(self.t)
-        # plt.ylabel(self.q_list[1])
-        #
-        # if len(self.q_list) == 2:
-        #     plt.figure(2)
-        #     plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions],
-        #              'o', markersize=1)
-        #     plt.title('Trajectory')
-        #     plt.xlabel(self.q_list[0])
-        #     plt.ylabel(self.q_list[1])
+        if len(self.q_list) == 2:
+            plt.figure(2)
+            plt.plot([result.item(0) for result in self.q_solutions], [result.item(1) for result in self.q_solutions],
+                     'o', markersize=1)
+            plt.title('Trajectory')
+            plt.xlabel(self.q_list[0])
+            plt.ylabel(self.q_list[1])
 
         plt.show()
