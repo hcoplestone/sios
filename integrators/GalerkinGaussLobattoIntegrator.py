@@ -218,8 +218,8 @@ class GalerkinGaussLobattoIntegrator(Integrator):
                 return np.concatenate(tuple(list_of_equations))
 
             def determine_new_momentum_from_q_n_plus_1th_solution(interior_points):
-                S = lambda q_n_plus_1: self.action(t, time_step, self.q_solutions[i], interior_points, q_n_plus_1)
-                partial_differential_of_action_wrt_q_n_plus_1 = egrad(S)
+                s = lambda q_n_plus_1: self.action(t, time_step, self.q_solutions[i], interior_points, q_n_plus_1)
+                partial_differential_of_action_wrt_q_n_plus_1 = egrad(s)
                 return partial_differential_of_action_wrt_q_n_plus_1(self.q_solutions[i + 1])
 
             if i > 1:
