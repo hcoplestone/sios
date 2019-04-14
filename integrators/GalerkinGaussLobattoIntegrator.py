@@ -130,10 +130,10 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         :param points: Concatenated lists of generalised coordinates for interior points and right hand endpoint.
         So if we have a quadrature interval with 2 interior points, with a system with 2 degrees of freedom (DOF),
-        these points are represented as the following array:
+        these points are represented by the following array:
         points = [interior_point_1_DOF_1, interior_point_1_DOF_2, interior_point_2_DOF_1, interior_point_2_DOF_2,
         q_n_plus_1_DOF_1, q_n_plus_1_DOF_2]
-        :return:
+        :return: List of vectorised interior points: [\vec{interior_point_1}, \vec{interior_point_2}, ...]
         """
         interior_points = points[:-len(self.q_list)]
         interior_points_chunked = [interior_points[i:i + len(self.q_list)] for i in
