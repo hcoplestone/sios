@@ -120,7 +120,7 @@ class Integrator:
         Discretise the function that we provide on an interval [t_lim_lower, t_lim_upper].
 
         :param expression: Sympy expression for the function we want to discretise.
-        :param n: The number of quadrature points to use.
+        :param n: The number of points to determine the system at.
         :param t_lim_lower: Lower time limit to sample our continuous function over.
         :param t_lim_upper: Upper time limit to sample our continuous function over.
         """
