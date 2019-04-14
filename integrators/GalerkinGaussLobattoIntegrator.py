@@ -141,6 +141,21 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         return interior_points_chunked
 
     def get_right_hand_exterior_point(self, points):
+        """
+        Given a set of points described by:
+        [interior_1_DOF_1, interior_1_DOF_2, interior_2_DOF_1, interior_2_DOF_2, RH_exterior_DOF_1, RH_exterior_DOF_2]
+        (where RH="Right Hand")
+        we extract the vector describing the right hand exterior point \vec{exterior} === \vec{q_n_plus_1}
+
+        Motivation is identical to that described in docstring of get_list_of_interior_points.
+
+        :param points: Concatenated lists of generalised coordinates for interior points and right hand endpoint.
+        So if we have a quadrature interval with 2 interior points, with a system with 2 degrees of freedom (DOF),
+        these points are represented by the following array:
+        points = [interior_point_1_DOF_1, interior_point_1_DOF_2, interior_point_2_DOF_1, interior_point_2_DOF_2,
+        q_n_plus_1_DOF_1, q_n_plus_1_DOF_2]
+        :return: Vector of right hand exterior point \vec{q_n_plus_1}
+        """
         return points[-len(self.q_list):]
 
     def integrate(self):
@@ -151,25 +166,27 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         # Setup solutions with initial values
         self.setup_solutions()
 
+        # Determine the fixed time step interval
         time_step = self.t_list[1] - self.t_list[0]
+
+        # Determine the derivative matrix for this interval
         self.calculate_derivative_matrix(time_step)
 
-        # Iterate
+        # Visually track progress of integration
         if self.verbose:
             print("\nIterating...")
 
+        # Determine system piecewise
         for i in range(self.n - 1):
             t = self.t_list[i]
-            t_next = self.t_list[i + 1]
-            # time_step = t_next - t
 
             if self.verbose:
                 print('.', end='', flush=True)
 
             def new_position_from_nth_solution_equation(points):
                 """
-                :param points: array of trial vector points [q_interior_1, q_interior_2, ..., q_n_plus_1]
-                :return:
+                :param points: concatenated array of generalised coordinates of trial vector points
+                [q_interior_1, q_interior_2, ..., q_n_plus_1]
                 """
                 list_of_equations = []
 
