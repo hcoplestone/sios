@@ -91,34 +91,13 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         return action
 
-        # Function returned accepts arguments (t, q, q1, q2..., v, v1, v2...)
-        # lagrangian_evaluator = self.get_expression_evaluator()
-        # ddt = 0.5*time_step
-        #
-        # v_n = (q_interior - q_n) / ddt
-        # lagrangian_evaled_at_n = lagrangian_evaluator(t, *q_n, *v_n)
-        # lagrangian_evaled_at_midpoint = lagrangian_evaluator(t+ddt, *q_interior, *v_n)
-        #
-        # v_n_plus_1 = (q_n_plus_1 - q_interior) / ddt
-        # t_n_plus_1 = t + time_step
-        # lagrangian_evaled_at_n_plus_1 = lagrangian_evaluator(t_n_plus_1, *q_n_plus_1, *v_n_plus_1)
-        #
-        # action = np.add(FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_n, lagrangian_evaled_at_midpoint, ddt),
-        #                 FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_midpoint, lagrangian_evaled_at_n_plus_1, ddt))
-        #
-        # print("Action is:")
-        # print(action)
-
-        # return action
-
     def determine_velocities(self, points):
         """
-        Determines the velocity of the Legendre trajectory at a point in phase space.
-        :param points: Array of all points in interval
+        Determines the velocities for every point in quadrature interval
+        :param points: Array of vector points in quadrature interval = [\vec{point_1}, \vec{point_2}, ...]
+        :returns: Array of vectors describing velocity at each point:
+        i.e. returns velocities = [\vec{velocity_at_point_1}, \vec{velocity_at_point_2}, ...]
         """
-
-        # return self.D * points
-        # return [points[0] - points[0]]/time_step
 
         velocities = []
 
