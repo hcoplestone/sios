@@ -70,24 +70,31 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         :param q_n_plus_1: Vector describing the final point in phase space
         :return action: Numerical value of S = \int_{t_n}^{t+time_step} L(t, q_n, [q_interiors], q_n_plus_1) dt
         """
+        # Scale the Gauss Lobatto quadrature to the interval [t_n, t_n_plus_1]
+        # This adjusts the times to sample at and the weightings (which should be invariant interval-to-interval
+        # as the time step is fixed).
+        # TODO: Only scale weightings once. Maybe add method to GGL quadrature scale_times_to_interval?
+        # TODO: And have separate method scale_weights_to_interval which we call at beginning of integrate?
         t_n_plus_1 = t + time_step
         self.gauss_lobatto_quadrature.scale_to_interval(t, t_n_plus_1)
 
         # Function returned accepts arguments (t, q, q1, q2..., v, v1, v2...)
         lagrangian_evaluator = self.get_expression_evaluator()
 
-        action = 0.0
-
+        # The points to be enumerated over for the quadrature method
         points = [q_n] + q_interior_points + [q_n_plus_1]
 
+        # Determine the velocities for each point in the interval
         velocities = self.determine_velocities(points)
 
+        action = 0.0
+
+        # Calculate S = \sum w_i * L(t_i, q_i, v_i)
         for index, weight in enumerate(self.gauss_lobatto_quadrature.scaled_weights):
             scaled_t = self.gauss_lobatto_quadrature.scaled_points[index]
 
             point_in_interval = points[index]
 
-            # action += weight * lagrangian_evaluator(scaled_t, *point_in_interval, *velocities[index])
             action += weight * lagrangian_evaluator(scaled_t, *point_in_interval, *velocities[index])
 
         return action

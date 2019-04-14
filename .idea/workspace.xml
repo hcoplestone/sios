@@ -54,7 +54,7 @@
           <entry key="COPYING" value="1" />
           <entry key="ipynb" value="2" />
           <entry key="md" value="3" />
-          <entry key="py" value="140" />
+          <entry key="py" value="141" />
           <entry key="rst" value="1" />
         </counts>
       </usages-collector>
@@ -63,7 +63,7 @@
           <entry key="IPNB" value="2" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="140" />
+          <entry key="Python" value="141" />
           <entry key="ReST" value="1" />
         </counts>
       </usages-collector>
@@ -72,7 +72,7 @@
           <entry key="Python Console" value="298" />
           <entry key="dummy" value="82" />
           <entry key="md" value="3" />
-          <entry key="py" value="70195" />
+          <entry key="py" value="71020" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -80,7 +80,7 @@
         <counts>
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="83" />
-          <entry key="Python" value="70493" />
+          <entry key="Python" value="71318" />
         </counts>
       </usages-collector>
     </session>
@@ -105,11 +105,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="70" column="94" selection-start-line="70" selection-start-column="94" selection-end-line="70" selection-end-column="94" />
+            <state relative-caret-position="468">
+              <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
               <folding>
-                <marker date="1555278557427" expanded="true" signature="4913:5260" ph="..." />
-                <marker date="1555278557427" expanded="true" signature="6490:6626" ph="..." />
+                <marker date="1555278958415" expanded="true" signature="5438:5785" ph="..." />
+                <marker date="1555278958415" expanded="true" signature="7015:7151" ph="..." />
               </folding>
             </state>
           </provider>
@@ -792,16 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/quadrature/GaussLobattoQuadrature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/slimplectic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2556">
@@ -831,13 +821,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/integrators/quadrature/GaussLobattoQuadrature.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="70" column="94" selection-start-line="70" selection-start-column="94" selection-end-line="70" selection-end-column="94" />
+        <state relative-caret-position="468">
+          <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
           <folding>
-            <marker date="1555278557427" expanded="true" signature="4913:5260" ph="..." />
-            <marker date="1555278557427" expanded="true" signature="6490:6626" ph="..." />
+            <marker date="1555278958415" expanded="true" signature="5438:5785" ph="..." />
+            <marker date="1555278958415" expanded="true" signature="7015:7151" ph="..." />
           </folding>
         </state>
       </provider>
