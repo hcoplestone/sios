@@ -222,16 +222,16 @@ class GalerkinGaussLobattoIntegrator(Integrator):
                 partial_differential_of_action_wrt_q_n_plus_1 = egrad(S)
                 return partial_differential_of_action_wrt_q_n_plus_1(self.q_solutions[i + 1])
 
-            if (i > 1):
-                q_nplus1_guess = self.q_solutions[i] + (self.q_solutions[i] - self.q_solutions[i - 1])
+            if i > 1:
+                q_n_plus_1_guess = self.q_solutions[i] + (self.q_solutions[i] - self.q_solutions[i - 1])
             else:
-                q_nplus1_guess = self.q_solutions[i]
+                q_n_plus_1_guess = self.q_solutions[i]
 
-            q_i_guess = q_nplus1_guess
+            q_i_guess = q_n_plus_1_guess
             point_guesses = [q_i_guess for i in range(self.order_of_integrator)]
-            point_guesses.append(q_nplus1_guess)
+            point_guesses.append(q_n_plus_1_guess)
 
-            solutions = optimize.root(new_position_from_nth_solution_equation, point_guesses)
+            solutions = optimize.root(new_position_from_nth_solution_equation, np.array(point_guesses))
 
             # q_interior_solution = solutions.x[0:len(self.q_list)]
             q_interior_points = self.get_list_of_interior_points(solutions.x)
