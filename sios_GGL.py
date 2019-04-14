@@ -6,7 +6,7 @@ class SiosGGL:
     def doit(self):
         # Create an instance of our integrator
         # integrator = GalerkinGaussLobattoStaticIntegrator('t', ['x', 'y'], ['vx', 'vy'], 1, verbose=True)
-        integrator = GalerkinGaussLobattoIntegrator('t', ['x', 'y'], ['vx', 'vy'], 1, verbose=True)
+        integrator = GalerkinGaussLobattoIntegrator('t', ['x', 'y'], ['vx', 'vy'], 4, verbose=True)
 
         # Define our properties and the Lagrangian for a spring
         m = 1.0
