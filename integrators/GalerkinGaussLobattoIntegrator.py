@@ -172,7 +172,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         # Determine the derivative matrix for this interval
         self.calculate_derivative_matrix(time_step)
 
-        # Visually track progress of integration
+        # Let the user know system determination has begun
         if self.verbose:
             print("\nIterating...")
 
@@ -180,6 +180,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         for i in range(self.n - 1):
             t = self.t_list[i]
 
+            # Visually track progress of integration
             if self.verbose:
                 print('.', end='', flush=True)
 
