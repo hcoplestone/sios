@@ -28,7 +28,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         Calculate the derivative matrix for a given fixed time step.
         This is used to calculate velocities of a Legendre path, given the value of each quadrature point
         in the interval [t_n, t_n+time_step].
-        :param time_step:
+        :param time_step: The fixed time interval the Gauss-Lobatto quadrature uses.
         """
         # r is the order of the integrator
         r = self.order_of_integrator
