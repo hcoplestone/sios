@@ -68,6 +68,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         value of generalised coordinate at this point in phase space.
         :param q_interior_points: array of vector interior points [\vec{q_interior_1}, \vec{q_interior_2}, ...]
         :param q_n_plus_1: Vector describing the final point in phase space
+        :return action: Numerical value of S = \int_{t_n}^{t+time_step} L(t, q_n, [q_interiors], q_n_plus_1) dt
         """
         t_n_plus_1 = t + time_step
         self.gauss_lobatto_quadrature.scale_to_interval(t, t_n_plus_1)
@@ -95,7 +96,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         """
         Determines the velocities for every point in quadrature interval
         :param points: Array of vector points in quadrature interval = [\vec{point_1}, \vec{point_2}, ...]
-        :returns: Array of vectors describing velocity at each point:
+        :return: Array of vectors describing velocity at each point:
         i.e. returns velocities = [\vec{velocity_at_point_1}, \vec{velocity_at_point_2}, ...]
         """
 
@@ -110,6 +111,11 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         return velocities
 
     def get_list_of_interior_points(self, points):
+        """
+        Takes a
+        :param points:
+        :return:
+        """
         interior_points = points[:-len(self.q_list)]
         interior_points_chunked = [interior_points[i:i + len(self.q_list)] for i in
                                    range(0, len(interior_points), len(self.q_list))]
