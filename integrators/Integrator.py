@@ -125,7 +125,7 @@ class Integrator:
         :param t_lim_upper: Upper time limit to sample our continuous function over.
         """
 
-        Assertions.assert_integer(n, 'number of quadrature points')
+        Assertions.assert_integer(n, 'number of points to determine system at')
 
         self.set_time_boundaries(t_lim_lower, t_lim_upper)
         self.n = n
