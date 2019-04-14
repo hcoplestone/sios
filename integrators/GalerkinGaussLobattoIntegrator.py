@@ -49,7 +49,10 @@ class GalerkinGaussLobattoIntegrator(Integrator):
                 if i != j:
                     self.D[i][j] = numerator / denominator
 
-    def action(self, t, time_step, q_n, q_interior, q_n_plus_1):
+    def action(self, t, time_step, q_n, q_interior_points, q_n_plus_1):
+        """
+        :type q_interior_points: array of interior points [\vec{q_interior_1}, \vec{q_interior_2}, ...]
+        """
         t_n_plus_1 = t + time_step
         self.gauss_lobatto_quadrature.scale_to_interval(t, t_n_plus_1)
 
@@ -58,7 +61,8 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         action = 0.0
 
-        points = [q_n, q_interior, q_n_plus_1]
+        points = [q_n] + q_interior_points + [q_n_plus_1]
+
         velocities = self.determine_velocities(points)
 
         for index, weight in enumerate(self.gauss_lobatto_quadrature.scaled_weights):
@@ -110,6 +114,12 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         return velocities
 
+    def get_list_of_interior_points(self, points):
+        interior_points = points[:-len(self.q_list)]
+        interior_points_chunked = [interior_points[i:i + len(self.q_list)] for i in
+                                   range(0, len(interior_points), len(self.q_list))]
+        return interior_points_chunked
+
     def integrate(self):
         """
         Numerically integrate the system.
@@ -134,26 +144,40 @@ class GalerkinGaussLobattoIntegrator(Integrator):
                 print('.', end='', flush=True)
 
             def new_position_from_nth_solution_equation(points):
-                interior_point_trial_solution = points[0:len(self.q_list)]
-                q_n_plus_1_trial_solution = points[len(self.q_list):2 * len(self.q_list)]
+                """
+                :param points: array of trial vector points [q_interior_1, q_interior_2, ..., q_n_plus_1]
+                :return:
+                """
+                list_of_equations = []
 
-                S_of_n = lambda q_n: self.action(t, time_step, q_n, interior_point_trial_solution,
+                list_of_interior_points = self.get_list_of_interior_points(points)
+                q_n_plus_1_trial_solution = points[-len(self.q_list):]
+
+                for index, interior_point in enumerate(list_of_interior_points):
+                    def interior_point_argument_for_action(point_to_differentiate_wrt_to):
+                        return list_of_interior_points[0:index] + [point_to_differentiate_wrt_to] \
+                               + list_of_interior_points[index + 1:]
+
+                    s_of_interior_point = lambda q_interior: self.action(t, time_step, self.q_solutions[i],
+                                                                         interior_point_argument_for_action(q_interior),
+                                                                         q_n_plus_1_trial_solution)
+
+                    partial_differential_of_action_wrt_interior_point = egrad(s_of_interior_point)
+                    interior_equation = partial_differential_of_action_wrt_interior_point(interior_point)
+                    list_of_equations.append(interior_equation)
+
+                s_of_n = lambda q_n: self.action(t, time_step, q_n, list_of_interior_points,
                                                  q_n_plus_1_trial_solution)
 
-                S_of_interior = lambda q_interior: self.action(t, time_step, self.q_solutions[i], q_interior,
-                                                               q_n_plus_1_trial_solution)
-
-                partial_differential_of_action_wrt_interior_point = egrad(S_of_interior)
-                interior_equation = partial_differential_of_action_wrt_interior_point(interior_point_trial_solution)
-
-                partial_differential_of_action_wrt_q_n = egrad(S_of_n)
+                partial_differential_of_action_wrt_q_n = egrad(s_of_n)
                 conservation_equation = np.add(self.p_solutions[i],
                                                partial_differential_of_action_wrt_q_n(self.q_solutions[i]))
+                list_of_equations.append(conservation_equation)
 
-                return np.concatenate((interior_equation, conservation_equation))
+                return np.concatenate(tuple(list_of_equations))
 
-            def determine_new_momentum_from_q_n_plus_1th_solution(interior_point):
-                S = lambda q_n_plus_1: self.action(t, time_step, self.q_solutions[i], interior_point, q_n_plus_1)
+            def determine_new_momentum_from_q_n_plus_1th_solution(interior_points):
+                S = lambda q_n_plus_1: self.action(t, time_step, self.q_solutions[i], interior_points, q_n_plus_1)
                 partial_differential_of_action_wrt_q_n_plus_1 = egrad(S)
                 return partial_differential_of_action_wrt_q_n_plus_1(self.q_solutions[i + 1])
 
@@ -163,13 +187,16 @@ class GalerkinGaussLobattoIntegrator(Integrator):
                 q_nplus1_guess = self.q_solutions[i]
 
             q_i_guess = q_nplus1_guess
+            point_guesses = [q_i_guess for i in range(self.order_of_integrator)]
+            point_guesses.append(q_nplus1_guess)
 
-            solutions = optimize.root(new_position_from_nth_solution_equation, [q_i_guess, q_nplus1_guess])
+            solutions = optimize.root(new_position_from_nth_solution_equation, point_guesses)
 
-            q_interior_solution = solutions.x[0:len(self.q_list)]
-            self.q_solutions[i + 1] = solutions.x[len(self.q_list):2 * len(self.q_list)]
+            # q_interior_solution = solutions.x[0:len(self.q_list)]
+            q_interior_points = self.get_list_of_interior_points(solutions.x)
+            self.q_solutions[i + 1] = solutions.x[-len(self.q_list):]
 
-            self.p_solutions[i + 1] = determine_new_momentum_from_q_n_plus_1th_solution(q_interior_solution)
+            self.p_solutions[i + 1] = determine_new_momentum_from_q_n_plus_1th_solution(q_interior_points)
 
         if self.verbose:
             print("\nIntegration complete!")

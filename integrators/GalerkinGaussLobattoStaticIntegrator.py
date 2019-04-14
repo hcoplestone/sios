@@ -17,7 +17,7 @@ class GalerkinGaussLobattoStaticIntegrator(Integrator):
         This way we can abstract away common functionality between integrators.
         """
 
-        Integrator.__init__(self, t, q_list, v_list, verbose, 'Galerkin Gauss Lobatto Integrator')
+        Integrator.__init__(self, t, q_list, v_list, verbose, 'Galerkin Gauss Lobatto Static Integrator')
         self.order_of_integrator = order_of_integrator
         self.gauss_lobatto_quadrature = GaussLobattoQuadrature(self.order_of_integrator + 2, False)
 
