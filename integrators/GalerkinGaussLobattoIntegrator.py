@@ -23,7 +23,13 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         self.D = None
 
-    def calculate_derivative_matrix(self, time_step):
+    def calculate_derivative_matrix(self, time_step) -> None:
+        """
+        Calculate the derivative matrix for a given fixed time step.
+        This is used to calculate velocities of a Legendre path, given the value of each quadrature point
+        in the interval [t_n, t_n+time_step].
+        :param time_step:
+        """
         # r is the order of the integrator
         r = self.order_of_integrator
 
@@ -51,7 +57,17 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
     def action(self, t, time_step, q_n, q_interior_points, q_n_plus_1):
         """
-        :type q_interior_points: array of interior points [\vec{q_interior_1}, \vec{q_interior_2}, ...]
+        Here we use Gauss-Lobatto quadrature to approximate the action integral for t \in [t, t+time_step]
+        with quadrature points [q_n] + q_interior_points + [q_n_plus_1] and velocities given by application
+        of the derivative matrix to these set of points.
+
+        :param t: The value of t at the beginning of the time interval we are integrating over.
+        i.e. we integrate over the region [t, t+time_step]
+        :param time_step: The fixed time step we use piecewise-integrate the system.
+        :param q_n: Vector describing the initial point in phase space: \vec{q_n} = [GC1, GC2, ...] where GCi is
+        value of generalised coordinate at this point in phase space.
+        :param q_interior_points: array of vector interior points [\vec{q_interior_1}, \vec{q_interior_2}, ...]
+        :param q_n_plus_1: Vector describing the final point in phase space
         """
         t_n_plus_1 = t + time_step
         self.gauss_lobatto_quadrature.scale_to_interval(t, t_n_plus_1)

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoStaticIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoStaticIntegrator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +54,7 @@
           <entry key="COPYING" value="1" />
           <entry key="ipynb" value="2" />
           <entry key="md" value="3" />
-          <entry key="py" value="138" />
+          <entry key="py" value="140" />
           <entry key="rst" value="1" />
         </counts>
       </usages-collector>
@@ -65,7 +63,7 @@
           <entry key="IPNB" value="2" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="138" />
+          <entry key="Python" value="140" />
           <entry key="ReST" value="1" />
         </counts>
       </usages-collector>
@@ -74,7 +72,7 @@
           <entry key="Python Console" value="298" />
           <entry key="dummy" value="82" />
           <entry key="md" value="3" />
-          <entry key="py" value="68191" />
+          <entry key="py" value="69393" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -82,7 +80,7 @@
         <counts>
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="83" />
-          <entry key="Python" value="68489" />
+          <entry key="Python" value="69691" />
         </counts>
       </usages-collector>
     </session>
@@ -92,10 +90,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sios_GGL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
+            <state relative-caret-position="120">
               <caret line="8" column="83" lean-forward="true" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
               <folding>
                 <element signature="e#0#92#0" expanded="true" />
@@ -104,15 +102,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
+            <state relative-caret-position="199">
+              <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
               <folding>
-                <marker date="1555276553340" expanded="true" signature="4506:4773" ph="..." />
-                <marker date="1555276553340" expanded="true" signature="6003:6139" ph="..." />
+                <marker date="1555277864857" expanded="true" signature="5565:5832" ph="..." />
+                <marker date="1555277864857" expanded="true" signature="7062:7198" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1860">
+              <caret line="124" column="71" selection-start-line="124" selection-start-column="71" selection-end-line="124" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1554746926462" expanded="true" signature="3161:5152" ph="..." />
+                <marker date="1554746926462" expanded="true" signature="5230:5946" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/slimplectic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2556">
+              <caret line="225" column="22" selection-start-line="225" selection-start-column="22" selection-end-line="225" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -192,8 +213,8 @@
         <option value="$PROJECT_DIR$/integrators/Integrator.py" />
         <option value="$PROJECT_DIR$/integrators/__init__.py" />
         <option value="$PROJECT_DIR$/integrators/GalerkinGaussLobattoStaticIntegrator.py" />
-        <option value="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" />
         <option value="$PROJECT_DIR$/sios_GGL.py" />
+        <option value="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" />
       </list>
     </option>
   </component>
@@ -598,13 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slimplectic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1366">
-          <caret line="225" column="22" selection-start-line="225" selection-start-column="22" selection-end-line="225" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/taylor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -727,18 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="124" column="71" selection-start-line="124" selection-start-column="71" selection-end-line="124" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1554746926462" expanded="true" signature="3161:5152" ph="..." />
-            <marker date="1554746926462" expanded="true" signature="5230:5946" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/autograd/differential_operators.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -800,23 +802,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
+    <entry file="file://$PROJECT_DIR$/slimplectic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
-          <folding>
-            <marker date="1555276553340" expanded="true" signature="4506:4773" ph="..." />
-            <marker date="1555276553340" expanded="true" signature="6003:6139" ph="..." />
-          </folding>
+        <state relative-caret-position="2556">
+          <caret line="225" column="22" selection-start-line="225" selection-start-column="22" selection-end-line="225" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sios_GGL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
+        <state relative-caret-position="120">
           <caret line="8" column="83" lean-forward="true" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
           <folding>
             <element signature="e#0#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1860">
+          <caret line="124" column="71" selection-start-line="124" selection-start-column="71" selection-end-line="124" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1554746926462" expanded="true" signature="3161:5152" ph="..." />
+            <marker date="1554746926462" expanded="true" signature="5230:5946" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
+          <folding>
+            <marker date="1555277864857" expanded="true" signature="5565:5832" ph="..." />
+            <marker date="1555277864857" expanded="true" signature="7062:7198" ph="..." />
           </folding>
         </state>
       </provider>
