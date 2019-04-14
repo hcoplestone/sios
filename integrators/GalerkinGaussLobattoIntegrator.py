@@ -119,14 +119,29 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
     def get_list_of_interior_points(self, points):
         """
-        Takes a
-        :param points:
+        This function is necessary because root finder takes guess of form x0 = (\vec{point_1}, \vec{point_2},...)
+        and transforms this input into (point_1_DOF_1, point_1_DOF_2, point_2_DOF_1, point_2_DOF_2) when passed
+        into the function which returns the set of equations we would like to solve.
+
+        Thus, this function (re)constructs a list of vector interior points from this transformed representation.
+        This is used in two places:
+        (a) In the function that defines the set of equations we want to solve.
+        (b) After the root finder method has been called. The solution list is defined in this flattened structure.
+
+        :param points: Concatenated lists of generalised coordinates for interior points and right hand endpoint.
+        So if we have a quadrature interval with 2 interior points, with a system with 2 degrees of freedom (DOF),
+        these points are represented as the following array:
+        points = [interior_point_1_DOF_1, interior_point_1_DOF_2, interior_point_2_DOF_1, interior_point_2_DOF_2,
+        q_n_plus_1_DOF_1, q_n_plus_1_DOF_2]
         :return:
         """
         interior_points = points[:-len(self.q_list)]
         interior_points_chunked = [interior_points[i:i + len(self.q_list)] for i in
                                    range(0, len(interior_points), len(self.q_list))]
         return interior_points_chunked
+
+    def get_right_hand_exterior_point(self, points):
+        return points[-len(self.q_list):]
 
     def integrate(self):
         """
@@ -159,7 +174,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
                 list_of_equations = []
 
                 list_of_interior_points = self.get_list_of_interior_points(points)
-                q_n_plus_1_trial_solution = points[-len(self.q_list):]
+                q_n_plus_1_trial_solution = self.get_right_hand_exterior_point(points)
 
                 for index, interior_point in enumerate(list_of_interior_points):
                     def interior_point_argument_for_action(point_to_differentiate_wrt_to):
@@ -202,7 +217,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
             # q_interior_solution = solutions.x[0:len(self.q_list)]
             q_interior_points = self.get_list_of_interior_points(solutions.x)
-            self.q_solutions[i + 1] = solutions.x[-len(self.q_list):]
+            self.q_solutions[i + 1] = self.get_right_hand_exterior_point(solutions.x)
 
             self.p_solutions[i + 1] = determine_new_momentum_from_q_n_plus_1th_solution(q_interior_points)
 

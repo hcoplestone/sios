@@ -226,7 +226,7 @@ class Integrator:
         y_data = [result.item(1) for result in self.q_solutions]
 
         fig = plt.figure()
-        ax = plt.axes(xlim=(min(x_data),max(x_data)), ylim=(min(y_data), max(y_data)))
+        ax = plt.axes(xlim=(min(x_data), max(x_data)), ylim=(min(y_data), max(y_data)))
 
         ax.set_xlabel(self.q_list[0])
         ax.set_ylabel(self.q_list[1])
@@ -236,6 +236,7 @@ class Integrator:
 
         title = ax.text(0.5, 0.85, "".format(self.t_list[0]), bbox={'facecolor': 'w', 'alpha': 0.5, 'pad': 5},
                         transform=ax.transAxes, ha="center")
+
         def init():
             line.set_data([], [])
             return line,
@@ -244,7 +245,7 @@ class Integrator:
             line.set_data(x_data[0:i], y_data[0:i])
             # line.set_data([x_data[i]], [y_data[i]])
             title.set_text("t={0:.2f}".format(self.t_list[i]))
-            return title,line,
+            return title, line,
 
         # call the animator.  blit=True means only re-draw the parts that have changed.
         anim = animation.FuncAnimation(fig, animate, init_func=init,
