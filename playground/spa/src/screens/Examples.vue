@@ -1,12 +1,18 @@
 <template>
     <div>
-        Examples
+        <loading-screen is-loading="isLoading"></loading-screen>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Examples"
+        name: "Examples",
+
+        data() {
+            return {
+                isLoading: true
+            }
+        }
     }
 </script>
 

@@ -6679,6 +6679,10 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-loading-overlay@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/vue-loading-overlay/-/vue-loading-overlay-3.2.0.tgz#7896f195e26a8d915219139a096367c9ad2c3c61"
+
 vue-router@^3.0.5:
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.5.tgz#24636923c7f1a62da3a577cf75a058f9fa328581"

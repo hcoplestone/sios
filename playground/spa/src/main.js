@@ -19,14 +19,18 @@ import App from './App.vue'
 import Examples from './screens/Examples.vue'
 import Home from './screens/Home.vue'
 
+
 const routes = [
     {path: '/', component: Home},
     {path: '/examples', component: Examples}
 ]
 
 const router = new VueRouter({
-  routes // short for `routes: routes`
+    routes // short for `routes: routes`
 })
+
+// Global Components
+Vue.component('loading-screen', require('./components/LoadingScreen'));
 
 
 new Vue({
