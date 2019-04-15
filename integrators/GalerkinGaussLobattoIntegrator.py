@@ -20,9 +20,12 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         Integrator.__init__(self, t, q_list, v_list, verbose, 'Galerkin Gauss Lobatto Integrator')
         self.order_of_integrator = order_of_integrator
-        self.gauss_lobatto_quadrature = GaussLobattoQuadrature(self.order_of_integrator + 2, False)
+        self.r = order_of_integrator-1
+        self.gauss_lobatto_quadrature = GaussLobattoQuadrature(self.r + 2, False)
 
         self.D = None
+
+        # TODO: assert order of integrator > 0
 
     def calculate_derivative_matrix(self, time_step) -> None:
         """
@@ -31,22 +34,20 @@ class GalerkinGaussLobattoIntegrator(Integrator):
         in the interval [t_n, t_n+time_step].
         :param time_step: The fixed time interval the Gauss-Lobatto quadrature uses.
         """
-        # r is the order of the integrator
-        r = self.order_of_integrator
 
         # Our derivative matrix is n * n, where n is the number of quadrature points to use.
-        self.D = np.zeros((r + 2, r + 2))
+        self.D = np.zeros((self.r + 2, self.r + 2))
 
         # Dij = -(r+1)(r+2)/(2*delta_t) for i = j = 0
-        self.D[0][0] = -1 * (r + 1) * (r + 2) / (2 * time_step)
+        self.D[0][0] = -1 * (self.r + 1) * (self.r + 2) / (2 * time_step)
 
         # Dij = (r+1)(r+2)/(2*delta_t) for i = j = r+1
-        self.D[r + 1][r + 1] = -1 * self.D[0][0]
+        self.D[self.r + 1][self.r + 1] = -1 * self.D[0][0]
 
         # Dij = 2*P_{r+1}(x_j) / P_{r+1}(x_j)*(x_i - x_j)*(delta_t)
-        for i in range(0, r + 2):
-            for j in range(0, r + 2):
-                P_r_plus_1 = sp.legendre(r + 1)
+        for i in range(0, self.r + 2):
+            for j in range(0, self.r + 2):
+                P_r_plus_1 = sp.legendre(self.r + 1)
                 x_i = self.gauss_lobatto_quadrature.points[i]
                 x_j = self.gauss_lobatto_quadrature.points[j]
 
@@ -112,7 +113,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         for i, point in enumerate(points):
             v = np.zeros(len(self.q_list))
-            for j in range(0, self.order_of_integrator + 2):
+            for j in range(0, self.r + 2):
                 v = np.add(v, self.D[i][j] * points[j])
             velocities.append(v)
 
@@ -292,7 +293,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
             q_i_guess = q_n_plus_1_guess
 
             # Define an array of vector trial solutions [\vec{IP_1_trial}, \vec{IP_2_trial},..., \vec{q_n+1_trial}]
-            point_guesses = [q_i_guess for i in range(self.order_of_integrator)]
+            point_guesses = [q_i_guess for i in range(self.r)]
             point_guesses.append(q_n_plus_1_guess)
 
             # Solve for q_n_plus_1 and interior point phase space vector solutions
