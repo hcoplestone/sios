@@ -4,7 +4,6 @@
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sios_GGL.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios_GGL.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +75,7 @@
           <entry key="Python Console" value="298" />
           <entry key="dummy" value="82" />
           <entry key="md" value="3" />
-          <entry key="py" value="77203" />
+          <entry key="py" value="77664" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -84,7 +83,7 @@
         <counts>
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="83" />
-          <entry key="Python" value="77501" />
+          <entry key="Python" value="77962" />
         </counts>
       </usages-collector>
     </session>
@@ -97,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sios_GGL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+            <state relative-caret-position="105">
+              <caret line="7" column="53" lean-forward="true" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
               <folding>
                 <element signature="e#0#92#0" expanded="true" />
               </folding>
@@ -109,11 +108,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="235" column="47" selection-start-line="235" selection-start-column="47" selection-end-line="235" selection-end-column="47" />
+            <state relative-caret-position="427">
+              <caret line="270" column="49" lean-forward="true" selection-start-line="270" selection-start-column="49" selection-end-line="270" selection-end-column="49" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1555325559591" expanded="true" signature="8015:8021" ph="..." />
+                <marker date="1555326070901" expanded="true" signature="8015:8021" ph="..." />
               </folding>
             </state>
           </provider>
@@ -770,8 +769,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sios_GGL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        <state relative-caret-position="105">
+          <caret line="7" column="53" lean-forward="true" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
           <folding>
             <element signature="e#0#92#0" expanded="true" />
           </folding>
@@ -780,11 +779,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/integrators/GalerkinGaussLobattoIntegrator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="235" column="47" selection-start-line="235" selection-start-column="47" selection-end-line="235" selection-end-column="47" />
+        <state relative-caret-position="427">
+          <caret line="270" column="49" lean-forward="true" selection-start-line="270" selection-start-column="49" selection-end-line="270" selection-end-column="49" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1555325559591" expanded="true" signature="8015:8021" ph="..." />
+            <marker date="1555326070901" expanded="true" signature="8015:8021" ph="..." />
           </folding>
         </state>
       </provider>

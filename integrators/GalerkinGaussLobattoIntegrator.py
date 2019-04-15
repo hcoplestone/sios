@@ -223,10 +223,10 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
                     def s_of_interior_point(q_interior):
                         """
-                        The action of the interval [t_n, t_n+time_step], as a function of the interior point we
+                        The action of the interval [t_n, t_n+time_step] as a function of the interior point we
                         are differentiating with respect to.
                         :param q_interior: Vector point we are differentiating elementwise \vec{q_interior}
-                        :return:
+                        :return: Numerical value of action
                         """
                         return self.action(t, time_step, self.q_solutions[i],
                                            interior_point_argument_for_action(q_interior),
@@ -238,11 +238,18 @@ class GalerkinGaussLobattoIntegrator(Integrator):
                     interior_equation = partial_differential_of_action_wrt_interior_point(interior_point)
                     list_of_equations.append(interior_equation)
 
-                # Add equation for right hand endpoint q_n_plus_1 to the list of equations
-                # p_n + ds/d(q_n)|q_n = 0
                 def s_of_n(q_n):
+                    """
+                    The action of the interval [t_n, t_n+time_step] as a function of the left hand endpoint which
+                    we differentiate wrt to.
+                    :param q_n: Vector point we are differentiating elementwise \vec{q_n}
+                    :return: Numerical value of action
+                    """
                     return self.action(t, time_step, q_n, list_of_interior_points,
-                                                 q_n_plus_1_trial_solution)
+                                       q_n_plus_1_trial_solution)
+
+                # Evaluate and add equation for right hand endpoint q_n_plus_1 to the list of equations
+                # p_n + ds/d(q_n)|q_n = 0
                 partial_differential_of_action_wrt_q_n = egrad(s_of_n)
                 conservation_equation = np.add(self.p_solutions[i],
                                                partial_differential_of_action_wrt_q_n(self.q_solutions[i]))
@@ -253,11 +260,13 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
             def determine_new_momentum_from_q_n_plus_1th_solution(interior_points):
                 """
-
+                Defines the mapping q_n, p_n, q_{n+1} -> p_{n+1}.
+                Uses equation p_{n+1} = dS_n/d(q_{n+1})|q_{n+1}
                 :param interior_points: An array of vectors of the interior points that have been previously solved
                 [\vec{interior_point_1}, \vec{interior_point_2}, ...]
                 :return:
                 """
+
                 def s(q_n_plus_1):
                     return self.action(t, time_step, self.q_solutions[i], interior_points, q_n_plus_1)
 
