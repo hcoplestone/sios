@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
+Vue.config.devtools = true
 
 // Routes
 
@@ -28,10 +29,6 @@ const routes = [
 const router = new VueRouter({
     routes // short for `routes: routes`
 })
-
-// Global Components
-Vue.component('loading-screen', require('./components/LoadingScreen'));
-
 
 new Vue({
     router,

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/playground/spa/src/components/LoadingScreen.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playground/spa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/playground/spa/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/spa/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/playground/spa/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playground/spa/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/playground/spa/src/components/Navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playground/spa/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/playground/spa/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playground/spa/src/screens/Examples.vue" beforeDir="false" afterPath="$PROJECT_DIR$/playground/spa/src/screens/Examples.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playground/spa/src/screens/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/playground/spa/src/screens/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playground/spa/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/playground/spa/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,14 +60,14 @@
           <entry key="COPYING" value="1" />
           <entry key="html" value="2" />
           <entry key="ipynb" value="2" />
-          <entry key="js" value="3" />
+          <entry key="js" value="7" />
           <entry key="json" value="2" />
           <entry key="md" value="4" />
           <entry key="png" value="2" />
           <entry key="py" value="158" />
           <entry key="rst" value="1" />
           <entry key="ts" value="1" />
-          <entry key="vue" value="8" />
+          <entry key="vue" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -77,33 +76,33 @@
           <entry key="IPNB" value="2" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="3" />
+          <entry key="JavaScript" value="7" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Python" value="158" />
           <entry key="ReST" value="1" />
           <entry key="TypeScript" value="1" />
-          <entry key="Vue.js" value="7" />
+          <entry key="Vue.js" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="298" />
           <entry key="dummy" value="82" />
-          <entry key="js" value="328" />
+          <entry key="js" value="344" />
           <entry key="md" value="3" />
           <entry key="py" value="80552" />
           <entry key="txt" value="1" />
-          <entry key="vue" value="678" />
+          <entry key="vue" value="1472" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="328" />
+          <entry key="JavaScript" value="344" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="83" />
           <entry key="Python" value="80850" />
-          <entry key="Vue.js" value="678" />
+          <entry key="Vue.js" value="1472" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -150,35 +149,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/playground/spa/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/playground/spa/src/screens/Examples.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/playground/spa/src/components/Navbar.vue">
+        <entry file="file://$PROJECT_DIR$/playground/spa/src/screens/Examples.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+            <state relative-caret-position="362">
+              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/playground/spa/src/screens/Home.vue">
+        <entry file="file://$PROJECT_DIR$/playground/spa/src/components/Navbar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+            <state relative-caret-position="525">
+              <caret line="35" column="97" selection-start-line="35" selection-start-column="97" selection-end-line="35" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -195,8 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>time_step</find>
-      <find>t_list</find>
       <find>polynomial</find>
       <find>velociti</find>
       <find>self.D</find>
@@ -225,6 +213,8 @@
       <find>calcuate</find>
       <find>self.order_of</find>
       <find>self.order</find>
+      <find>HelloWo</find>
+      <find>Hell</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -265,12 +255,12 @@
         <option value="$PROJECT_DIR$/playground/server.py" />
         <option value="$PROJECT_DIR$/playground/spa/src/components/Examples.vue" />
         <option value="$PROJECT_DIR$/playground/spa/src/components/Home.vue" />
-        <option value="$PROJECT_DIR$/playground/spa/src/App.vue" />
         <option value="$PROJECT_DIR$/playground/spa/src/screens/Home.vue" />
-        <option value="$PROJECT_DIR$/playground/spa/src/main.js" />
-        <option value="$PROJECT_DIR$/playground/spa/src/screens/Examples.vue" />
         <option value="$PROJECT_DIR$/playground/spa/src/components/LoadingScreen.vue" />
         <option value="$PROJECT_DIR$/playground/spa/src/components/Navbar.vue" />
+        <option value="$PROJECT_DIR$/playground/spa/src/App.vue" />
+        <option value="$PROJECT_DIR$/playground/spa/src/main.js" />
+        <option value="$PROJECT_DIR$/playground/spa/src/screens/Examples.vue" />
       </list>
     </option>
   </component>
@@ -332,53 +322,6 @@
               <item name="sios" type="462c0819:PsiDirectoryNode" />
               <item name="playground" type="462c0819:PsiDirectoryNode" />
               <item name="spa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sios" type="462c0819:PsiDirectoryNode" />
-              <item name="playground" type="462c0819:PsiDirectoryNode" />
-              <item name="spa" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sios" type="462c0819:PsiDirectoryNode" />
-              <item name="playground" type="462c0819:PsiDirectoryNode" />
-              <item name="spa" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-loading-overlay" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sios" type="462c0819:PsiDirectoryNode" />
-              <item name="playground" type="462c0819:PsiDirectoryNode" />
-              <item name="spa" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-loading-overlay" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sios" type="462c0819:PsiDirectoryNode" />
-              <item name="playground" type="462c0819:PsiDirectoryNode" />
-              <item name="spa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sios" type="462c0819:PsiDirectoryNode" />
-              <item name="playground" type="462c0819:PsiDirectoryNode" />
-              <item name="spa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sios" type="462c0819:PsiDirectoryNode" />
-              <item name="playground" type="462c0819:PsiDirectoryNode" />
-              <item name="spa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -910,25 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playground/spa/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#115#156#0" expanded="true" />
-            <element signature="e#276#303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playground/spa/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/playground/spa/node_modules/bootstrap-vue/src/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2055">
@@ -936,24 +860,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playground/spa/src/screens/Examples.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/playground/spa/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playground/spa/src/components/LoadingScreen.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -966,8 +876,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/playground/spa/src/components/Navbar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+        <state relative-caret-position="525">
+          <caret line="35" column="97" selection-start-line="35" selection-start-column="97" selection-end-line="35" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/spa/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/spa/src/components/LoadingScreen.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+          <folding>
+            <element signature="e#158#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/spa/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/spa/src/screens/Examples.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
         </state>
       </provider>
     </entry>

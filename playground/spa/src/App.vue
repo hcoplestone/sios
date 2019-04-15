@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import HelloWorld from './screens/Home.vue'
 import Navbar from './components/Navbar.vue'
 
 export default {
