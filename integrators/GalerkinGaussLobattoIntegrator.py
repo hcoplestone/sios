@@ -285,23 +285,29 @@ class GalerkinGaussLobattoIntegrator(Integrator):
             # (only the case for the first iteration!).
             if i > 0:
                 q_n_plus_1_guess = self.q_solutions[i] + (self.q_solutions[i] - self.q_solutions[i - 1])
-                print("Shooting")
             else:
-                print("Not shooting")
                 q_n_plus_1_guess = self.q_solutions[i]
 
+            # Use the same guess as the right hand endpoint for each of the interior points
             q_i_guess = q_n_plus_1_guess
+
+            # Define an array of vector trial solutions [\vec{IP_1_trial}, \vec{IP_2_trial},..., \vec{q_n+1_trial}]
             point_guesses = [q_i_guess for i in range(self.order_of_integrator)]
             point_guesses.append(q_n_plus_1_guess)
 
+            # Solve for q_n_plus_1 and interior point phase space vector solutions
             solutions = optimize.root(new_position_from_nth_solution_equations, np.array(point_guesses))
 
-            # q_interior_solution = solutions.x[0:len(self.q_list)]
+            # Parse the solutions array and extract a list of vector interior point solutions
             q_interior_points = self.get_list_of_interior_points(solutions.x)
+
+            # Extract the vector solution of \vec{q_(n+1)} and add it to the set of system solutions
             self.q_solutions[i + 1] = self.get_right_hand_exterior_point(solutions.x)
 
+            # Determine and set the vector solution for coordinate moment \vec{p_(n+1)}
             self.p_solutions[i + 1] = determine_new_momentum_from_q_n_plus_1th_solution(q_interior_points)
 
+        # Let the user know that the integration is finished
         if self.verbose:
             bar.finish()
             print("\nIntegration complete!")
