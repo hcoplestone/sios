@@ -53,7 +53,7 @@ class Sios:
         foi.discretise(L, 100, 0.0, 10.0)
 
         # Set the initial conditions for integration
-        foi.set_initial_conditions([1.0, 1.0], [2.0, 1.0])
+        foi.set_initial_conditions([1.0, 1.0], [0.0, 0.0])
 
         # Integrate the system
         print('Integrating, hang in there my friends...')
