@@ -5,7 +5,7 @@ from scipy import optimize
 import scipy.special as sp
 from autograd import elementwise_grad as egrad
 
-from .quadrature import GaussLobattoQuadrature, FirstOrderQuadrature
+from .quadrature import GaussLobattoQuadrature
 from progress.bar import IncrementalBar
 
 
