@@ -187,41 +187,80 @@ class GalerkinGaussLobattoIntegrator(Integrator):
                 # print('.', end='', flush=True)
                 bar.next()
 
-            def new_position_from_nth_solution_equation(points):
+            def new_position_from_nth_solution_equations(points):
                 """
+                The system of equations that need to be solved to map {q_n, p_n} -> {q_n+1}.
+
                 :param points: concatenated array of generalised coordinates of trial vector points
                 [q_interior_1, q_interior_2, ..., q_n_plus_1]
+                :return The result of the corresponding equations for each DOF evaluated at trial values
+                So if points passed in is of form [DOF_1_TRIAL_VAL, DOF_2_TRIAL_VAL, DOF_3_TRIAL_VAL]
+                then we return [DOF_1_EQUATION(DOF_1_TRIAL_VAL), DOF_2_EQUATION(DOF_2_TRIAL_VAL), ...]
                 """
+
+                # A place to store the results of the evaluated equations
                 list_of_equations = []
 
+                # Vectorize the flat array of generalised coordinates passed in
                 list_of_interior_points = self.get_list_of_interior_points(points)
                 q_n_plus_1_trial_solution = self.get_right_hand_exterior_point(points)
 
+                # Add dS/d(interior)|interior = 0 to the list of equations for each interior point
                 for index, interior_point in enumerate(list_of_interior_points):
                     def interior_point_argument_for_action(point_to_differentiate_wrt_to):
+                        """
+                        For use in our action, where we pass in the list of internal points,
+                        replacing the point that we want to differentiate with respect to by
+                        point_to_differentiate_wrt_to. This allows us to apply autodiff elementwise on this
+                        vector input. We can then evaluate the result of this at the point this dummy variable is
+                        standing in place of (interior_point).
+                        :param point_to_differentiate_wrt_to: The variable that is differentiated wrt to by autograd.
+                        :return: Array of interior points, with the interior point at index i replaced with the
+                        autodiff differentiation variable.
+                        """
                         return list_of_interior_points[0:index] + [point_to_differentiate_wrt_to] \
                                + list_of_interior_points[index + 1:]
 
-                    s_of_interior_point = lambda q_interior: self.action(t, time_step, self.q_solutions[i],
-                                                                         interior_point_argument_for_action(q_interior),
-                                                                         q_n_plus_1_trial_solution)
+                    def s_of_interior_point(q_interior):
+                        """
+                        The action of the interval [t_n, t_n+time_step], as a function of the interior point we
+                        are differentiating with respect to.
+                        :param q_interior: Vector point we are differentiating elementwise \vec{q_interior}
+                        :return:
+                        """
+                        return self.action(t, time_step, self.q_solutions[i],
+                                           interior_point_argument_for_action(q_interior),
+                                           q_n_plus_1_trial_solution)
 
+                    # Differentiate s(interior_point) wrt interior_point. Evaluate at the trial value for that point.
+                    # This value = ds/d(interior)|interior_trial_value = 0 is the equation for this interior point.
                     partial_differential_of_action_wrt_interior_point = egrad(s_of_interior_point)
                     interior_equation = partial_differential_of_action_wrt_interior_point(interior_point)
                     list_of_equations.append(interior_equation)
 
-                s_of_n = lambda q_n: self.action(t, time_step, q_n, list_of_interior_points,
+                # Add equation for right hand endpoint q_n_plus_1 to the list of equations
+                # p_n + ds/d(q_n)|q_n = 0
+                def s_of_n(q_n):
+                    return self.action(t, time_step, q_n, list_of_interior_points,
                                                  q_n_plus_1_trial_solution)
-
                 partial_differential_of_action_wrt_q_n = egrad(s_of_n)
                 conservation_equation = np.add(self.p_solutions[i],
                                                partial_differential_of_action_wrt_q_n(self.q_solutions[i]))
                 list_of_equations.append(conservation_equation)
 
+                # Transform the list of equations into a np array that mirrors format of inputted points
                 return np.concatenate(tuple(list_of_equations))
 
             def determine_new_momentum_from_q_n_plus_1th_solution(interior_points):
-                s = lambda q_n_plus_1: self.action(t, time_step, self.q_solutions[i], interior_points, q_n_plus_1)
+                """
+
+                :param interior_points: An array of vectors of the interior points that have been previously solved
+                [\vec{interior_point_1}, \vec{interior_point_2}, ...]
+                :return:
+                """
+                def s(q_n_plus_1):
+                    return self.action(t, time_step, self.q_solutions[i], interior_points, q_n_plus_1)
+
                 partial_differential_of_action_wrt_q_n_plus_1 = egrad(s)
                 return partial_differential_of_action_wrt_q_n_plus_1(self.q_solutions[i + 1])
 
@@ -234,7 +273,7 @@ class GalerkinGaussLobattoIntegrator(Integrator):
             point_guesses = [q_i_guess for i in range(self.order_of_integrator)]
             point_guesses.append(q_n_plus_1_guess)
 
-            solutions = optimize.root(new_position_from_nth_solution_equation, np.array(point_guesses))
+            solutions = optimize.root(new_position_from_nth_solution_equations, np.array(point_guesses))
 
             # q_interior_solution = solutions.x[0:len(self.q_list)]
             q_interior_points = self.get_list_of_interior_points(solutions.x)
