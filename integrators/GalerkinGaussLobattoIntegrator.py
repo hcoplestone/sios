@@ -6,6 +6,7 @@ import scipy.special as sp
 from autograd import elementwise_grad as egrad
 
 from .quadrature import GaussLobattoQuadrature, FirstOrderQuadrature
+from progress.bar import IncrementalBar
 
 
 class GalerkinGaussLobattoIntegrator(Integrator):
@@ -174,7 +175,8 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
         # Let the user know system determination has begun
         if self.verbose:
-            print("\nIterating...")
+            bar = IncrementalBar('Iterating', max=self.n)
+            bar.next()
 
         # Determine system piecewise
         for i in range(self.n - 1):
@@ -182,7 +184,8 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
             # Visually track progress of integration
             if self.verbose:
-                print('.', end='', flush=True)
+                # print('.', end='', flush=True)
+                bar.next()
 
             def new_position_from_nth_solution_equation(points):
                 """
@@ -240,4 +243,5 @@ class GalerkinGaussLobattoIntegrator(Integrator):
             self.p_solutions[i + 1] = determine_new_momentum_from_q_n_plus_1th_solution(q_interior_points)
 
         if self.verbose:
+            bar.finish()
             print("\nIntegration complete!")
