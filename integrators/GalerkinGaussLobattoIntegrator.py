@@ -240,9 +240,9 @@ class GalerkinGaussLobattoIntegrator(Integrator):
 
                 def s_of_n(q_n):
                     """
-                    The action of the interval [t_n, t_n+time_step] as a function of the left hand endpoint which
-                    we differentiate wrt to.
-                    :param q_n: Vector point we are differentiating elementwise \vec{q_n}
+                    The action of the interval [t_n, t_n+time_step] as a function of the left hand endpoint \vec{q_n}
+                    which we differentiate wrt to.
+                    :param q_n: Vector point we are differentiating wrt to elementwise \vec{q_n}
                     :return: Numerical value of action
                     """
                     return self.action(t, time_step, q_n, list_of_interior_points,
@@ -262,20 +262,32 @@ class GalerkinGaussLobattoIntegrator(Integrator):
                 """
                 Defines the mapping q_n, p_n, q_{n+1} -> p_{n+1}.
                 Uses equation p_{n+1} = dS_n/d(q_{n+1})|q_{n+1}
-                :param interior_points: An array of vectors of the interior points that have been previously solved
+                :param interior_points: An array of vectors of the interior points that have been previously determined
                 [\vec{interior_point_1}, \vec{interior_point_2}, ...]
-                :return:
+                :return: Vector of momenta at t_{n+1}: \vec{p_(n+1)}
                 """
 
                 def s(q_n_plus_1):
+                    """
+                    The action of the interval [t_n, t_n+time_step] as a function of the right hand endpoint \vec{q_n+1}
+                    which will be differentiated wrt to.
+                    :param q_n_plus_1: Vector point we are differentiating wrt to elementwise \vec{q_n+1}
+                    :return: Numerical value of action
+                    """
                     return self.action(t, time_step, self.q_solutions[i], interior_points, q_n_plus_1)
 
                 partial_differential_of_action_wrt_q_n_plus_1 = egrad(s)
                 return partial_differential_of_action_wrt_q_n_plus_1(self.q_solutions[i + 1])
 
-            if i > 1:
+            # If system is fully determined at two previous points (t_i, t_(i-1)), then use shooting method
+            # to give a more accurate initial guess for the next phase space solution.
+            # If we only have one previous point (i.e. initial conditions), just use this as the guess
+            # (only the case for the first iteration!).
+            if i > 0:
                 q_n_plus_1_guess = self.q_solutions[i] + (self.q_solutions[i] - self.q_solutions[i - 1])
+                print("Shooting")
             else:
+                print("Not shooting")
                 q_n_plus_1_guess = self.q_solutions[i]
 
             q_i_guess = q_n_plus_1_guess
