@@ -1,6 +1,8 @@
 from integrators import GalerkinGaussLobattoIntegrator
 from flask import abort
 
+
+
 def extract_param(params, key):
     param = next((param for param in params if param["key"].upper() == key.upper()), False)
     if param:
@@ -12,6 +14,8 @@ def extract_param(params, key):
 
 def two_dimension_harmonic_oscillator(params):
     n = int(extract_param(params, 'n'))
+    mass = int(extract_param(params, 'm'))
+    spring_constant = int(extract_param(params, 'k'))
     t_lower = float(extract_param(params, 't-lower'))
     t_upper = float(extract_param(params, 't-upper'))
     order_of_integrator = int(extract_param(params, 'order-of-integrator'))
@@ -23,8 +27,8 @@ def two_dimension_harmonic_oscillator(params):
     integrator = GalerkinGaussLobattoIntegrator('t', ['x', 'y'], ['vx', 'vy'], order_of_integrator, verbose=True)
 
     # Define our properties and the Lagrangian for a spring
-    m = 1.0
-    k = 1.0
+    m = mass
+    k = spring_constant
 
     # Get symbols for use in Lagrangian
     vx, vy = integrator.symbols['v']

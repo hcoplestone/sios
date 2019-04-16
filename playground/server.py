@@ -14,20 +14,18 @@ example_list = [
         'params': [
             {
                 'key': 't-lower',
-                'order': 0,
                 'name': 'Starting time',
-                'value': 0
+                'value': 0.0
             },
             {
                 'key': 't-upper',
-                'order': 1,
                 'name': 'Finish time',
-                'value': 10
+                'value': 9
             },
             {
                 'key': 'n',
                 'name': 'Number of points',
-                'value': 100
+                'value': 200
             },
             {
                 'key': 'order-of-integrator',
@@ -37,22 +35,32 @@ example_list = [
             {
                 'key': 'initial-x',
                 'name': 'Initial x',
-                'value': 0
+                'value': 1.0
             },
             {
                 'key': 'initial-y',
                 'name': 'Initial y',
-                'value': 0
+                'value': 1.0
             },
             {
                 'key': 'initial-x-momentum',
                 'name': 'Initial x momentum',
-                'value': 1
+                'value': 0.0
             },
             {
                 'key': 'initial-y-momentum',
                 'name': 'Initial y momentum',
-                'value': 1
+                'value': 0.0
+            },
+            {
+                'key': 'm',
+                'name': 'Mass',
+                'value': 1.0
+            },
+            {
+                'key': 'k',
+                'name': 'Spring constant',
+                'value': 1.0
             }
         ]
     }

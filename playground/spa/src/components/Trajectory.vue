@@ -4,10 +4,10 @@
     const _ = require('lodash')
 
     export default {
-        name: 'GeneralisedCoordinateEvolution',
+        name: 'Trajectory',
         extends: Line,
 
-        props: ['t', 'q', 'variable'],
+        props: ['x', 'y', 'xLabel', 'yLabel'],
 
         mounted() {
             this.renderChart(this.graphData, this.options)
@@ -27,13 +27,13 @@
                             position: 'bottom',
                             scaleLabel: {
                                 display: true,
-                                labelString: 't'
+                                labelString: this.xLabel
                             }
                         }],
                         yAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: this.variable
+                                labelString: this.yLabel
                             }
                         }]
                     }
@@ -43,15 +43,15 @@
 
         computed: {
             dataset() {
-                return _.map(this.t, (t, index) => {
-                    return {x: t, y: this.q[index]}
+                return _.map(this.x, (x, index) => {
+                    return {x: x, y: this.y[index]}
                 })
             },
 
             graphData() {
                 return {
                     datasets: [{
-                        label: 'Evolution of ' + this.variable,
+                        label: 'Trajectory',
                         data: this.dataset,
                         fill: false,
                         pointBackgroundColor: '#2b8cbf',

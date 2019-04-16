@@ -24,7 +24,7 @@
 
             </div>
 
-            <oscillator-results v-if="example.key == 'harm-osc-2d'" :results="results"></oscillator-results>
+            <oscillator-results v-if="example && example.key == 'harm-osc-2d'" :results="results"></oscillator-results>
 
         </b-container>
 
