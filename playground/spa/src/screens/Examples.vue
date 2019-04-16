@@ -1,15 +1,25 @@
 <template>
     <div class="examples-screen">
-        <h1>Examples</h1>
+        <b-jumbotron header="Examples" lead="Click on an example and have a play!">
+        </b-jumbotron>
 
         <loading-screen :is-loading="isLoading"></loading-screen>
-        <b-alert :show="error" variant="danger">{{ error }}</b-alert>
+
+        <b-container fluid>
+            <b-alert :show="error" variant="danger">{{ error }}</b-alert>
+            <b-table v-if="examples" striped bordered hover
+                     :items="examples"
+                     :fields="['name', 'description']"
+                     selectable
+                     @row-selected="selectExample"></b-table>
+        </b-container>
 
     </div>
 </template>
 
 <script>
     import LoadingScreen from "../components/LoadingScreen"
+
     const axios = require('axios')
 
     export default {
@@ -43,6 +53,10 @@
                     this.error = e
                     this.isLoading = false
                 })
+            },
+
+            selectExample(example) {
+                this.$router.push({name: 'example', params: {key: example[0].key}})
             }
         },
 
@@ -53,6 +67,5 @@
 
 <style scoped>
     .examples-screen {
-        padding-top: 50px;
     }
 </style>

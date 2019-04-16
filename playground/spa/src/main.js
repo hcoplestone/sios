@@ -18,12 +18,14 @@ Vue.config.devtools = true
 
 import App from './App.vue'
 import Examples from './screens/Examples.vue'
+import Example from './screens/Example.vue'
 import Home from './screens/Home.vue'
 
 
 const routes = [
     {path: '/', component: Home},
-    {path: '/examples', component: Examples}
+    {path: '/examples', component: Examples},
+    {path: '/examples/:key', name: 'example', component: Example}
 ]
 
 const router = new VueRouter({
