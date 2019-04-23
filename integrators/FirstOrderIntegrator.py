@@ -5,6 +5,7 @@ from scipy import optimize
 from autograd import elementwise_grad as egrad
 
 from .quadrature import FirstOrderQuadrature
+from progress.bar import IncrementalBar
 
 
 class FirstOrderIntegrator(Integrator):
@@ -41,13 +42,17 @@ class FirstOrderIntegrator(Integrator):
 
         # Iterate
         if self.verbose:
-            print("\nIterating...")
+            bar = IncrementalBar('Iterating', max=self.n)
+            bar.next()
 
         for i in range(self.n - 1):
             time_step = self.t_list[i + 1] - self.t_list[i]
             t = self.t_list[i + 1]
+
+            # Visually track progress of integration
             if self.verbose:
-                print('.', end='', flush=True)
+                # print('.', end='', flush=True)
+                bar.next()
 
             def new_position_from_nth_solution_equation(q_n_plus_1_trial_solutions):
                 S = lambda q_n: self.action(q_n, q_n_plus_1_trial_solutions, t, time_step)
@@ -70,5 +75,7 @@ class FirstOrderIntegrator(Integrator):
 
             self.p_solutions[i + 1] = determine_new_momentum_from_q_n_plus_1th_solution()
 
+        # Let the user know that the integration is finished
         if self.verbose:
+            bar.finish()
             print("\nIntegration complete!")
