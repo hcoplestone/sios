@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/double_pendulum.py" beforeDir="false" afterPath="$PROJECT_DIR$/double_pendulum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Double Pendulum - Order Comparison-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Double Pendulum - Order Comparison-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Double Pendulum-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Double Pendulum-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Double Pendulum - Order Comparison.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Double Pendulum - Order Comparison.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Double Pendulum.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Double Pendulum.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sios.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +44,8 @@
     <session id="-1992092386">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="29" />
-          <entry key="project.open.time.10" value="2" />
+          <entry key="project.closed" value="30" />
+          <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.16" value="1" />
@@ -48,8 +53,8 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="6" />
           <entry key="project.open.time.8" value="10" />
-          <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="29" />
+          <entry key="project.open.time.9" value="5" />
+          <entry key="project.opened" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -89,7 +94,7 @@
           <entry key="html" value="20" />
           <entry key="js" value="418" />
           <entry key="md" value="3" />
-          <entry key="py" value="93085" />
+          <entry key="py" value="93091" />
           <entry key="txt" value="1" />
           <entry key="vue" value="5360" />
         </counts>
@@ -100,7 +105,7 @@
           <entry key="JavaScript" value="418" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="83" />
-          <entry key="Python" value="93383" />
+          <entry key="Python" value="93389" />
           <entry key="Vue.js" value="5360" />
         </counts>
       </usages-collector>
@@ -117,22 +122,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/double_pendulum.py">
+        <entry file="file://$PROJECT_DIR$/sios.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
-              <folding>
-                <element signature="e#0#76#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spinning_top.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="62" column="6" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+            <state relative-caret-position="450">
+              <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -233,9 +226,9 @@
         <option value="$PROJECT_DIR$/integrators/Integrator.py" />
         <option value="$PROJECT_DIR$/comparisons/oscillator2d.py" />
         <option value="$PROJECT_DIR$/integrators/FirstOrderIntegrator.py" />
-        <option value="$PROJECT_DIR$/sios.py" />
         <option value="$PROJECT_DIR$/spinning_top.py" />
         <option value="$PROJECT_DIR$/double_pendulum.py" />
+        <option value="$PROJECT_DIR$/sios.py" />
       </list>
     </option>
   </component>
@@ -280,6 +273,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -296,7 +290,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -509,8 +502,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.26171243" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49927008" weight="0.2657512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5007299" side_tool="true" weight="0.24555735" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -820,13 +814,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Oscillator 1st Order Example.ipynb" />
-    <entry file="file://$PROJECT_DIR$/sios.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/autodiff/Autograd.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -855,9 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="199" column="9" selection-start-line="199" selection-start-column="6" selection-end-line="199" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -865,9 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -890,20 +871,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/double_pendulum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spinning_top.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
+        <state relative-caret-position="608">
           <caret line="62" column="6" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/double_pendulum.py">
+    <entry file="file://$PROJECT_DIR$/sios.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#0#76#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="450">
+          <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
         </state>
       </provider>
     </entry>

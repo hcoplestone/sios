@@ -20,7 +20,7 @@ class Sios:
         L = 0.5 * m * (vx * vx + vy * vy) - 0.5 * k * (x * x + y * y)
 
         # Define discretization parameters
-        foi.discretise(L, 5000, 0.0, 5000.0)
+        foi.discretise(L, 100000, 0.0, 5000.0)
 
         # Set the initial conditions for integration
         foi.set_initial_conditions([1.0, 1.0], [1.0, 0.0])
@@ -36,7 +36,7 @@ class Sios:
 
         # Display the solutions and plot the results
         # foi.display_solutions()
-        foi.plot_results()
+        # foi.plot_results()
         # foi.animate_trajectory()
         return foi
 
@@ -80,25 +80,25 @@ if __name__ == "__main__":
 
     # Work out euler method q and p trajectories
     # print('\nIntegrating using Euler method...')
-    euler_q_solutions = []
-    euler_p_solutions = []
-
-    euler_q_solutions.append(integrator.q_solutions[0])
-    euler_p_solutions.append(integrator.p_solutions[0])
-    dt = integrator.t_list[1] - integrator.t_list[0]
-
-    bar = IncrementalBar('Euler', max=integrator.n)
-    bar.next()
-
-    for i in range(1, integrator.n):
-        # print('.', end='', flush=True)
-        bar.next()
-        dx_dt = A*omega*np.cos(omega*integrator.t_list[i-1] - psi1)
-        dy_dt = B*omega*np.cos(omega*integrator.t_list[i-1] - psi2)
-        q = euler_q_solutions[i-1] + np.array([dx_dt, dy_dt]) * dt
-        euler_q_solutions.append(q)
-        euler_p_solutions.append(np.array(dx_dt, dy_dt))
-    bar.finish()
+    # euler_q_solutions = []
+    # euler_p_solutions = []
+    #
+    # euler_q_solutions.append(integrator.q_solutions[0])
+    # euler_p_solutions.append(integrator.p_solutions[0])
+    # dt = integrator.t_list[1] - integrator.t_list[0]
+    #
+    # bar = IncrementalBar('Euler', max=integrator.n)
+    # bar.next()
+    #
+    # for i in range(1, integrator.n):
+    #     # print('.', end='', flush=True)
+    #     bar.next()
+    #     dx_dt = A*omega*np.cos(omega*integrator.t_list[i-1] - psi1)
+    #     dy_dt = B*omega*np.cos(omega*integrator.t_list[i-1] - psi2)
+    #     q = euler_q_solutions[i-1] + np.array([dx_dt, dy_dt]) * dt
+    #     euler_q_solutions.append(q)
+    #     euler_p_solutions.append(np.array(dx_dt, dy_dt))
+    # bar.finish()
 
     # plt.figure()
     # plt.plot(integrator.t_list, [result.item(0) for result in euler_q_solutions], 'o', markersize=1, label='Analytic')
@@ -154,6 +154,6 @@ if __name__ == "__main__":
     # ax2.loglog(integrator.t_list, np.abs(np.array(energies_euler) / np.array(analytic_energies) - 1.), 'b-',
     #            linewidth=1.0, label='Non symplectic - Euler')
     ax2.set_xlabel('Time, $t$', fontsize=10)
-    ax2.set_ylabel('Fractional energy error, $\delta E/E$', fontsize=10)
+    ax2.set_ylabel('Fractional energy error, $\Delta(t)$', fontsize=10)
     ax2.legend(loc='best')
     plt.show()
