@@ -17,7 +17,7 @@ phi_0 = 0.0
 theta_0 = 0.5776
 
 v_psi_0 = 18.7
-v_phi_0 = 2 * np.pi
+v_phi_0 = 1 * np.pi
 v_theta_0 = 0
 
 p_psi_0 = float(
@@ -73,5 +73,5 @@ if __name__ == "__main__":
     sios = SpinningTop()
     spinningtop = sios.doit(2)
     spinningtop.plot_results()
-    np.savez('data/spinning_top.npz', q_list=spinningtop.q_list, t_list=spinningtop.t_list,
+    np.savez('data/spinning_top_2.npz', q_list=spinningtop.q_list, t_list=spinningtop.t_list,
              q_solutions=spinningtop.q_solutions, p_solutions=spinningtop.p_solutions)
