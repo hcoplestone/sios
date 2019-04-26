@@ -1,7 +1,7 @@
 clear all
 
 % Load the data
-data = spinningtop('spinningtop.txt');
+data = spinningtop('spinningtopbest.txt');
 
 % Vectorise coordinate data
 t = table2array(data(:, 1));
@@ -31,5 +31,9 @@ s = surf(x,y,z);
 hold on;
 
 % Plot our data on top of sphere
-p = plot3(X,Y,Z);
-p.LineWidth = 3;
+p = plot3(X,Y,Z,'k');
+p.LineWidth = 2;
+
+% Hide grid
+grid off
+set(gca,'visible','off')
