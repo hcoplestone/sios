@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/comparisons/shootingmethod.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Spinning Top-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Spinning Top-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spinning Top.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Spinning Top.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/analysespinningtop.m" beforeDir="false" afterPath="$PROJECT_DIR$/data/analysespinningtop.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/double_pendulum.py" beforeDir="false" afterPath="$PROJECT_DIR$/double_pendulum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sios_GGL.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios_GGL.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spinning_top.py" beforeDir="false" afterPath="$PROJECT_DIR$/spinning_top.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +40,9 @@
     <session id="-1992092386">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="36" />
+          <entry key="project.closed" value="37" />
           <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.16" value="1" />
@@ -55,7 +51,7 @@
           <entry key="project.open.time.7" value="10" />
           <entry key="project.open.time.8" value="11" />
           <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="37" />
+          <entry key="project.opened" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -67,7 +63,7 @@
           <entry key="json" value="2" />
           <entry key="md" value="4" />
           <entry key="png" value="2" />
-          <entry key="py" value="239" />
+          <entry key="py" value="245" />
           <entry key="rst" value="1" />
           <entry key="ts" value="1" />
           <entry key="vue" value="26" />
@@ -82,7 +78,7 @@
           <entry key="JavaScript" value="9" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="239" />
+          <entry key="Python" value="245" />
           <entry key="ReST" value="1" />
           <entry key="TypeScript" value="1" />
           <entry key="Vue.js" value="25" />
@@ -95,7 +91,7 @@
           <entry key="html" value="20" />
           <entry key="js" value="418" />
           <entry key="md" value="3" />
-          <entry key="py" value="94029" />
+          <entry key="py" value="95140" />
           <entry key="txt" value="1" />
           <entry key="vue" value="5360" />
         </counts>
@@ -106,7 +102,7 @@
           <entry key="JavaScript" value="418" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="83" />
-          <entry key="Python" value="94327" />
+          <entry key="Python" value="95438" />
           <entry key="Vue.js" value="5360" />
         </counts>
       </usages-collector>
@@ -123,36 +119,26 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sios_GGL.py">
+        <entry file="file://$PROJECT_DIR$/comparisons/shootingmethod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="555">
+              <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
               <folding>
-                <element signature="e#0#76#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spinning_top.py">
+        <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+            <state relative-caret-position="240">
+              <caret line="236" column="76" selection-start-line="236" selection-start-column="73" selection-end-line="236" selection-end-column="76" />
               <folding>
-                <element signature="e#0#76#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/double_pendulum.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#76#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1555620275252" expanded="true" signature="3161:5173" ph="..." />
+                <marker date="1555620275252" expanded="true" signature="5251:5967" ph="..." />
               </folding>
             </state>
           </provider>
@@ -257,6 +243,7 @@
         <option value="$PROJECT_DIR$/sios_GGL.py" />
         <option value="$PROJECT_DIR$/double_pendulum.py" />
         <option value="$PROJECT_DIR$/spinning_top.py" />
+        <option value="$PROJECT_DIR$/comparisons/shootingmethod.py" />
       </list>
     </option>
   </component>
@@ -308,6 +295,11 @@
               <item name="sios" type="b2602c69:ProjectViewProjectNode" />
               <item name="sios" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sios" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sios" type="462c0819:PsiDirectoryNode" />
+              <item name="comparisons" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -322,19 +314,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/comparisons" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/playground/spa/src/components" />
+      <recent name="$PROJECT_DIR$/playground/spa/src/screens" />
+      <recent name="$PROJECT_DIR$/integrators" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/playground/spa/src/components" />
       <recent name="$PROJECT_DIR$/playground/spa/src/screens" />
       <recent name="$PROJECT_DIR$/integrators" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/experiments" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/playground/spa/src/components" />
-      <recent name="$PROJECT_DIR$/playground/spa/src/screens" />
-      <recent name="$PROJECT_DIR$/integrators" />
-      <recent name="$PROJECT_DIR$/integrators/quadrature" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -527,7 +519,7 @@
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.2657512" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49927008" weight="0.26979" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5007299" side_tool="true" weight="0.24555735" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -587,19 +579,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/filter_none.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/playground/spa/babel.config.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -743,13 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comparisons/twoBodyRK.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/comparisons/orbit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1306">
@@ -758,13 +730,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Oscillator 1st Order Example.ipynb" />
-    <entry file="file://$PROJECT_DIR$/comparisons/oscillator2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/sympy/functions/elementary/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -779,25 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assertions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-470">
-          <caret line="221" column="16" selection-start-line="221" selection-start-column="16" selection-end-line="221" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1555620275252" expanded="true" signature="3161:5173" ph="..." />
-            <marker date="1555620275252" expanded="true" signature="5251:5967" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,16 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sios_GGL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/slimplectic_GGL.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -917,8 +853,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2812">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sios_GGL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
           <folding>
-            <element signature="e#950#994#0" expanded="true" />
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spinning_top.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -933,12 +886,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spinning_top.py">
+    <entry file="file://$PROJECT_DIR$/comparisons/oscillator2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        <state relative-caret-position="176">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comparisons/twoBodyRK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comparisons/potentialwell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
-            <element signature="e#0#76#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assertions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comparisons/shootingmethod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrators/Integrator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="236" column="76" selection-start-line="236" selection-start-column="73" selection-end-line="236" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1555620275252" expanded="true" signature="3161:5173" ph="..." />
+            <marker date="1555620275252" expanded="true" signature="5251:5967" ph="..." />
           </folding>
         </state>
       </provider>
