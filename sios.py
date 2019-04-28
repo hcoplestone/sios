@@ -10,9 +10,9 @@ k = 1.0
 
 
 class Sios:
-    def doit(self):
+    def doit(self, should_shoot=True):
         # Create an instance of our integrator
-        foi = FirstOrderIntegrator('t', ['x', 'y'], ['vx', 'vy'], verbose=True)
+        foi = FirstOrderIntegrator('t', ['x', 'y'], ['vx', 'vy'], verbose=False)
 
         x, y = foi.symbols['q']
         vx, vy = foi.symbols['v']
@@ -20,28 +20,71 @@ class Sios:
         L = 0.5 * m * (vx * vx + vy * vy) - 0.5 * k * (x * x + y * y)
 
         # Define discretization parameters
-        foi.discretise(L, 100000, 0.0, 5000.0)
+        foi.discretise(L, 1000, 0.0, 1000.0)
 
         # Set the initial conditions for integration
         foi.set_initial_conditions([1.0, 1.0], [1.0, 0.0])
 
         # Integrate the system
         start_time = timer()
-        foi.integrate()
+        foi.integrate(should_shoot)
         end_time = timer()
 
         # Display elapsed time while integrating
         elapsed_time = end_time - start_time
-        print('\nElapsed time is {0:.2f} seconds'.format(elapsed_time))
+        # print('\nElapsed time is {0:.2f} seconds'.format(elapsed_time))
 
         # Display the solutions and plot the results
         # foi.display_solutions()
         # foi.plot_results()
         # foi.animate_trajectory()
-        return foi
+        return foi, elapsed_time
 
 
-if __name__ == "__main__":
+def main():
+    sios = Sios()
+    elapsed_times_shooting = []
+    elapsed_times_not_shooting = []
+
+    n = 2000
+
+    # bar = IncrementalBar('Shooting', max=n)
+    # for i in range(n):
+    #     bar.next()
+    #     integrator, elapsed_time = sios.doit(True)
+    #     elapsed_times_shooting.append(elapsed_time)
+    # bar.finish()
+
+    bar = IncrementalBar('Not shooting', max=n)
+    for i in range(n):
+        bar.next()
+        integrator, elapsed_time = sios.doit(False)
+        elapsed_times_not_shooting.append(elapsed_time)
+    bar.finish()
+
+    # print("\nElapsed times shooting:")
+    # print(elapsed_times_shooting)
+    #
+    # print("\nElapsed times not shooting:")
+    # print(elapsed_times_not_shooting)
+
+    bar = IncrementalBar('Writing to file', max=n)
+
+    f = open("times-not-shooting-2.csv", "w")
+    # f = open("times-shooting-2.csv", "w")
+    for i in range(n):
+        bar.next()
+        f.write("{}\n".format(elapsed_times_not_shooting[i]))
+        # f.write("{}, {}\n".format(elapsed_times_shooting[i], elapsed_times_not_shooting[i))
+    f.close()
+    bar.finish()
+
+
+if __name__ == '__main__':
+    main()
+
+
+def compareenergies():
     # sios = Sios()
     # sios.doit()
     # n = range(1,5)
@@ -59,20 +102,20 @@ if __name__ == "__main__":
     bar = IncrementalBar('Analytic', max=integrator.n)
     omega = np.sqrt(k / m)
     psi1 = np.arctan(-omega)
-    A = np.sqrt(1+omega**2)
-    psi2 = -np.pi/2
+    A = np.sqrt(1 + omega ** 2)
+    psi2 = -np.pi / 2
     B = 1
     analytic_q_solutions = []
     analytic_p_solutions = []
     for t in integrator.t_list:
         bar.next()
-        x = A * np.sin(omega*t - psi1)
-        y = B * np.sin(omega*t - psi2)
+        x = A * np.sin(omega * t - psi1)
+        y = B * np.sin(omega * t - psi2)
         q = np.array([x, y])
         analytic_q_solutions.append(q)
 
-        px = A * omega * np.cos(omega*t - psi1)
-        py = B * omega * np.cos(omega*t - psi2)
+        px = A * omega * np.cos(omega * t - psi1)
+        py = B * omega * np.cos(omega * t - psi2)
 
         p = np.array([px, py])
         analytic_p_solutions.append(p)
@@ -139,7 +182,6 @@ if __name__ == "__main__":
     #     energies_euler.append(kinetic + potential)
     #     bar.next()
     # bar.finish()
-
 
     # Plot fractional energy error
     # fig2 = plt.figure(figsize=(12, 5), dpi=500)

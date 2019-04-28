@@ -32,9 +32,10 @@ class FirstOrderIntegrator(Integrator):
         action = FirstOrderQuadrature.trapezium_rule(lagrangian_evaled_at_n, lagrangian_evaled_at_n_plus_1, time_step)
         return action
 
-    def integrate(self):
+    def integrate(self, should_shoot: bool = True):
         """
         Numerically integrate the system.
+        :param should_shoot: Boolean to determine if shooting method should be used to guess q_{n+3} from q_{n+2} and q_{n+1}.
         """
 
         # Setup solutions with initial values
@@ -65,7 +66,7 @@ class FirstOrderIntegrator(Integrator):
                 partial_differential_of_action_wrt_q_n_plus_1 = egrad(S)
                 return partial_differential_of_action_wrt_q_n_plus_1(self.q_solutions[i + 1])
 
-            if (i > 1):
+            if i > 1 and should_shoot:
                 q_nplus1_guess = self.q_solutions[i] + (self.q_solutions[i] - self.q_solutions[i - 1])
             else:
                 q_nplus1_guess = self.q_solutions[i]
