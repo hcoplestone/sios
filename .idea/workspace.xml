@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501a560f-d12f-493d-a440-cafa93b4f9ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sios.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sios.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comparisons/gradients.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integrators/FirstOrderIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrators/FirstOrderIntegrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sios.py" beforeDir="false" afterPath="$PROJECT_DIR$/sios.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +40,7 @@
     <session id="-1992092386">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="43" />
+          <entry key="project.closed" value="44" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="2" />
@@ -52,9 +50,9 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="11" />
-          <entry key="project.open.time.8" value="12" />
+          <entry key="project.open.time.8" value="13" />
           <entry key="project.open.time.9" value="7" />
-          <entry key="project.opened" value="44" />
+          <entry key="project.opened" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -66,7 +64,7 @@
           <entry key="json" value="2" />
           <entry key="md" value="4" />
           <entry key="png" value="2" />
-          <entry key="py" value="256" />
+          <entry key="py" value="257" />
           <entry key="rst" value="1" />
           <entry key="ts" value="1" />
           <entry key="txt" value="1" />
@@ -82,7 +80,7 @@
           <entry key="JavaScript" value="9" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="256" />
+          <entry key="Python" value="257" />
           <entry key="ReST" value="1" />
           <entry key="TypeScript" value="1" />
           <entry key="Vue.js" value="25" />
@@ -95,7 +93,7 @@
           <entry key="html" value="20" />
           <entry key="js" value="418" />
           <entry key="md" value="3" />
-          <entry key="py" value="96527" />
+          <entry key="py" value="97544" />
           <entry key="txt" value="1" />
           <entry key="vue" value="5360" />
         </counts>
@@ -106,7 +104,7 @@
           <entry key="JavaScript" value="418" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="83" />
-          <entry key="Python" value="96825" />
+          <entry key="Python" value="97842" />
           <entry key="Vue.js" value="5360" />
         </counts>
       </usages-collector>
@@ -122,13 +120,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sios.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+            <state relative-caret-position="45">
+              <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
               <folding>
                 <marker date="1556416232062" expanded="true" signature="1263:2382" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/comparisons/gradients.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <marker date="1556796884403" expanded="true" signature="157:162" ph="..." />
               </folding>
             </state>
           </provider>
@@ -234,6 +245,7 @@
         <option value="$PROJECT_DIR$/comparisons/shootingmethod.py" />
         <option value="$PROJECT_DIR$/integrators/FirstOrderIntegrator.py" />
         <option value="$PROJECT_DIR$/sios.py" />
+        <option value="$PROJECT_DIR$/comparisons/gradients.py" />
       </list>
     </option>
   </component>
@@ -266,7 +278,7 @@
     </entry>
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -281,7 +293,22 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="sios" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="sios" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="comparisons" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -496,7 +523,7 @@
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49927008" weight="0.27382874" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.27382874" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5007299" side_tool="true" weight="0.24555735" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -561,7 +588,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/playground/spa/dist/js/app.243496ad.js" />
     <entry file="file://$PROJECT_DIR$/playground/spa/node_modules/bootstrap-vue/src/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2055">
@@ -898,10 +924,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sios.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        <state relative-caret-position="45">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
           <folding>
             <marker date="1556416232062" expanded="true" signature="1263:2382" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comparisons/gradients.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1556796884403" expanded="true" signature="157:162" ph="..." />
           </folding>
         </state>
       </provider>
