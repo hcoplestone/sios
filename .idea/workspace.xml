@@ -63,7 +63,7 @@
           <entry key="json" value="2" />
           <entry key="md" value="4" />
           <entry key="png" value="2" />
-          <entry key="py" value="257" />
+          <entry key="py" value="260" />
           <entry key="rst" value="1" />
           <entry key="ts" value="1" />
           <entry key="txt" value="1" />
@@ -79,7 +79,7 @@
           <entry key="JavaScript" value="9" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="257" />
+          <entry key="Python" value="260" />
           <entry key="ReST" value="1" />
           <entry key="TypeScript" value="1" />
           <entry key="Vue.js" value="25" />
@@ -92,7 +92,7 @@
           <entry key="html" value="20" />
           <entry key="js" value="418" />
           <entry key="md" value="3" />
-          <entry key="py" value="97575" />
+          <entry key="py" value="98227" />
           <entry key="txt" value="1" />
           <entry key="vue" value="5360" />
         </counts>
@@ -103,7 +103,7 @@
           <entry key="JavaScript" value="418" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="83" />
-          <entry key="Python" value="97873" />
+          <entry key="Python" value="98525" />
           <entry key="Vue.js" value="5360" />
         </counts>
       </usages-collector>
@@ -119,27 +119,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sios.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/comparisons/gradients.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="75">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
-                <marker date="1556416232062" expanded="true" signature="1263:2382" ph="..." />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/comparisons/gradients.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sios_GGL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <marker date="1556796923382" expanded="true" signature="157:162" ph="..." />
-              </folding>
+            <state relative-caret-position="-879">
+              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -522,7 +518,7 @@
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.27382874" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49927008" weight="0.27382874" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5007299" side_tool="true" weight="0.24555735" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -805,23 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sios_GGL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spinning_top.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/double_pendulum.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -857,13 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comparisons/shootingmethod.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -921,23 +893,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/comparisons/shootingmethod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sios.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="-1603">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
           <folding>
+            <element signature="e#0#44#0" expanded="true" />
             <marker date="1556416232062" expanded="true" signature="1263:2382" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spinning_top.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sios_GGL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-879">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/comparisons/gradients.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1556796923382" expanded="true" signature="157:162" ph="..." />
           </folding>
         </state>
       </provider>
